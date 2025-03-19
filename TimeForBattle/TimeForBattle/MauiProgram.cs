@@ -14,6 +14,10 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+		builder.Services.AddSingleton<Views.InitiativePage>();
+		builder.Services.AddTransient<Views.CharacterPage>();
+
+		builder.Services.AddSingleton<Models.CharactersDatabase>();
 
 #if DEBUG
 		builder.Logging.AddDebug();
