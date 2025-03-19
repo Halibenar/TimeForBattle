@@ -470,3 +470,9 @@ D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
+D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Mvvm.dll
+D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\SQLite-net.dll
+D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.batteries_v2.dll
+D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.core.dll
+D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.provider.e_sqlite3.dll
+D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\e_sqlite3.dll
