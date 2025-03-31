@@ -3,36 +3,12 @@
   "WorkspaceRootPath": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\views\\initiativepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\views\\initiativepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\views\\initiativepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\views\\initiativepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\viewmodels\\initiativeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\viewmodels\\initiativeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\viewmodels\\characterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\viewmodels\\characterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\viewmodels\\addcharacterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\viewmodels\\addcharacterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\models\\charactersdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,20 +19,56 @@
       "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\models\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\viewmodels\\characterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\viewmodels\\characterviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\views\\initiativepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\views\\initiativepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\views\\initiativepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\views\\initiativepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\views\\addcharacterpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\views\\addcharacterpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\views\\characterpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\views\\characterpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\views\\addcharacterpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\views\\addcharacterpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\views\\characterpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\views\\characterpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\views\\characterpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\views\\characterpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,89 +78,115 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "InitiativeViewModel.cs",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\ViewModels\\InitiativeViewModel.cs",
-              "RelativeDocumentMoniker": "TimeForBattle\\ViewModels\\InitiativeViewModel.cs",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\ViewModels\\InitiativeViewModel.cs",
-              "RelativeToolTip": "TimeForBattle\\ViewModels\\InitiativeViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T11:12:10.404Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "CharactersDatabase.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Models\\CharactersDatabase.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Models\\CharactersDatabase.cs",
               "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Models\\CharactersDatabase.cs",
               "RelativeToolTip": "TimeForBattle\\Models\\CharactersDatabase.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAkwCoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAC4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-19T11:40:13.97Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "InitiativePage.xaml.cs",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Views\\InitiativePage.xaml.cs",
-              "RelativeDocumentMoniker": "TimeForBattle\\Views\\InitiativePage.xaml.cs",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Views\\InitiativePage.xaml.cs",
-              "RelativeToolTip": "TimeForBattle\\Views\\InitiativePage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:05:20.57Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\App.xaml.cs",
-              "RelativeDocumentMoniker": "TimeForBattle\\App.xaml.cs",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\App.xaml.cs",
-              "RelativeToolTip": "TimeForBattle\\App.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABCAAAAAAAAAA==",
+              "Title": "Character.cs",
+              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Models\\Character.cs",
+              "RelativeDocumentMoniker": "TimeForBattle\\Models\\Character.cs",
+              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Models\\Character.cs",
+              "RelativeToolTip": "TimeForBattle\\Models\\Character.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T11:53:26.268Z",
+              "WhenOpened": "2025-03-19T11:28:20.823Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "AddCharacterViewModel.cs",
+              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\ViewModels\\AddCharacterViewModel.cs",
+              "RelativeDocumentMoniker": "TimeForBattle\\ViewModels\\AddCharacterViewModel.cs",
+              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\ViewModels\\AddCharacterViewModel.cs",
+              "RelativeToolTip": "TimeForBattle\\ViewModels\\AddCharacterViewModel.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAwwEAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T11:19:12.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "InitiativeViewModel.cs",
+              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\ViewModels\\InitiativeViewModel.cs",
+              "RelativeDocumentMoniker": "TimeForBattle\\ViewModels\\InitiativeViewModel.cs",
+              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\ViewModels\\InitiativeViewModel.cs",
+              "RelativeToolTip": "TimeForBattle\\ViewModels\\InitiativeViewModel.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAwCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T11:12:10.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "InitiativePage.xaml",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Views\\InitiativePage.xaml",
               "RelativeDocumentMoniker": "TimeForBattle\\Views\\InitiativePage.xaml",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Views\\InitiativePage.xaml*",
-              "RelativeToolTip": "TimeForBattle\\Views\\InitiativePage.xaml*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAsAAAAAAAAAA==",
+              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Views\\InitiativePage.xaml",
+              "RelativeToolTip": "TimeForBattle\\Views\\InitiativePage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-03-19T12:01:41.067Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Constants.cs",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Constants.cs",
-              "RelativeDocumentMoniker": "TimeForBattle\\Constants.cs",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Constants.cs",
-              "RelativeToolTip": "TimeForBattle\\Constants.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\App.xaml.cs",
+              "RelativeDocumentMoniker": "TimeForBattle\\App.xaml.cs",
+              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\App.xaml.cs",
+              "RelativeToolTip": "TimeForBattle\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T13:42:47.318Z",
+              "WhenOpened": "2025-03-19T11:53:26.268Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "InitiativePage.xaml.cs",
+              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Views\\InitiativePage.xaml.cs",
+              "RelativeDocumentMoniker": "TimeForBattle\\Views\\InitiativePage.xaml.cs",
+              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Views\\InitiativePage.xaml.cs",
+              "RelativeToolTip": "TimeForBattle\\Views\\InitiativePage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T12:05:20.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CharacterViewModel.cs",
+              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\ViewModels\\CharacterViewModel.cs",
+              "RelativeDocumentMoniker": "TimeForBattle\\ViewModels\\CharacterViewModel.cs",
+              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\ViewModels\\CharacterViewModel.cs",
+              "RelativeToolTip": "TimeForBattle\\ViewModels\\CharacterViewModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T11:22:05.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "AppShell.xaml.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\AppShell.xaml.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\AppShell.xaml.cs",
@@ -161,33 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CharacterViewModel.cs",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\ViewModels\\CharacterViewModel.cs",
-              "RelativeDocumentMoniker": "TimeForBattle\\ViewModels\\CharacterViewModel.cs",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\ViewModels\\CharacterViewModel.cs",
-              "RelativeToolTip": "TimeForBattle\\ViewModels\\CharacterViewModel.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T11:22:05.495Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MauiProgram.cs",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\MauiProgram.cs",
-              "RelativeDocumentMoniker": "TimeForBattle\\MauiProgram.cs",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\MauiProgram.cs",
-              "RelativeToolTip": "TimeForBattle\\MauiProgram.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T14:19:35.84Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "AppShell.xaml",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\AppShell.xaml",
               "RelativeDocumentMoniker": "TimeForBattle\\AppShell.xaml",
@@ -200,33 +212,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Character.cs",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Models\\Character.cs",
-              "RelativeDocumentMoniker": "TimeForBattle\\Models\\Character.cs",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Models\\Character.cs",
-              "RelativeToolTip": "TimeForBattle\\Models\\Character.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "AddCharacterPage.xaml.cs",
+              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Views\\AddCharacterPage.xaml.cs",
+              "RelativeDocumentMoniker": "TimeForBattle\\Views\\AddCharacterPage.xaml.cs",
+              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Views\\AddCharacterPage.xaml.cs",
+              "RelativeToolTip": "TimeForBattle\\Views\\AddCharacterPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T11:28:20.823Z",
+              "WhenOpened": "2025-03-31T11:17:06.761Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "CharacterPage.xaml",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Views\\CharacterPage.xaml",
-              "RelativeDocumentMoniker": "TimeForBattle\\Views\\CharacterPage.xaml",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Views\\CharacterPage.xaml",
-              "RelativeToolTip": "TimeForBattle\\Views\\CharacterPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-19T12:15:57.378Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "App.xaml",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\App.xaml",
               "RelativeDocumentMoniker": "TimeForBattle\\App.xaml",
@@ -239,7 +238,46 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "TimeForBattle\\MauiProgram.cs",
+              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\MauiProgram.cs",
+              "RelativeToolTip": "TimeForBattle\\MauiProgram.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T14:19:35.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 13,
+              "Title": "Constants.cs",
+              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Constants.cs",
+              "RelativeDocumentMoniker": "TimeForBattle\\Constants.cs",
+              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Constants.cs",
+              "RelativeToolTip": "TimeForBattle\\Constants.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T13:42:47.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AddCharacterPage.xaml",
+              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Views\\AddCharacterPage.xaml",
+              "RelativeDocumentMoniker": "TimeForBattle\\Views\\AddCharacterPage.xaml",
+              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Views\\AddCharacterPage.xaml",
+              "RelativeToolTip": "TimeForBattle\\Views\\AddCharacterPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-31T11:16:33.02Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "CharacterPage.xaml.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Views\\CharacterPage.xaml.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Views\\CharacterPage.xaml.cs",
@@ -248,6 +286,19 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-19T12:16:12.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CharacterPage.xaml",
+              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Views\\CharacterPage.xaml",
+              "RelativeDocumentMoniker": "TimeForBattle\\Views\\CharacterPage.xaml",
+              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Views\\CharacterPage.xaml",
+              "RelativeToolTip": "TimeForBattle\\Views\\CharacterPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-19T12:15:57.378Z",
               "EditorCaption": ""
             }
           ]

@@ -47,6 +47,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = TimeForBattle.Resources.St
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
+[D:/GitHub/TimeForBattle/TimeForBattle/TimeForBattle/Views/AddCharacterPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TimeForBattle.Views.AddCharacterPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AddCharacterPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AddCharacterPage.xaml
+
 [D:/GitHub/TimeForBattle/TimeForBattle/TimeForBattle/Views/CharacterPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TimeForBattle.Views.CharacterPage.xaml

@@ -73,6 +73,9 @@
 	  <Compile Update="Views\CharacterPage.xaml.cs">
 	    <DependentUpon>CharacterPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\AddCharacterPage.xaml.cs">
+	    <DependentUpon>AddCharacterPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -80,6 +83,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\CharacterPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\AddCharacterPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
