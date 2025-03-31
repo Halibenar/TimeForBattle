@@ -20,7 +20,7 @@ namespace TimeForBattle.Models
             var result = await database.CreateTableAsync<Character>();
         }
 
-        public async Task<IEnumerable<Character>> GetCharactersAsync()
+        public async Task<IEnumerable<Character>> GetAllCharactersAsync()
         {
             await Init();
             return await database.Table<Character>().ToListAsync();

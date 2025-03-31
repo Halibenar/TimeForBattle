@@ -1,3 +1,5 @@
+using System.Threading.Tasks;
+
 namespace TimeForBattle.Views;
 
 public partial class InitiativePage : ContentPage
@@ -12,8 +14,8 @@ public partial class InitiativePage : ContentPage
 		await Navigation.PushAsync(new Views.CharacterPage());
 	}
 
-    private void addCharacterButton_Clicked(object sender, EventArgs e)
+    private async void addCharacterButton_Clicked(object sender, EventArgs e)
     {
-
+		await Navigation.PushAsync(new Views.AddCharacterPage());
     }
 }
