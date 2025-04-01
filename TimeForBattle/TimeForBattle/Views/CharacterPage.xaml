@@ -8,10 +8,10 @@
     <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,*" Margin="10">
         <Label Text="Name:" Grid.Row="0" />
         <Label Text="Type:" Grid.Row="1" />
-        <Label Text="Description:" Grid.Row="2" />
+        <Label Text="Initiative Bonus:" Grid.Row="2" />
 
         <Label Text="{Binding CharacterName}" Grid.Row="0" Grid.Column="1" />
         <Label Text="{Binding CharacterType}" Grid.Row="1" Grid.Column="1" />
-        <Label Text="{Binding CharacterDescription}" Grid.Row="2" Grid.Column="1" />
+        <Label Text="{Binding CharacterBonus}" Grid.Row="2" Grid.Column="1" />
     </Grid>
 </ContentPage>

@@ -12,12 +12,12 @@ namespace TimeForBattle.Models
         
         private int _characterId;
         private string _characterName;
-        private string _characterDescription;
+        private int _characterBonus;
         private string _characterType;
 
         [PrimaryKey, AutoIncrement]  public int CharacterId { get => _characterId; set => _characterId = value; }
         public string CharacterName { get => _characterName; set => _characterName = value; }
-        public string CharacterDescription { get => _characterDescription; set => _characterDescription = value; }
+        public int CharacterBonus { get => _characterBonus; set => _characterBonus = value; }
         public string CharacterType { get => _characterType; set => _characterType = value; }
 
         public Character()
