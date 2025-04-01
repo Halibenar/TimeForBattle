@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Microsoft.Maui.Controls;
 using TimeForBattle.Views;
+using System.Diagnostics;
 
 namespace TimeForBattle.ViewModels
 {
@@ -26,6 +27,7 @@ namespace TimeForBattle.ViewModels
         public ICommand UpdateCharacterCommand { get; private set; }
 
         public ObservableCollection<CharacterViewModel> Characters { get; set; }
+        public CollectionView CharactersView { get; set; }
 
         public InitiativeViewModel()
         {
@@ -55,6 +57,27 @@ namespace TimeForBattle.ViewModels
         private async void UpdateCharacter(CharacterViewModel character)
         {
             await AppShell.Current.Navigation.PushAsync(new Views.AddCharacterPage(character));
+        }
+
+        public void RollInitiative()
+        {
+            Random rng = new Random();
+
+            foreach (var character in Characters)
+            {
+                int initiative = rng.Next(1, 21) + character.CharacterBonus;
+                character.CharacterInitiative = initiative;
+                character.CharacterInitiativeString = initiative.ToString();
+                Trace.WriteLine(character.CharacterName + ", " + character.CharacterInitiativeString);
+            }
+
+            var sortedCharacters = Characters.OrderByDescending(x => x.CharacterInitiative).ThenByDescending(x => x.CharacterBonus).ToList();
+
+            Characters.Clear();
+            foreach (var character in sortedCharacters)
+            {
+                Characters.Add(character);
+            }
         }
     }
 }
