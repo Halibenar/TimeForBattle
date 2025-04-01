@@ -18,4 +18,12 @@ public partial class InitiativePage : ContentPage
     {
 		await Navigation.PushAsync(new Views.AddCharacterPage());
     }
+
+	private void rollInitiative_Clicked(object sender, EventArgs e)
+	{
+		if (App.InitiativeViewModel is not null)
+		{
+			App.InitiativeViewModel.RollInitiative();
+		}
+	}
 }

@@ -10,20 +10,22 @@
     <StackLayout>
         <ListView ItemsSource="{Binding Characters}" SelectedItem="{Binding SelectedCharacter, Mode=OneWayToSource}" Margin="10" ItemTapped="ListView_ItemTapped">
             <ListView.Header>
-                <Grid ColumnDefinitions="*,*,*">
+                <Grid ColumnDefinitions="*,*,*,*">
                     <Label Text="Name" Grid.Column="0"/>
                     <Label Text="Bonus" Grid.Column="1"/>
                     <Label Text="Type" Grid.Column="2"/>
+                    <Label Text="Initiative" Grid.Column="3"/>
                 </Grid>
             </ListView.Header>
             
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="vm:CharacterViewModel">
                     <ViewCell>
-                        <Grid Padding="10" ColumnDefinitions="*,*,*">
+                        <Grid Padding="10" ColumnDefinitions="*,*,*,*">
                             <Label Grid.Column="0" Text="{Binding CharacterName}" FontAttributes="Bold"/>
                             <Label Grid.Column="1" Text="{Binding CharacterBonus}" FontAttributes="Bold"/>
                             <Label Grid.Column="2" Text="{Binding CharacterType}" FontAttributes="Bold"/>
+                            <Label Grid.Column="3" Text="{Binding CharacterInitiativeString}" FontAttributes="Bold"/>
                         </Grid>
                         <ViewCell.ContextActions>
                             <MenuItem Text="Delete" IsDestructive="True" Command="{Binding DeleteCharacterCommand, Source={x:Static local:App.InitiativeViewModel}}" CommandParameter="{Binding}" />
@@ -39,5 +41,11 @@
                 Margin="5"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"/>
+        <Button x:Name="rollInitiative"
+        Text="Roll for Initiative"
+        Clicked="rollInitiative_Clicked"
+        Margin="5"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"/>
     </StackLayout>
 </ContentPage>
