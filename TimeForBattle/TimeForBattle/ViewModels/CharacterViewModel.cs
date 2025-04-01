@@ -11,7 +11,7 @@ namespace TimeForBattle.ViewModels
     {
         private int _characterId;
         private string _characterName;
-        private string _characterDescription;
+        private int _characterBonus;
         private string _characterType;
 
         public int CharacterId
@@ -26,10 +26,10 @@ namespace TimeForBattle.ViewModels
             set => SetProperty(ref _characterName, value);
         }
 
-        public string CharacterDescription
+        public int CharacterBonus
         {
-            get => _characterDescription;
-            set => SetProperty(ref _characterDescription, value);
+            get => _characterBonus;
+            set => SetProperty(ref _characterBonus, value);
         }
 
         public string CharacterType
@@ -42,7 +42,7 @@ namespace TimeForBattle.ViewModels
         {
             _characterId = character.CharacterId;
             _characterName = character.CharacterName;
-            _characterDescription = character.CharacterDescription;
+            _characterBonus = character.CharacterBonus;
             _characterType = character.CharacterType;
         }
     }

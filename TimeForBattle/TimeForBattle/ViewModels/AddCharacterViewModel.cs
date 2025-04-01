@@ -12,7 +12,7 @@ namespace TimeForBattle.ViewModels
     {
         private int _characterId;
         private string _characterName;
-        private string _characterDescription;
+        private int _characterBonus;
         private string _characterType;
 
         public int CharacterId {
@@ -23,9 +23,9 @@ namespace TimeForBattle.ViewModels
             get { return _characterName; }
             set { SetProperty(ref _characterName, value); }
         }
-        public string CharacterDescription {
-            get { return _characterDescription; }
-            set { SetProperty(ref _characterDescription, value); }
+        public int CharacterBonus {
+            get { return _characterBonus; }
+            set { SetProperty(ref _characterBonus, value); }
         }
         public string CharacterType
         {
@@ -44,7 +44,7 @@ namespace TimeForBattle.ViewModels
         {
             CharacterId = character.CharacterId;
             CharacterName = character.CharacterName;
-            CharacterDescription = character.CharacterDescription;
+            CharacterBonus = character.CharacterBonus;
             CharacterType = character.CharacterType;
             database = new Models.CharactersDatabase();
         }
@@ -55,7 +55,7 @@ namespace TimeForBattle.ViewModels
             {
                 CharacterId = CharacterId,
                 CharacterName = CharacterName,
-                CharacterDescription = CharacterDescription,
+                CharacterBonus = CharacterBonus,
                 CharacterType = CharacterType
             };
             await database.SaveCharacterAsync(character);

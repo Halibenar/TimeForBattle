@@ -9,19 +9,32 @@
              BindingContext="{x:Static local:App.InitiativeViewModel}">
     <StackLayout>
         <ListView ItemsSource="{Binding Characters}" SelectedItem="{Binding SelectedCharacter, Mode=OneWayToSource}" Margin="10" ItemTapped="ListView_ItemTapped">
+            <ListView.Header>
+                <Grid ColumnDefinitions="*,*,*">
+                    <Label Text="Name" Grid.Column="0"/>
+                    <Label Text="Bonus" Grid.Column="1"/>
+                    <Label Text="Type" Grid.Column="2"/>
+                </Grid>
+            </ListView.Header>
+            
             <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding CharacterName}" x:DataType="vm:CharacterViewModel">
-                        <TextCell.ContextActions>
+                <DataTemplate x:DataType="vm:CharacterViewModel">
+                    <ViewCell>
+                        <Grid Padding="10" ColumnDefinitions="*,*,*">
+                            <Label Grid.Column="0" Text="{Binding CharacterName}" FontAttributes="Bold"/>
+                            <Label Grid.Column="1" Text="{Binding CharacterBonus}" FontAttributes="Bold"/>
+                            <Label Grid.Column="2" Text="{Binding CharacterType}" FontAttributes="Bold"/>
+                        </Grid>
+                        <ViewCell.ContextActions>
                             <MenuItem Text="Delete" IsDestructive="True" Command="{Binding DeleteCharacterCommand, Source={x:Static local:App.InitiativeViewModel}}" CommandParameter="{Binding}" />
                             <MenuItem Text="Update" IsDestructive="True" Command="{Binding UpdateCharacterCommand, Source={x:Static local:App.InitiativeViewModel}}" CommandParameter="{Binding}" />
-                        </TextCell.ContextActions>
-                    </TextCell>
+                        </ViewCell.ContextActions>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
         <Button x:Name="addCharacterButton"
-                Text="Add Character"
+                Text="New Character"
                 Clicked="addCharacterButton_Clicked"
                 Margin="5"
                 VerticalOptions="Center"

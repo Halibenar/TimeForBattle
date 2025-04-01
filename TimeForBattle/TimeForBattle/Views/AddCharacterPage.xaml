@@ -7,7 +7,7 @@
              Title="AddCharacterPage">
     <VerticalStackLayout Padding="10,0,10,0" >
         <Entry Text="{Binding CharacterName}" Placeholder="Enter Name" />
-        <Entry Text="{Binding CharacterDescription}" Placeholder="Enter Description" />
+        <Entry Text="{Binding CharacterBonus}" Placeholder="Enter Initiative Bonus" />
         <Entry Text="{Binding CharacterType}" Placeholder="Enter Type" />
         <Button x:Name="btnSaveUpdate" Text="Save" Command="{Binding AddCharacterCommand}" />
     </VerticalStackLayout>
