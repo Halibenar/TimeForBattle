@@ -27,7 +27,6 @@ namespace TimeForBattle.ViewModels
         public ICommand UpdateCharacterCommand { get; private set; }
 
         public ObservableCollection<CharacterViewModel> Characters { get; set; }
-        public CollectionView CharactersView { get; set; }
 
         public InitiativeViewModel()
         {

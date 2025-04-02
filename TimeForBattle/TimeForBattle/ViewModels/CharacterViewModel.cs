@@ -13,6 +13,9 @@ namespace TimeForBattle.ViewModels
         private string _characterName;
         private int _characterBonus;
         private string _characterType;
+        private int _characterMaximumHP;
+        private int _characterCurrentHP;
+
         private int _characterInitiative;
         private string _characterInitiativeString;
 
@@ -52,12 +55,26 @@ namespace TimeForBattle.ViewModels
             set => SetProperty(ref _characterInitiativeString, value);
         }
 
+        public int CharacterMaximumHP
+        {
+            get => _characterMaximumHP;
+            set => SetProperty(ref _characterMaximumHP, value);
+        }
+
+        public int CharacterCurrentHP 
+        {
+            get => _characterCurrentHP;
+            set => SetProperty(ref _characterCurrentHP, value);
+        }
+
         public CharacterViewModel(Models.Character character)
         {
             _characterId = character.CharacterId;
             _characterName = character.CharacterName;
             _characterBonus = character.CharacterBonus;
             _characterType = character.CharacterType;
+            _characterMaximumHP = character.CharacterMaximumHP;
+            _characterCurrentHP = character.CharacterCurrentHP;
             _characterInitiativeString = "";
         }
     }

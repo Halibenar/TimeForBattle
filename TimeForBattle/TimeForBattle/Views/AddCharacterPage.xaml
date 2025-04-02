@@ -9,6 +9,8 @@
         <Entry Text="{Binding CharacterName}" Placeholder="Enter Name" />
         <Entry Text="{Binding CharacterBonus}" Placeholder="Enter Initiative Bonus" />
         <Entry Text="{Binding CharacterType}" Placeholder="Enter Type" />
+        <Entry Text="{Binding CharacterCurrentHP}" Placeholder="Enter Current HP" />
+        <Entry Text="{Binding CharacterMaximumHP}" Placeholder="Enter Maximum HP" />
         <Button x:Name="btnSaveUpdate" Text="Save" Command="{Binding AddCharacterCommand}" />
     </VerticalStackLayout>
 </ContentPage>

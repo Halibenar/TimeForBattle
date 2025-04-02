@@ -14,6 +14,8 @@ namespace TimeForBattle.ViewModels
         private string _characterName;
         private int _characterBonus;
         private string _characterType;
+        private int _characterMaximumHP;
+        private int _characterCurrentHP;
 
         public int CharacterId {
             get { return _characterId; }
@@ -32,6 +34,16 @@ namespace TimeForBattle.ViewModels
             get { return _characterType; }
             set { SetProperty(ref _characterType, value); }
         }
+        public int CharacterMaximumHP
+        {
+            get { return _characterMaximumHP; }
+            set { SetProperty(ref _characterMaximumHP, value); }
+        }
+        public int CharacterCurrentHP
+        {
+            get { return _characterCurrentHP; }
+            set { SetProperty(ref _characterCurrentHP, value); }
+        }
 
         private Models.CharactersDatabase database;
 
@@ -46,6 +58,8 @@ namespace TimeForBattle.ViewModels
             CharacterName = character.CharacterName;
             CharacterBonus = character.CharacterBonus;
             CharacterType = character.CharacterType;
+            CharacterMaximumHP = character.CharacterMaximumHP;
+            CharacterCurrentHP = character.CharacterCurrentHP;
             database = new Models.CharactersDatabase();
         }
 
@@ -56,7 +70,9 @@ namespace TimeForBattle.ViewModels
                 CharacterId = CharacterId,
                 CharacterName = CharacterName,
                 CharacterBonus = CharacterBonus,
-                CharacterType = CharacterType
+                CharacterType = CharacterType,
+                CharacterCurrentHP = CharacterCurrentHP,
+                CharacterMaximumHP = CharacterMaximumHP
             };
             await database.SaveCharacterAsync(character);
             await App.InitiativeViewModel.RefreshCharacters();
