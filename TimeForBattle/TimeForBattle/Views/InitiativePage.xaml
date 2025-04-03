@@ -8,24 +8,25 @@
              Title="Initiative"
              BindingContext="{x:Static local:App.InitiativeViewModel}">
     <StackLayout>
-        <ListView ItemsSource="{Binding Characters}" SelectedItem="{Binding SelectedCharacter, Mode=OneWayToSource}" Margin="10" ItemTapped="ListView_ItemTapped">
-            <ListView.Header>
+        <CollectionView ItemsSource="{Binding Characters}" SelectedItem="{Binding SelectedCharacter, Mode=OneWayToSource}" Margin="10">
+            <CollectionView.Header>
                 <Grid ColumnDefinitions="*,*,*,*,*">
                     <Label Text="Name" Grid.Column="0"/>
                     <Label Text="Bonus" Grid.Column="1"/>
                     <Label Text="Type" Grid.Column="2"/>
                     <Label Text="Initiative" Grid.Column="3"/>
-                    <StackLayout Grid.Column="4" Orientation="Horizontal">
-                        <Label Text="Current HP"/>
-                        <Label Text="/"/>
-                        <Label Text="Maximum HP"/>
-                    </StackLayout>
+                    <Label Text="HP" Grid.Column="4"/>
                 </Grid>
-            </ListView.Header>
-            
-            <ListView.ItemTemplate>
+            </CollectionView.Header>
+            <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="vm:CharacterViewModel">
-                    <ViewCell>
+                    <SwipeView>
+                        <SwipeView.LeftItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Delete" IsDestructive="True" Command="{Binding DeleteCharacterCommand, Source={x:Static local:App.InitiativeViewModel}}" CommandParameter="{Binding}" />
+                                <SwipeItem Text="Update" IsDestructive="True" Command="{Binding UpdateCharacterCommand, Source={x:Static local:App.InitiativeViewModel}}" CommandParameter="{Binding}" />
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
                         <Grid Padding="10" ColumnDefinitions="*,*,*,*,*">
                             <Label Grid.Column="0" Text="{Binding CharacterName}" FontAttributes="Bold"/>
                             <Label Grid.Column="1" Text="{Binding CharacterBonus}" FontAttributes="Bold"/>
@@ -37,14 +38,10 @@
                                 <Label Text="{Binding CharacterMaximumHP}"/>
                             </StackLayout>
                         </Grid>
-                        <ViewCell.ContextActions>
-                            <MenuItem Text="Delete" IsDestructive="True" Command="{Binding DeleteCharacterCommand, Source={x:Static local:App.InitiativeViewModel}}" CommandParameter="{Binding}" />
-                            <MenuItem Text="Update" IsDestructive="True" Command="{Binding UpdateCharacterCommand, Source={x:Static local:App.InitiativeViewModel}}" CommandParameter="{Binding}" />
-                        </ViewCell.ContextActions>
-                    </ViewCell>
+                    </SwipeView>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
         <Button x:Name="addCharacterButton"
                 Text="New Character"
                 Clicked="addCharacterButton_Clicked"

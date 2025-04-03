@@ -62,13 +62,12 @@ namespace TimeForBattle.ViewModels
         {
             Random rng = new Random();
 
-            foreach (var character in Characters)
+            Parallel.ForEach(Characters, character =>
             {
                 int initiative = rng.Next(1, 21) + character.CharacterBonus;
                 character.CharacterInitiative = initiative;
                 character.CharacterInitiativeString = initiative.ToString();
-                Trace.WriteLine(character.CharacterName + ", " + character.CharacterInitiativeString);
-            }
+            });
 
             var sortedCharacters = Characters.OrderByDescending(x => x.CharacterInitiative).ThenByDescending(x => x.CharacterBonus).ToList();
 
