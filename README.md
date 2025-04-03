@@ -6,3 +6,13 @@ Tabletop roleplaying games often incorporate turn-based combat. At the start of 
 
 # Quick and easy initiative order
 TimeForBattle aims to assist the Game Master of a tabletop roleplaying game with keeping the initiative order in combat. The app can quickly set up combat scenarios and keep track of important statistics, while the Game Master can focus on delivering an unforgettable experience.
+
+# ToDo
+- Add custom input of initiative, specifically for player characters
+- Add separate initiative rolling for characters added after initiative was already rolled
+- Disable initiative rolling after it was rolled, except when combat is ended with button
+- Allow HP tracking
+  - Input of current HP
+  - Subtraction of HP
+- Add saving characters to seperate database for quick addition to initiative order
+- Add labels for variables in AddCharacterView
