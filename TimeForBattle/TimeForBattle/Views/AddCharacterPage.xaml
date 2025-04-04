@@ -5,12 +5,22 @@
              xmlns:viewmodels="clr-namespace:TimeForBattle.ViewModels"
              x:DataType="viewmodels:AddCharacterViewModel"
              Title="AddCharacterPage">
-    <VerticalStackLayout Padding="10,0,10,0" >
-        <Entry Text="{Binding CharacterName}" Placeholder="Enter Name" />
-        <Entry Text="{Binding CharacterBonus}" Placeholder="Enter Initiative Bonus" />
-        <Entry Text="{Binding CharacterType}" Placeholder="Enter Type" />
-        <Entry Text="{Binding CharacterCurrentHP}" Placeholder="Enter Current HP" />
-        <Entry Text="{Binding CharacterMaximumHP}" Placeholder="Enter Maximum HP" />
-        <Button x:Name="btnSaveUpdate" Text="Save" Command="{Binding AddCharacterCommand}" />
-    </VerticalStackLayout>
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,*" Margin="10">
+        <Label Text="Name:" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" Padding="0,0,20,0"/>
+        <Label Text="Type:" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" Padding="0,0,20,0"/>
+        <Label Text="Initiative Bonus:" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" Padding="0,0,20,0"/>
+        <Label Text="Current HP:" Grid.Row="3" Grid.Column="0" VerticalOptions="Center" Padding="0,0,20,0"/>
+        <Label Text="Maximum HP:" Grid.Row="4" Grid.Column="0" VerticalOptions="Center" Padding="0,0,20,0"/>
+
+        <Entry Text="{Binding CharacterName}" Placeholder="Enter Name" Grid.Row="0" Grid.Column="1" />
+        <HorizontalStackLayout RadioButtonGroup.GroupName="characterType" RadioButtonGroup.SelectedValue="{Binding CharacterType}" Grid.Row="1" Grid.Column="1">
+            <RadioButton Content="NPC" Value="NPC"></RadioButton>
+            <RadioButton Content="PC" Value="PC"></RadioButton>
+        </HorizontalStackLayout>
+        <Entry Text="{Binding CharacterBonus}" Placeholder="Enter Initiative Bonus" Grid.Row="2" Grid.Column="1" />
+        <Entry Text="{Binding CharacterCurrentHP}" Placeholder="Enter Current HP" Grid.Row="3" Grid.Column="1" />
+        <Entry Text="{Binding CharacterMaximumHP}" Placeholder="Enter Maximum HP" Grid.Row="4" Grid.Column="1" />
+        <Button x:Name="btnSaveUpdate" Text="Save" Command="{Binding AddCharacterCommand}" Grid.Row="5" Grid.Column="1" />
+    </Grid>
+    
 </ContentPage>

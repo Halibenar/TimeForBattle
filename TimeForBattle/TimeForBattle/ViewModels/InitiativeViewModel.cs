@@ -64,11 +64,19 @@ namespace TimeForBattle.ViewModels
 
             Parallel.ForEach(Characters, character =>
             {
-                int initiative = rng.Next(1, 21) + character.CharacterBonus;
-                character.CharacterInitiative = initiative;
-                character.CharacterInitiativeString = initiative.ToString();
+                if (character.CharacterType == "NPC")
+                {
+                    int initiative = rng.Next(1, 21) + character.CharacterBonus;
+                    character.CharacterInitiative = initiative;
+                    character.CharacterInitiativeString = initiative.ToString();
+                }
             });
 
+            SortInitiative();
+        }
+
+        public void SortInitiative()
+        {
             var sortedCharacters = Characters.OrderByDescending(x => x.CharacterInitiative).ThenByDescending(x => x.CharacterBonus).ToList();
 
             Characters.Clear();
