@@ -68,25 +68,25 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\InitiativePage.xaml.cs">
-	    <DependentUpon>InitiativePage.xaml</DependentUpon>
+	  <Compile Update="View\CharactersPage.xaml.cs">
+	    <DependentUpon>CharactersPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Views\CharacterPage.xaml.cs">
+	  <Compile Update="View\CharacterPage.xaml.cs">
 	    <DependentUpon>CharacterPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Views\AddCharacterPage.xaml.cs">
+	  <Compile Update="View\AddCharacterPage.xaml.cs">
 	    <DependentUpon>AddCharacterPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\InitiativePage.xaml">
+	  <MauiXaml Update="View\CharactersPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\CharacterPage.xaml">
+	  <MauiXaml Update="View\CharacterPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\AddCharacterPage.xaml">
+	  <MauiXaml Update="View\AddCharacterPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

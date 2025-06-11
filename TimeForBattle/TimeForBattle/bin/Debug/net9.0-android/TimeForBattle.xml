@@ -4,11 +4,103 @@
         <name>TimeForBattle</name>
     </assembly>
     <members>
+        <member name="T:TimeForBattle.ViewModel.BaseViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.BaseViewModel.IsBusy">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.BaseViewModel.isBusy"/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.BaseViewModel.Title">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.BaseViewModel.title"/>
+        </member>
+        <member name="T:TimeForBattle.ViewModel.CharacterDetailsViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CharacterDetailsViewModel.Character">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.CharacterDetailsViewModel.character"/>
+        </member>
+        <member name="T:TimeForBattle.ViewModel.CharactersViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CharactersViewModel.IsRefreshing">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.CharactersViewModel.isRefreshing"/>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CharactersViewModel.refreshCharactersCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CharactersViewModel.RefreshCharactersCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CharactersViewModel.RefreshCharactersCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CharactersViewModel.RefreshCharacters"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CharactersViewModel.deleteCharacterCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CharactersViewModel.DeleteCharacterCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CharactersViewModel.DeleteCharacterCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CharactersViewModel.DeleteCharacter(TimeForBattle.Model.Character)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CharactersViewModel.updateCharacterCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CharactersViewModel.UpdateCharacterCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CharactersViewModel.UpdateCharacterCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CharactersViewModel.UpdateCharacter(TimeForBattle.Model.Character)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CharactersViewModel.rollInitiativeCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CharactersViewModel.RollInitiativeCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CharactersViewModel.RollInitiativeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CharactersViewModel.RollInitiative"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CharactersViewModel.sortInitiativeCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CharactersViewModel.SortInitiativeCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CharactersViewModel.SortInitiativeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CharactersViewModel.SortInitiative"/>.</summary>
+        </member>
         <member name="T:TimeForBattle.Resource">
             <summary>
             Android Resource Designer class.
             Exposes the Android Resource designer assembly into the project Namespace.
             </summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Character">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Character" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsRefreshing">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsRefreshing" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Character">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Character" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsRefreshing">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsRefreshing" generated properties.</summary>
         </member>
     </members>
 </doc>
