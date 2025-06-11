@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using TimeForBattle.Services;
+using TimeForBattle.View;
 
 namespace TimeForBattle;
 
@@ -14,15 +16,17 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
-		builder.Services.AddSingleton<Views.InitiativePage>();
-		builder.Services.AddTransient<Views.CharacterPage>();
+        builder.Services.AddSingleton<CharactersPage>();
+        builder.Services.AddTransient<CharacterPage>();
 
-		builder.Services.AddSingleton<Models.CharactersDatabase>();
+        builder.Services.AddSingleton<CharactersViewModel>();
+        builder.Services.AddTransient<CharacterDetailsViewModel>();
+
+        builder.Services.AddSingleton<CharacterService>();
 
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
-
 		return builder.Build();
 	}
 }

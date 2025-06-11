@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:TimeForBattle.Model"
+             xmlns:viewmodel="clr-namespace:TimeForBattle.ViewModel"
+             x:DataType="viewmodel:CharactersViewModel"
+             Title="{Binding Title}"
+             x:Class="TimeForBattle.View.CharactersPage">
+
+    <Grid ColumnDefinitions="*,*"
+          ColumnSpacing="5"
+          RowDefinitions="*,Auto"
+          RowSpacing="0">
+
+        <RefreshView Grid.ColumnSpan="2"
+                     Command="{Binding RefreshCharactersCommand}"
+                     IsRefreshing="{Binding IsRefreshing}"
+                     VerticalOptions="Fill">
+            <CollectionView BackgroundColor="Transparent"
+                            ItemsSource="{Binding Characters}"
+                            SelectionMode="None">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Horizontal"
+                                     Span="1"
+                                     HorizontalItemSpacing="30"/>
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Character">
+                        <Grid Padding="10">
+                            <Border HeightRequest="125">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                                                          CommandParameter="{Binding .}" />
+                                </Border.GestureRecognizers>
+                                <Grid ColumnDefinitions="125,*"
+                                      ColumnSpacing="5"
+                                      RowDefinitions="*,*,*,*"
+                                      RowSpacing="0"
+                                      Padding="0">
+                                    <Label Grid.Column="0"
+                                           Grid.Row="0"
+                                           Text="Name:"
+                                           FontAttributes="Bold"
+                                           VerticalOptions="Center" />
+                                    <Label Grid.Column="0"
+                                           Grid.Row="1"
+                                           Text="Bonus:"
+                                           FontAttributes="Bold"
+                                           VerticalOptions="Center" />
+                                    <Label Grid.Column="0"
+                                           Grid.Row="2"
+                                           Text="Type:"
+                                           FontAttributes="Bold"
+                                           VerticalOptions="Center" />
+                                    <Label Grid.Column="0"
+                                           Grid.Row="3"
+                                           Text="HP:"
+                                           FontAttributes="Bold"
+                                           VerticalOptions="Center" />
+                                    <Label Grid.Column="1"
+                                           Grid.Row="0"
+                                           Text="{Binding Name}"
+                                           VerticalOptions="Center" />
+                                    <Label Grid.Column="1"
+                                           Grid.Row="1"
+                                           Text="{Binding Bonus}"
+                                           VerticalOptions="Center" />
+                                    <Label Grid.Column="1"
+                                           Grid.Row="2"
+                                           Text="{Binding Type}"
+                                           VerticalOptions="Center" />
+                                    <Label Grid.Column="1"
+                                           Grid.Row="3"
+                                           Text="{Binding MaximumHP}"
+                                           VerticalOptions="Center" />
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+
+        <Button x:Name="addCharacterButton"
+                Text="New Character"
+                Margin="5"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Grid.Row="1"
+                Grid.Column="0"/>
+
+        <Button x:Name="rollInitiative"
+                Command="{Binding RollInitiativeCommand}"
+                Text="Roll for Initiative"
+                Margin="5"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Grid.Row="1"
+                Grid.Column="1" />
+
+    </Grid>
+</ContentPage>
