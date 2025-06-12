@@ -51,20 +51,20 @@ build_metadata.AdditionalFiles.ManifestResourceName = TimeForBattle.Resources.St
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[D:/GitHub/TimeForBattle/TimeForBattle/TimeForBattle/View/AddCharacterPage.xaml]
+[D:/GitHub/TimeForBattle/TimeForBattle/TimeForBattle/View/AddCreaturePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = TimeForBattle.View.AddCharacterPage.xaml
-build_metadata.AdditionalFiles.TargetPath = View\AddCharacterPage.xaml
-build_metadata.AdditionalFiles.RelativePath = View\AddCharacterPage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TimeForBattle.View.AddCreaturePage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\AddCreaturePage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\AddCreaturePage.xaml
 
-[D:/GitHub/TimeForBattle/TimeForBattle/TimeForBattle/View/CharacterPage.xaml]
+[D:/GitHub/TimeForBattle/TimeForBattle/TimeForBattle/View/CreatureDetailsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = TimeForBattle.View.CharacterPage.xaml
-build_metadata.AdditionalFiles.TargetPath = View\CharacterPage.xaml
-build_metadata.AdditionalFiles.RelativePath = View\CharacterPage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TimeForBattle.View.CreatureDetailsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\CreatureDetailsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\CreatureDetailsPage.xaml
 
-[D:/GitHub/TimeForBattle/TimeForBattle/TimeForBattle/View/CharactersPage.xaml]
+[D:/GitHub/TimeForBattle/TimeForBattle/TimeForBattle/View/CreatureListPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = TimeForBattle.View.CharactersPage.xaml
-build_metadata.AdditionalFiles.TargetPath = View\CharactersPage.xaml
-build_metadata.AdditionalFiles.RelativePath = View\CharactersPage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TimeForBattle.View.CreatureListPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\CreatureListPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\CreatureListPage.xaml

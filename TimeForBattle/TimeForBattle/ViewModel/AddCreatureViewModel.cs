@@ -2,7 +2,7 @@
 
 namespace TimeForBattle.ViewModel;
 
-class AddCharacterViewModel : BaseViewModel
+class AddCreatureViewModel : BaseViewModel
 {
     //private int Id;
     //private string _characterName;
