@@ -2,7 +2,7 @@
 
 public partial class App : Application
 {
-    public static ViewModel.CharactersViewModel? InitiativeViewModel { get; private set; }
+    public static ViewModel.CreatureListViewModel? InitiativeViewModel { get; private set; }
 
     public App()
     {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TimeForBattle.View.AddCharacterPage"
+             x:Class="TimeForBattle.View.AddCreaturePage"
              xmlns:viewmodel="clr-namespace:TimeForBattle.ViewModel"
-             x:DataType="viewmodel:AddCharacterViewModel"
+             x:DataType="viewmodel:AddCreatureViewModel"
              Title="AddCharacterPage">
     
     <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,*" Margin="10">

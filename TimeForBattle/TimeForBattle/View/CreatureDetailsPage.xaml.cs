@@ -1,8 +1,8 @@
 namespace TimeForBattle.View;
 
-public partial class CharacterPage : ContentPage
+public partial class CreatureDetailsPage : ContentPage
 {
-	public CharacterPage(CharacterDetailsViewModel viewModel)
+	public CreatureDetailsPage(CreatureDetailsViewModel viewModel)
 	{
         InitializeComponent();
         BindingContext = viewModel;

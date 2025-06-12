@@ -3,40 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:TimeForBattle.Model"
              xmlns:viewmodel="clr-namespace:TimeForBattle.ViewModel"
-             x:DataType="viewmodel:CharactersViewModel"
+             x:DataType="viewmodel:CreatureListViewModel"
              Title="{Binding Title}"
-             x:Class="TimeForBattle.View.CharactersPage">
+             x:Class="TimeForBattle.View.CreatureListPage">
 
     <Grid ColumnDefinitions="*,*"
-          ColumnSpacing="5"
-          RowDefinitions="*,Auto"
-          RowSpacing="0">
+          ColumnSpacing="10"
+          RowDefinitions="*,*,50"
+          RowSpacing="0"
+          Padding="30,0,30,0">
 
-        <RefreshView Grid.ColumnSpan="2"
-                     Command="{Binding RefreshCharactersCommand}"
+        <RefreshView Grid.Row="0"
+            Grid.ColumnSpan="2"
+                     Command="{Binding RefreshCreaturesCommand}"
                      IsRefreshing="{Binding IsRefreshing}"
-                     VerticalOptions="Fill">
+                     VerticalOptions="Fill"
+                     HorizontalOptions="Fill">
             <CollectionView BackgroundColor="Transparent"
-                            ItemsSource="{Binding Characters}"
+                            ItemsSource="{Binding Creatures}"
                             SelectionMode="None">
 
                 <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Horizontal"
-                                     Span="1"
-                                     HorizontalItemSpacing="30"/>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="2"
+                                     VerticalItemSpacing="20"/>
                 </CollectionView.ItemsLayout>
 
                 <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="model:Character">
+                    <DataTemplate x:DataType="model:Creature">
                         <Grid Padding="10">
                             <Border HeightRequest="125">
                                 <Border.GestureRecognizers>
                                     <TapGestureRecognizer 
                                                           CommandParameter="{Binding .}" />
                                 </Border.GestureRecognizers>
-                                <Grid ColumnDefinitions="125,*"
+                                <Grid ColumnDefinitions="80,*"
                                       ColumnSpacing="5"
-                                      RowDefinitions="*,*,*,*"
+                                      RowDefinitions="*,*,*,*,*"
                                       RowSpacing="0"
                                       Padding="0">
                                     <Label Grid.Column="0"
@@ -75,6 +78,11 @@
                                            Grid.Row="3"
                                            Text="{Binding MaximumHP}"
                                            VerticalOptions="Center" />
+                                    <Button Grid.Column="0"
+                                            Grid.Row="4"
+                                            Text="Add"
+                                            CommandParameter="{Binding .}"
+                                            Command="{Binding x:DataType='viewmodel:CreatureListViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:CreatureListViewModel}}, Path=AddToInitiativeCommand}"/>
                                 </Grid>
                             </Border>
                         </Grid>
@@ -83,12 +91,64 @@
             </CollectionView>
         </RefreshView>
 
+        <CollectionView Grid.Row="1"
+            Grid.ColumnSpan="2"
+            BackgroundColor="Transparent"
+                        ItemsSource="{Binding Initiative}"
+                        SelectionMode="None">
+
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
+                                 Span="1"
+                                 VerticalItemSpacing="0" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Creature">
+                    <Grid Padding="10">
+                        <Border HeightRequest="30">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer CommandParameter="{Binding .}" />
+                            </Border.GestureRecognizers>
+                            <Grid ColumnDefinitions="*,*,*,*,*,*"
+                                  ColumnSpacing="5"
+                                  RowDefinitions="*"
+                                  RowSpacing="0"
+                                  Padding="0">
+                                <Label Grid.Column="0"
+                                       Grid.Row="0"
+                                       Text="{Binding Name}"
+                                       VerticalOptions="Center" />
+                                <Label Grid.Column="1"
+                                       Grid.Row="0"
+                                       Text="{Binding Bonus}"
+                                       VerticalOptions="Center" />
+                                <Label Grid.Column="2"
+                                       Grid.Row="0"
+                                       Text="{Binding Type}"
+                                       VerticalOptions="Center" />
+                                <Label Grid.Column="3"
+                                       Grid.Row="0"
+                                       Text="{Binding MaximumHP}"
+                                       VerticalOptions="Center" />
+                                <Button Grid.Column="4"
+                                        Grid.Row="0"
+                                        Text="Remove"
+                                        CommandParameter="{Binding .}"
+                                        Command="{Binding x:DataType='viewmodel:CreatureListViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:CreatureListViewModel}}, Path=RemoveFromInitiativeCommand}" />
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
         <Button x:Name="addCharacterButton"
                 Text="New Character"
                 Margin="5"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
-                Grid.Row="1"
+                Grid.Row="2"
                 Grid.Column="0"/>
 
         <Button x:Name="rollInitiative"
@@ -97,7 +157,7 @@
                 Margin="5"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
-                Grid.Row="1"
+                Grid.Row="2"
                 Grid.Column="1" />
 
     </Grid>

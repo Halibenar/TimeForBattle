@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Shell
-    x:Class="TimeForBattle.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:view="clr-namespace:TimeForBattle.View"
-    Shell.FlyoutBehavior="Disabled">
+<Shell x:Class="TimeForBattle.AppShell"
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:view="clr-namespace:TimeForBattle.View"
+       Shell.FlyoutBehavior="Disabled">
 
     <Shell.Resources>
         <ResourceDictionary>
@@ -34,10 +33,9 @@
         </ResourceDictionary>
     </Shell.Resources>
 
-    <ShellContent
-        Shell.NavBarIsVisible="true"
-        Title="Characters"
-        ContentTemplate="{DataTemplate view:CharactersPage}"
-        Route="CharactersPage" />
+    <ShellContent Shell.NavBarIsVisible="true"
+                  Title="Creatures"
+                  ContentTemplate="{DataTemplate view:CreatureListPage}"
+                  Route="CreatureListPage" />
 
 </Shell>

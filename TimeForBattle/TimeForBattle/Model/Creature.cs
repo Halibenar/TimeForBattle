@@ -1,10 +1,7 @@
-﻿using SQLite;
+﻿namespace TimeForBattle.Model;
 
-namespace TimeForBattle.Model;
-
-public class Character
+public class Creature : DatabaseObject
 {
-    [PrimaryKey, AutoIncrement] public int Id { get; set; }
     public string Name { get; set; }
     public int Initiative { get; set; }
     public int Bonus { get; set; }
