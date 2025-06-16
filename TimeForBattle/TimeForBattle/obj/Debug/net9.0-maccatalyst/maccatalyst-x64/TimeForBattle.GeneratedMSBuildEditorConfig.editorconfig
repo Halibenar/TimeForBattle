@@ -64,3 +64,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TimeForBattle.View.CreatureListPage.xaml
 build_metadata.AdditionalFiles.TargetPath = View\CreatureListPage.xaml
 build_metadata.AdditionalFiles.RelativePath = View\CreatureListPage.xaml
+
+[D:/GitHub/TimeForBattle/TimeForBattle/TimeForBattle/View/InitiativePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TimeForBattle.View.InitiativePage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\InitiativePage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\InitiativePage.xaml

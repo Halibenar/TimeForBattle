@@ -1,0 +1,55 @@
+﻿
+namespace TimeForBattle.Model;
+
+public class InitiativeCreature : Creature
+{
+    public int CreatureID { get; set; }
+    public int CurrentHitPoints { get; set; }
+    public int? Initiative { get; set; }
+
+    public InitiativeCreature() { }
+
+    public InitiativeCreature(Creature creature)
+    {
+        this.CreatureID = creature.Id;
+        this.Initiative = null;
+        this.CurrentHitPoints = creature.MaximumHitPoints;
+
+        this.Name = creature.Name;
+        this.Size = creature.Size;
+        this.Type = creature.Type;
+        this.Alignment = creature.Alignment;
+
+        this.ArmorClass = creature.ArmorClass;
+        this.InitiativeBonus = creature.InitiativeBonus;
+        this.MaximumHitPoints = creature.MaximumHitPoints;
+        this.Speed = creature.Speed;
+        this.ChallengeRating = creature.ChallengeRating;
+
+        this.StrScore = creature.StrScore;
+        this.DexScore = creature.DexScore;
+        this.ConScore = creature.ConScore;
+        this.IntScore = creature.IntScore;
+        this.WisScore = creature.WisScore;
+        this.ChaScore = creature.ChaScore;
+
+        this.SavingThrows = creature.SavingThrows;
+        this.Skills = creature.Skills;
+        this.Resistances = creature.Resistances;
+        this.Vulnerabilities = creature.Vulnerabilities;
+        this.Immunities = creature.Immunities;
+        this.Senses = creature.Senses;
+        this.Languages = creature.Languages;
+        this.Gear = creature.Gear;
+
+        this.Traits = creature.Traits;
+
+        this.Actions = creature.Actions;
+        this.BonusActions = creature.BonusActions;
+        this.Reactions = creature.Reactions;
+        this.LegendaryActions = creature.LegendaryActions;
+}
+}
+
+
+    

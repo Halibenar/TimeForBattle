@@ -4,21 +4,74 @@
              xmlns:viewmodel="clr-namespace:TimeForBattle.ViewModel"
              x:Class="TimeForBattle.View.CreatureDetailsPage"
              x:DataType="viewmodel:CreatureDetailsViewModel"
-             Title="Details">
-    
-    <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,*" Margin="10">
-        <Label Text="Name:" Grid.Row="0" />
-        <Label Text="Type:" Grid.Row="1" />
-        <Label Text="Initiative Bonus:" Grid.Row="2" />
-        <Label Text="HP:" Grid.Row="3" />
+             Title="{Binding Creature.Name}">
 
-        <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="1" />
-        <Label Text="{Binding Type}" Grid.Row="1" Grid.Column="1" />
-        <Label Text="{Binding Bonus}" Grid.Row="2" Grid.Column="1" />
-        <HorizontalStackLayout Grid.Row="3" Grid.Column="1" >
-            <Label Text="{Binding CurrentHP}"/>
-            <Label Text="/"/>
-            <Label Text="{Binding MaximumHP}"/>
-        </HorizontalStackLayout>
-    </Grid>
+    <StackLayout Margin="10">
+        <Label Text="{Binding Creature.Name}"
+               FontSize="20"
+               VerticalOptions="Center" />
+        <Line X1="-5"
+              X2="200"
+              Stroke="DarkRed"
+              StrokeThickness="4" />
+        <Label VerticalOptions="Center"
+               FontAttributes="Italic"
+               TextColor="Grey">
+            <Label.Text>
+                <MultiBinding StringFormat="{}{0} {1}, {2}">
+                    <Binding Path="Creature.Size" />
+                    <Binding Path="Creature.Type" />
+                    <Binding Path="Creature.Alignment" />
+                </MultiBinding>
+            </Label.Text>
+        </Label>
+        <Label VerticalOptions="Center">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Armor Class "
+                          FontAttributes="Bold" />
+                    <Span Text="{Binding Creature.ArmorClass}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label VerticalOptions="Center">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Hit Points "
+                          FontAttributes="Bold" />
+                    <Span Text="{Binding Creature.MaximumHitPoints}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label VerticalOptions="Center">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Speed "
+                          FontAttributes="Bold" />
+                    <Span Text="{Binding Creature.Speed}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label VerticalOptions="Center"
+               IsVisible="{Binding Creature.Skills, TargetNullValue=False}">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Skills "
+                          FontAttributes="Bold" />
+                    <Span Text="{Binding Creature.Skills}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label VerticalOptions="Center"
+               IsVisible="{Binding Creature.Senses, TargetNullValue=False}">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Senses "
+                          FontAttributes="Bold" />
+                    <Span Text="{Binding Creature.Senses}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+    </StackLayout>
 </ContentPage>

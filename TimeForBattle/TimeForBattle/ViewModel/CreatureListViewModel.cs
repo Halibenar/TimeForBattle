@@ -7,49 +7,86 @@ namespace TimeForBattle.ViewModel;
 public partial class CreatureListViewModel: BaseViewModel
 {
     public CreatureService<Creature> creatureService;
+    public CreatureService<InitiativeCreature> initiativeService;
     public ObservableCollection<Creature> Creatures { get; } = new();
-    public ObservableCollection<Creature> Initiative { get; } = new();
+    public ObservableCollection<InitiativeCreature> Initiative { get; } = new();
 
-    public CreatureListViewModel(CreatureService<Creature> characterService)
+    public CreatureListViewModel(CreatureService<Creature> characterService, CreatureService<InitiativeCreature> initiativeService)
     {
         Title = "Creatures";
         this.creatureService = characterService;
+        this.initiativeService = initiativeService;
         Creatures = [];
-        TestCharacters();
+        Initiative = [];
+        TestCreatures();
         RefreshCreatures();
     }
 
-    public async void TestCharacters()
+    public async void TestCreatures()
     {
-        //Creature characterA = new Creature();
-        //characterA.Name = "Martijn";
-        //characterA.Initiative = 25;
-        //characterA.Bonus = 9;
-        //characterA.Type = "DM";
-        //characterA.MaximumHP = 99;
-        //characterA.CurrentHP = 99;
+        //Creature newCreature = new()
+        //{
+        //    Name = "Goblin Warrior",
+        //    Size = "Small",
+        //    Type = "Fey (Goblinoid)",
+        //    Alignment = "Chaotic Neutral",
+        //    ArmorClass = 15,
+        //    InitiativeBonus = 2,
+        //    MaximumHitPoints = 10,
+        //    Speed = 30,
+        //    StrScore = 8,
+        //    DexScore = 15,
+        //    ConScore = 10,
+        //    IntScore = 10,
+        //    WisScore = 8,
+        //    ChaScore = 8,
+        //    ChallengeRating = 1 / 4
+        //};
 
-        //await creatureService.SaveAsync(characterA);
+        //await creatureService.SaveAsync(newCreature);
 
-        //Creature characterB = new Creature();
-        //characterB.Name = "Rita";
-        //characterB.Initiative = 25;
-        //characterB.Bonus = 9;
-        //characterB.Type = "Monster";
-        //characterB.MaximumHP = 50;
-        //characterB.CurrentHP = 50;
+        //Creature newCreature2 = new()
+        //{
+        //    Name = "Kobold Warrior",
+        //    Size = "Small",
+        //    Type = "Dragon",
+        //    Alignment = "Neutral",
+        //    ArmorClass = 14,
+        //    InitiativeBonus = 2,
+        //    MaximumHitPoints = 7,
+        //    Speed = 30,
+        //    StrScore = 7,
+        //    DexScore = 15,
+        //    ConScore = 9,
+        //    IntScore = 8,
+        //    WisScore = 7,
+        //    ChaScore = 8,
+        //    ChallengeRating = 1 / 8
+        //};
 
-        //await creatureService.SaveAsync(characterB);
+        //await creatureService.SaveAsync(newCreature2);
 
-        //Creature characterC = new Creature();
-        //characterC.Name = "Robert";
-        //characterC.Initiative = 15;
-        //characterC.Bonus = 5;
-        //characterC.Type = "Player";
-        //characterC.MaximumHP = 30;
-        //characterC.CurrentHP = 30;
+        //Creature newCreature3 = new()
+        //{
+        //    Name = "Shadow",
+        //    Size = "Medium",
+        //    Type = "Undead",
+        //    Alignment = "Chaotic Evil",
+        //    ArmorClass = 12,
+        //    InitiativeBonus = 2,
+        //    MaximumHitPoints = 27,
+        //    Speed = 40,
+        //    StrScore = 6,
+        //    DexScore = 14,
+        //    ConScore = 13,
+        //    IntScore = 6,
+        //    WisScore = 10,
+        //    ChaScore = 8,
+        //    ChallengeRating = 1 / 2,
+        //    Senses = "Sarkvision 60 ft."
+        //};
 
-        //await creatureService.SaveAsync(characterC);
+        //await creatureService.SaveAsync(newCreature3);
     }
 
     [ObservableProperty] bool isRefreshing;
@@ -58,24 +95,65 @@ public partial class CreatureListViewModel: BaseViewModel
     public async Task RefreshCreatures()
     {
         List<Creature> creatureData = await creatureService.GetAllAsync();
-
         Creatures.Clear();
         foreach (Creature creature in creatureData)
         {
             Creatures.Add(creature);
         }
+
+        List<InitiativeCreature> initiativeCreatureData = await initiativeService.GetAllAsync();
+        Initiative.Clear();
+        foreach(InitiativeCreature initiativeCreature in initiativeCreatureData)
+        {
+            Initiative.Add(initiativeCreature);
+        }
+    }
+
+    [RelayCommand]
+    public async Task GoToDetailsAsync(Creature creature)
+    {
+        if (creature is null)
+            return;
+
+        await Shell.Current.GoToAsync($"{nameof(CreatureDetailsPage)}", true,
+            new Dictionary<string, object>
+            {
+                {"Creature", creature}
+            });
+    }
+
+    [RelayCommand]
+    public async Task GoToInitiativeAsync()
+    {
+        if (this.Initiative is null)
+            return;
+
+        await Shell.Current.GoToAsync($"{nameof(InitiativePage)}", true);
     }
 
     [RelayCommand]
     public async Task AddToInitiativeAsync(Creature creature)
     {
-        Initiative.Add(creature);
+        if (creature is null)
+            return;
+
+        InitiativeCreature initiativeCreature = new(creature);
+
+        await initiativeService.SaveAsync(initiativeCreature);
+
+        Initiative.Add(initiativeCreature);
     }
 
     [RelayCommand]
-    public async Task RemoveFromInitiativeAsync(Creature creature)
+    public async Task RemoveFromInitiativeAsync(InitiativeCreature initiativeCreature)
     {
-        Initiative.Remove(creature);
+        if (initiativeCreature is null)
+            return;
+
+        if (await initiativeService.DeleteAsync(await initiativeService.GetByIdAsync(initiativeCreature.Id)) > 0)
+        {
+            Initiative.Remove(initiativeCreature);
+        }
     }
 
     [RelayCommand]
@@ -94,32 +172,38 @@ public partial class CreatureListViewModel: BaseViewModel
     }
 
     [RelayCommand]
+    public async Task<Creature> GetCreature(int iD)
+    {
+        return await creatureService.GetByIdAsync(iD);
+    }
+
+    [RelayCommand]
     void RollInitiative()
     {
-        Random rng = new Random();
+        //Random rng = new Random();
 
-        Parallel.ForEach(Creatures, creature =>
-        {
-            //if (character.Type == "NPC")
+        //Parallel.ForEach(Initiative, creature =>
+        //{
+        //    //if (character.Type == "NPC")
             
-                int initiative = rng.Next(1, 21) + creature.Bonus;
-                creature.Initiative = initiative;
-                creatureService.SaveAsync(creature);
+        //        int initiative = rng.Next(1, 21) + creature.InitiativeBonus;
+        //        creature.Initiative = initiative;
+        //        creatureService.SaveAsync(creature);
             
-        });
+        //});
 
-        SortInitiative();
+        //SortInitiative();
     }
 
     [RelayCommand]
     void SortInitiative()
     {
-        var sortedCreatures = Creatures.OrderByDescending(x => x.Initiative).ThenByDescending(x => x.Bonus).ToList();
+    //    var sortedCreatures = Creatures.OrderByDescending(x => x.Initiative).ThenByDescending(x => x.Bonus).ToList();
 
-        Creatures.Clear();
-        foreach (var creature in sortedCreatures)
-        {
-            Creatures.Add(creature);
-        }
+    //    Creatures.Clear();
+    //    foreach (var creature in sortedCreatures)
+    //    {
+    //        Creatures.Add(creature);
+    //    }
     }
 }
