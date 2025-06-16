@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:TimeForBattle.Model"
+             xmlns:viewmodel="clr-namespace:TimeForBattle.ViewModel"
+             x:DataType="viewmodel:CreatureListViewModel"
+             Title="{Binding Title}"
+             x:Class="TimeForBattle.View.InitiativePage">
+
+    <CollectionView BackgroundColor="Transparent"
+                    ItemsSource="{Binding Initiative}"
+                    SelectionMode="None">
+
+        <CollectionView.ItemsLayout>
+            <GridItemsLayout Orientation="Vertical"
+                             Span="1"
+                             VerticalItemSpacing="0" />
+        </CollectionView.ItemsLayout>
+
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="model:Creature">
+                <Grid Padding="0">
+                    <Border HeightRequest="30">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer CommandParameter="{Binding .}" />
+                        </Border.GestureRecognizers>
+                        <Grid ColumnDefinitions="*,150"
+                              ColumnSpacing="5"
+                              RowDefinitions="*"
+                              RowSpacing="0"
+                              Padding="0">
+                            <Label Grid.Column="0"
+                                   Grid.Row="0"
+                                   Text="{Binding Name}"
+                                   VerticalOptions="Center" />
+                            <Button Grid.Column="1"
+                                    Grid.Row="0"
+                                    Text="Remove"
+                                    CommandParameter="{Binding .}"
+                                    Command="{Binding x:DataType='viewmodel:CreatureListViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:CreatureListViewModel}}, Path=RemoveFromInitiativeCommand}" />
+                        </Grid>
+                    </Border>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>

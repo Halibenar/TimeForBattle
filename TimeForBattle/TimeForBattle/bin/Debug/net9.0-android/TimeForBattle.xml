@@ -13,52 +13,93 @@
         <member name="P:TimeForBattle.ViewModel.BaseViewModel.Title">
             <inheritdoc cref="F:TimeForBattle.ViewModel.BaseViewModel.title"/>
         </member>
-        <member name="T:TimeForBattle.ViewModel.CharacterDetailsViewModel">
+        <member name="T:TimeForBattle.ViewModel.CreatureDetailsViewModel">
             <inheritdoc/>
         </member>
-        <member name="P:TimeForBattle.ViewModel.CharacterDetailsViewModel.Character">
-            <inheritdoc cref="F:TimeForBattle.ViewModel.CharacterDetailsViewModel.character"/>
+        <member name="P:TimeForBattle.ViewModel.CreatureDetailsViewModel.Creature">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.CreatureDetailsViewModel.creature"/>
         </member>
-        <member name="T:TimeForBattle.ViewModel.CharactersViewModel">
-            <inheritdoc/>
-            <inheritdoc/>
+        <member name="T:TimeForBattle.ViewModel.CreatureListViewModel">
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
         </member>
-        <member name="P:TimeForBattle.ViewModel.CharactersViewModel.IsRefreshing">
-            <inheritdoc cref="F:TimeForBattle.ViewModel.CharactersViewModel.isRefreshing"/>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.IsRefreshing">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.CreatureListViewModel.isRefreshing"/>
         </member>
-        <member name="F:TimeForBattle.ViewModel.CharactersViewModel.refreshCharactersCommand">
-            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CharactersViewModel.RefreshCharactersCommand"/>.</summary>
+        <member name="F:TimeForBattle.ViewModel.CreatureListViewModel.refreshCreaturesCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.RefreshCreaturesCommand"/>.</summary>
         </member>
-        <member name="P:TimeForBattle.ViewModel.CharactersViewModel.RefreshCharactersCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CharactersViewModel.RefreshCharacters"/>.</summary>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.RefreshCreaturesCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureListViewModel.RefreshCreatures"/>.</summary>
         </member>
-        <member name="F:TimeForBattle.ViewModel.CharactersViewModel.deleteCharacterCommand">
-            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CharactersViewModel.DeleteCharacterCommand"/>.</summary>
+        <member name="F:TimeForBattle.ViewModel.CreatureListViewModel.goToDetailsCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.GoToDetailsCommand"/>.</summary>
         </member>
-        <member name="P:TimeForBattle.ViewModel.CharactersViewModel.DeleteCharacterCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CharactersViewModel.DeleteCharacter(TimeForBattle.Model.Character)"/>.</summary>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.GoToDetailsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureListViewModel.GoToDetailsAsync(TimeForBattle.Model.Creature)"/>.</summary>
         </member>
-        <member name="F:TimeForBattle.ViewModel.CharactersViewModel.updateCharacterCommand">
-            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CharactersViewModel.UpdateCharacterCommand"/>.</summary>
+        <member name="F:TimeForBattle.ViewModel.CreatureListViewModel.goToInitiativeCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.GoToInitiativeCommand"/>.</summary>
         </member>
-        <member name="P:TimeForBattle.ViewModel.CharactersViewModel.UpdateCharacterCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CharactersViewModel.UpdateCharacter(TimeForBattle.Model.Character)"/>.</summary>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.GoToInitiativeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureListViewModel.GoToInitiativeAsync"/>.</summary>
         </member>
-        <member name="F:TimeForBattle.ViewModel.CharactersViewModel.rollInitiativeCommand">
-            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CharactersViewModel.RollInitiativeCommand"/>.</summary>
+        <member name="F:TimeForBattle.ViewModel.CreatureListViewModel.addToInitiativeCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.AddToInitiativeCommand"/>.</summary>
         </member>
-        <member name="P:TimeForBattle.ViewModel.CharactersViewModel.RollInitiativeCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CharactersViewModel.RollInitiative"/>.</summary>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.AddToInitiativeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureListViewModel.AddToInitiativeAsync(TimeForBattle.Model.Creature)"/>.</summary>
         </member>
-        <member name="F:TimeForBattle.ViewModel.CharactersViewModel.sortInitiativeCommand">
-            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CharactersViewModel.SortInitiativeCommand"/>.</summary>
+        <member name="F:TimeForBattle.ViewModel.CreatureListViewModel.removeFromInitiativeCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.RemoveFromInitiativeCommand"/>.</summary>
         </member>
-        <member name="P:TimeForBattle.ViewModel.CharactersViewModel.SortInitiativeCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CharactersViewModel.SortInitiative"/>.</summary>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.RemoveFromInitiativeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureListViewModel.RemoveFromInitiativeAsync(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CreatureListViewModel.deleteCreatureCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.DeleteCreatureCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.DeleteCreatureCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureListViewModel.DeleteCreature(TimeForBattle.Model.Creature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CreatureListViewModel.updateCreatureCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.UpdateCreatureCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.UpdateCreatureCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureListViewModel.UpdateCreature(TimeForBattle.Model.Creature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CreatureListViewModel.getCreatureCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.GetCreatureCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.GetCreatureCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureListViewModel.GetCreature(System.Int32)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CreatureListViewModel.rollInitiativeCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.RollInitiativeCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.RollInitiativeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureListViewModel.RollInitiative"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CreatureListViewModel.sortInitiativeCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.SortInitiativeCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.SortInitiativeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureListViewModel.SortInitiative"/>.</summary>
+        </member>
+        <member name="T:TimeForBattle.ViewModel.InitiativeViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.Initiative">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.InitiativeViewModel.initiative"/>
         </member>
         <member name="T:TimeForBattle.Resource">
             <summary>
@@ -78,11 +119,14 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Title">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Title" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Character">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Character" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Creature">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Creature" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsRefreshing">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsRefreshing" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Initiative">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Initiative" generated properties.</summary>
         </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
@@ -96,11 +140,14 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Title">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Title" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Character">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Character" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Creature">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Creature" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsRefreshing">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsRefreshing" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Initiative">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Initiative" generated properties.</summary>
         </member>
     </members>
 </doc>

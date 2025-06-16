@@ -8,13 +8,13 @@
              x:Class="TimeForBattle.View.CreatureListPage">
 
     <Grid ColumnDefinitions="*,*"
-          ColumnSpacing="10"
-          RowDefinitions="*,*,50"
+          ColumnSpacing="0"
+          RowDefinitions="*,Auto,50"
           RowSpacing="0"
-          Padding="30,0,30,0">
+          Padding="0,0,0,0">
 
         <RefreshView Grid.Row="0"
-            Grid.ColumnSpan="2"
+                     Grid.ColumnSpan="2"
                      Command="{Binding RefreshCreaturesCommand}"
                      IsRefreshing="{Binding IsRefreshing}"
                      VerticalOptions="Fill"
@@ -26,63 +26,169 @@
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical"
                                      Span="2"
-                                     VerticalItemSpacing="20"/>
+                                     VerticalItemSpacing="10" />
                 </CollectionView.ItemsLayout>
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Creature">
-                        <Grid Padding="10">
-                            <Border HeightRequest="125">
+                        <Grid Padding="0">
+                            <Border HeightRequest="180"
+                                    WidthRequest="160"
+                                    Stroke="DarkRed"
+                                    StrokeThickness="2">
                                 <Border.GestureRecognizers>
-                                    <TapGestureRecognizer 
-                                                          CommandParameter="{Binding .}" />
+                                    <TapGestureRecognizer CommandParameter="{Binding .}" />
                                 </Border.GestureRecognizers>
-                                <Grid ColumnDefinitions="80,*"
+                                <Grid ColumnDefinitions="*,*"
                                       ColumnSpacing="5"
-                                      RowDefinitions="*,*,*,*,*"
-                                      RowSpacing="0"
-                                      Padding="0">
-                                    <Label Grid.Column="0"
-                                           Grid.Row="0"
-                                           Text="Name:"
-                                           FontAttributes="Bold"
-                                           VerticalOptions="Center" />
-                                    <Label Grid.Column="0"
-                                           Grid.Row="1"
-                                           Text="Bonus:"
-                                           FontAttributes="Bold"
-                                           VerticalOptions="Center" />
-                                    <Label Grid.Column="0"
-                                           Grid.Row="2"
-                                           Text="Type:"
-                                           FontAttributes="Bold"
-                                           VerticalOptions="Center" />
-                                    <Label Grid.Column="0"
-                                           Grid.Row="3"
-                                           Text="HP:"
-                                           FontAttributes="Bold"
-                                           VerticalOptions="Center" />
-                                    <Label Grid.Column="1"
+                                      RowDefinitions="*,2,*,*,*,2,*,*,2,25"
+                                      RowSpacing="2"
+                                      Padding="5">
+
+                                    <Label Grid.ColumnSpan="2"
                                            Grid.Row="0"
                                            Text="{Binding Name}"
+                                           FontSize="20"
                                            VerticalOptions="Center" />
-                                    <Label Grid.Column="1"
-                                           Grid.Row="1"
-                                           Text="{Binding Bonus}"
-                                           VerticalOptions="Center" />
-                                    <Label Grid.Column="1"
+                                    <Line Grid.ColumnSpan="2"
+                                          Grid.Row="1"
+                                          X1="-5"
+                                          X2="200"
+                                          Stroke="DarkRed"
+                                          StrokeThickness="2" />
+                                    <Label Grid.ColumnSpan="2"
                                            Grid.Row="2"
-                                           Text="{Binding Type}"
+                                           VerticalOptions="Center"
+                                           FontAttributes="Italic"
+                                           TextColor="Grey">
+                                        <Label.Text>
+                                            <MultiBinding StringFormat="{}{0} {1}">
+                                                <Binding Path="Size" />
+                                                <Binding Path="Type" />
+                                            </MultiBinding>
+                                        </Label.Text>
+                                    </Label>
+                                    <Label Grid.Column="0"
+                                           Grid.Row="3"
+                                           Text="{Binding ArmorClass, StringFormat='AC: {0}'}"
                                            VerticalOptions="Center" />
                                     <Label Grid.Column="1"
                                            Grid.Row="3"
-                                           Text="{Binding MaximumHP}"
+                                           Text="{Binding ChallengeRating, StringFormat='CR: {0}'}"
                                            VerticalOptions="Center" />
+                                    <Label Grid.Column="0"
+                                           Grid.Row="4"
+                                           Text="{Binding MaximumHitPoints, StringFormat='HP: {0}'}"
+                                           VerticalOptions="Center" />
+                                    <Label Grid.Column="1"
+                                           Grid.Row="4"
+                                           Text="{Binding InitiativeBonus, StringFormat='Init: +{0}'}"
+                                           VerticalOptions="Center" />
+                                    <Line Grid.ColumnSpan="2"
+                                          Grid.Row="5"
+                                          X1="-5"
+                                          X2="200"
+                                          Stroke="DarkRed"
+                                          StrokeThickness="2" />
+                                    <Grid Grid.Row="6"
+                                          Grid.ColumnSpan="2"
+                                          Grid.RowSpan="2"
+                                          ColumnDefinitions="*,*,*,*,*,*"
+                                          ColumnSpacing="4"
+                                          RowDefinitions="*,*"
+                                          RowSpacing="2"
+                                          Padding="5">
+
+                                        <Label Grid.Column="0"
+                                               Grid.Row="0"
+                                               Text="STR"
+                                               FontSize="9"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center" />
+                                        <Label Grid.Column="1"
+                                               Grid.Row="0"
+                                               Text="DEX"
+                                               FontSize="9"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center" />
+                                        <Label Grid.Column="2"
+                                               Grid.Row="0"
+                                               Text="CON"
+                                               FontSize="9"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center" />
+                                        <Label Grid.Column="3"
+                                               Grid.Row="0"
+                                               Text="INT"
+                                               FontSize="9"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center" />
+                                        <Label Grid.Column="4"
+                                               Grid.Row="0"
+                                               Text="WIS"
+                                               FontSize="9"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center" />
+                                        <Label Grid.Column="5"
+                                               Grid.Row="0"
+                                               Text="CHA"
+                                               FontSize="9"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center" />
+                                        <Label Grid.Column="0"
+                                               Grid.Row="1"
+                                               Text="{Binding StrScore}"
+                                               FontSize="9"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center" />
+                                        <Label Grid.Column="1"
+                                               Grid.Row="1"
+                                               Text="{Binding DexScore}"
+                                               FontSize="9"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center" />
+                                        <Label Grid.Column="2"
+                                               Grid.Row="1"
+                                               Text="{Binding ConScore}"
+                                               FontSize="9"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center" />
+                                        <Label Grid.Column="3"
+                                               Grid.Row="1"
+                                               Text="{Binding IntScore}"
+                                               FontSize="9"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center" />
+                                        <Label Grid.Column="4"
+                                               Grid.Row="1"
+                                               Text="{Binding WisScore}"
+                                               FontSize="9"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center" />
+                                        <Label Grid.Column="5"
+                                               Grid.Row="1"
+                                               Text="{Binding ChaScore}"
+                                               FontSize="9"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center" />
+                                    </Grid>
+                                    <Line Grid.ColumnSpan="2"
+                                          Grid.Row="8"
+                                          X1="-5"
+                                          X2="200"
+                                          Stroke="DarkRed"
+                                          StrokeThickness="2" />
                                     <Button Grid.Column="0"
-                                            Grid.Row="4"
+                                            Grid.Row="9"
                                             Text="Add"
                                             CommandParameter="{Binding .}"
-                                            Command="{Binding x:DataType='viewmodel:CreatureListViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:CreatureListViewModel}}, Path=AddToInitiativeCommand}"/>
+                                            Command="{Binding x:DataType='viewmodel:CreatureListViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:CreatureListViewModel}}, Path=AddToInitiativeCommand}" />
+                                    <Button Grid.Column="1"
+                                            Grid.Row="9"
+                                            Text="View"
+                                            CommandParameter="{Binding .}"
+                                            Command="{Binding x:DataType='viewmodel:CreatureListViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:CreatureListViewModel}}, Path=GoToDetailsCommand}" />
+
                                 </Grid>
                             </Border>
                         </Grid>
@@ -91,57 +197,68 @@
             </CollectionView>
         </RefreshView>
 
-        <CollectionView Grid.Row="1"
-            Grid.ColumnSpan="2"
-            BackgroundColor="Transparent"
-                        ItemsSource="{Binding Initiative}"
-                        SelectionMode="None">
+        <Grid Grid.Row="1"
+              Grid.ColumnSpan="2"
+              ColumnDefinitions="*"
+              ColumnSpacing="0"
+              Padding="10,0,10,0"
+              RowDefinitions="20,*"
+              RowSpacing="0">
 
-            <CollectionView.ItemsLayout>
-                <GridItemsLayout Orientation="Vertical"
-                                 Span="1"
-                                 VerticalItemSpacing="0" />
-            </CollectionView.ItemsLayout>
+            <Label Grid.Row="0"
+                   Grid.Column="1"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Text="Creatures in Initiative:"/>
 
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:Creature">
-                    <Grid Padding="10">
-                        <Border HeightRequest="30">
-                            <Border.GestureRecognizers>
-                                <TapGestureRecognizer CommandParameter="{Binding .}" />
-                            </Border.GestureRecognizers>
-                            <Grid ColumnDefinitions="*,*,*,*,*,*"
-                                  ColumnSpacing="5"
-                                  RowDefinitions="*"
-                                  RowSpacing="0"
-                                  Padding="0">
-                                <Label Grid.Column="0"
-                                       Grid.Row="0"
-                                       Text="{Binding Name}"
-                                       VerticalOptions="Center" />
-                                <Label Grid.Column="1"
-                                       Grid.Row="0"
-                                       Text="{Binding Bonus}"
-                                       VerticalOptions="Center" />
-                                <Label Grid.Column="2"
-                                       Grid.Row="0"
-                                       Text="{Binding Type}"
-                                       VerticalOptions="Center" />
-                                <Label Grid.Column="3"
-                                       Grid.Row="0"
-                                       Text="{Binding MaximumHP}"
-                                       VerticalOptions="Center" />
-                                <Button Grid.Column="4"
-                                        Grid.Row="0"
-                                        Text="Remove"
-                                        CommandParameter="{Binding .}"
-                                        Command="{Binding x:DataType='viewmodel:CreatureListViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:CreatureListViewModel}}, Path=RemoveFromInitiativeCommand}" />
-                            </Grid>
-                        </Border>
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+            <CollectionView Grid.Row="1"
+                            Grid.Column="1"
+                            BackgroundColor="Transparent"
+                            ItemsSource="{Binding Initiative}"
+                            SelectionMode="None"
+                            MinimumHeightRequest="30">
+
+                <CollectionView.EmptyView>
+                    <ContentView>
+                        <Label Text="None"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center" />
+                    </ContentView>
+                    
+                </CollectionView.EmptyView>
+
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:InitiativeCreature">
+                        <Grid Padding="0">
+                            <Border HeightRequest="30">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="{Binding .}" />
+                                </Border.GestureRecognizers>
+                                <Grid ColumnDefinitions="*,80"
+                                      ColumnSpacing="5"
+                                      RowDefinitions="*"
+                                      RowSpacing="0"
+                                      Padding="0">
+                                    <Label Grid.Column="0"
+                                           Grid.Row="0"
+                                           Text="{Binding Name}"
+                                           VerticalOptions="Center" />
+                                    <Button Grid.Column="1"
+                                            Grid.Row="0"
+                                            Text="Remove"
+                                            CommandParameter="{Binding .}"
+                                            Command="{Binding x:DataType='viewmodel:CreatureListViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:CreatureListViewModel}}, Path=RemoveFromInitiativeCommand}" />
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
 
         <Button x:Name="addCharacterButton"
                 Text="New Character"
@@ -149,10 +266,10 @@
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
                 Grid.Row="2"
-                Grid.Column="0"/>
+                Grid.Column="0" />
 
         <Button x:Name="rollInitiative"
-                Command="{Binding RollInitiativeCommand}"
+                Command="{Binding GoToInitiativeCommand}"
                 Text="Roll for Initiative"
                 Margin="5"
                 VerticalOptions="Center"

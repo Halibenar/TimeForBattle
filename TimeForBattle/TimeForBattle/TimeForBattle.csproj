@@ -77,6 +77,9 @@
 	  <Compile Update="View\AddCreaturePage.xaml.cs">
 	    <DependentUpon>AddCreaturePage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="View\InitiativePage.xaml.cs">
+	    <DependentUpon>InitiativePage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -87,6 +90,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\AddCreaturePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\InitiativePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
