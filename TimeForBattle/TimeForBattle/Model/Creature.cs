@@ -1,17 +1,17 @@
 ﻿namespace TimeForBattle.Model;
 
-public class Creature : DatabaseObject
+public partial class Creature : DatabaseObject
 {
     public string Name { get; set; }
-    public String Size { get; set; }
+    public string Size { get; set; }
     public string Type { get; set; }
-    public String Alignment { get; set; }
+    public string Alignment { get; set; }
 
-    public int ArmorClass { get; set; }
+    [ObservableProperty] public int armorClass;
     public int InitiativeBonus { get; set; }
     public int MaximumHitPoints { get; set; }
-    public int Speed { get; set; }
-    public float ChallengeRating { get; set; }
+    public string Speed { get; set; }
+    public string ChallengeRating { get; set; }
 
     public int StrScore { get; set; }
     public int DexScore { get; set; }
@@ -20,19 +20,19 @@ public class Creature : DatabaseObject
     public int WisScore { get; set; }
     public int ChaScore { get; set; }
 
-    public String SavingThrows { get; set; }
-    public String Skills { get; set; }
-    public String Resistances { get; set; }
-    public String Vulnerabilities { get; set; }
-    public String Immunities { get; set; }
-    public String Senses { get; set; }
-    public String Languages { get; set; }
-    public String Gear { get; set; }
+    public string SavingThrows { get; set; }
+    public string Skills { get; set; }
+    public string Resistances { get; set; }
+    public string Vulnerabilities { get; set; }
+    public string Immunities { get; set; }
+    public string Senses { get; set; }
+    public string Languages { get; set; }
+    public string Gear { get; set; }
 
-    public String Traits { get; set; }
+    public string Traits { get; set; }
 
-    public String Actions { get; set; }
-    public String BonusActions { get; set; }
-    public String Reactions { get; set; }
-    public String LegendaryActions { get; set; }
+    public string Actions { get; set; }
+    public string BonusActions { get; set; }
+    public string Reactions { get; set; }
+    public string LegendaryActions { get; set; }
 }

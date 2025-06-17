@@ -2,7 +2,7 @@
 
 namespace TimeForBattle.Model;
 
-public class DatabaseObject
+public partial class DatabaseObject : ObservableObject
 {
     [PrimaryKey, AutoIncrement] public int Id { get; set; }
 }

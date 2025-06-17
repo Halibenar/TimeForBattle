@@ -1,7 +1,7 @@
 ﻿
 namespace TimeForBattle.Model;
 
-public class InitiativeCreature : Creature
+public partial class InitiativeCreature : Creature
 {
     public int CreatureID { get; set; }
     public int CurrentHitPoints { get; set; }
@@ -48,8 +48,7 @@ public class InitiativeCreature : Creature
         this.BonusActions = creature.BonusActions;
         this.Reactions = creature.Reactions;
         this.LegendaryActions = creature.LegendaryActions;
-}
+    }
 }
 
 
-    
