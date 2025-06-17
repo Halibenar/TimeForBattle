@@ -4,24 +4,70 @@
              x:Class="TimeForBattle.View.AddCreaturePage"
              xmlns:viewmodel="clr-namespace:TimeForBattle.ViewModel"
              x:DataType="viewmodel:AddCreatureViewModel"
-             Title="AddCharacterPage">
-    
-    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,*" Margin="10">
-        <Label Text="Name:" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" Padding="0,0,20,0"/>
-        <Label Text="Type:" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" Padding="0,0,20,0"/>
-        <Label Text="Initiative Bonus:" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" Padding="0,0,20,0"/>
-        <Label Text="Current HP:" Grid.Row="3" Grid.Column="0" VerticalOptions="Center" Padding="0,0,20,0"/>
-        <Label Text="Maximum HP:" Grid.Row="4" Grid.Column="0" VerticalOptions="Center" Padding="0,0,20,0"/>
+             Title="{Binding Creature.Name}">
 
-        <Entry Text="{Binding CharacterName}" Placeholder="Enter Name" Grid.Row="0" Grid.Column="1" />
-        <HorizontalStackLayout RadioButtonGroup.GroupName="characterType" RadioButtonGroup.SelectedValue="{Binding CharacterType}" Grid.Row="1" Grid.Column="1">
-            <RadioButton Content="NPC" Value="NPC"></RadioButton>
-            <RadioButton Content="PC" Value="PC"></RadioButton>
+    <StackLayout Margin="10">
+        <Label Text="{Binding Creature.Name}"
+               FontSize="20"
+               VerticalOptions="Center" />
+        <Line X1="-5"
+              X2="200"
+              Stroke="DarkRed"
+              StrokeThickness="4" />
+        <Label VerticalOptions="Center"
+               FontAttributes="Italic"
+               TextColor="Grey">
+            <Label.Text>
+                <MultiBinding StringFormat="{}{0} {1}, {2}">
+                    <Binding Path="Creature.Size" />
+                    <Binding Path="Creature.Type" />
+                    <Binding Path="Creature.Alignment" />
+                </MultiBinding>
+            </Label.Text>
+        </Label>
+        <HorizontalStackLayout Spacing="5">
+            <Label VerticalOptions="Center"
+                   Text="Armor Class"
+                   FontAttributes="Bold" />
+            <Entry VerticalOptions="Center"
+                   Text="{Binding Creature.ArmorClass}" />
         </HorizontalStackLayout>
-        <Entry Text="{Binding CharacterBonus}" Placeholder="Enter Initiative Bonus" Grid.Row="2" Grid.Column="1" />
-        <Entry Text="{Binding CharacterCurrentHP}" Placeholder="Enter Current HP" Grid.Row="3" Grid.Column="1" />
-        <Entry Text="{Binding CharacterMaximumHP}" Placeholder="Enter Maximum HP" Grid.Row="4" Grid.Column="1" />
-        <Button x:Name="btnSaveUpdate" Text="Save" Command="{Binding AddCharacterCommand}" Grid.Row="5" Grid.Column="1" />
-    </Grid>
-    
+        <HorizontalStackLayout Spacing="5">
+            <Label VerticalOptions="Center"
+                   Text="Hit Points"
+                   FontAttributes="Bold" />
+            <Entry VerticalOptions="Center"
+                   Text="{Binding Creature.MaximumHitPoints}" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="5">
+            <Label VerticalOptions="Center"
+                   Text="Speed"
+                   FontAttributes="Bold" />
+            <Entry VerticalOptions="Center"
+                   Text="{Binding Creature.Speed}" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="5"
+                               IsVisible="{Binding Creature.Skills, TargetNullValue=False}">
+            <Label VerticalOptions="Center"
+                   Text="Skills"
+                   FontAttributes="Bold" />
+            <Entry VerticalOptions="Center"
+                   Text="{Binding Creature.Skills}" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="5"
+                               IsVisible="{Binding Creature.Senses, TargetNullValue=False}">
+            <Label VerticalOptions="Center"
+                   Text="Senses"
+                   FontAttributes="Bold" />
+            <Entry VerticalOptions="Center"
+                   Text="{Binding Creature.Senses}" />
+        </HorizontalStackLayout>
+        <Button x:Name="saveChanges"
+                Command="{Binding SaveCreatureCommand}"
+                Text="Save changes"
+                Margin="5"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" />
+    </StackLayout>
+
 </ContentPage>

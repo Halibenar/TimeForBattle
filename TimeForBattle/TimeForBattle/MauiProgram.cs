@@ -18,11 +18,13 @@ public static class MauiProgram
 			});
         builder.Services.AddSingleton<CreatureListPage>();
         builder.Services.AddTransient<CreatureDetailsPage>();
+		builder.Services.AddTransient<AddCreaturePage>();
 		builder.Services.AddSingleton<InitiativePage>();
 
         builder.Services.AddSingleton<CreatureListViewModel>();
         builder.Services.AddTransient<CreatureDetailsViewModel>();
-		builder.Services.AddSingleton<InitiativeViewModel>();
+        builder.Services.AddTransient<AddCreatureViewModel>();
+        builder.Services.AddSingleton<InitiativeViewModel>();
 
         builder.Services.AddSingleton<CreatureService<Creature>>();
 		builder.Services.AddSingleton<CreatureService<InitiativeCreature>>();

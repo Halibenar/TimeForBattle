@@ -4,6 +4,19 @@
         <name>TimeForBattle</name>
     </assembly>
     <members>
+        <member name="T:TimeForBattle.ViewModel.AddCreatureViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.AddCreatureViewModel.Creature">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.AddCreatureViewModel.creature"/>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.AddCreatureViewModel.saveCreatureCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.AddCreatureViewModel.SaveCreatureCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.AddCreatureViewModel.SaveCreatureCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.AddCreatureViewModel.SaveCreatureAsync"/>.</summary>
+        </member>
         <member name="T:TimeForBattle.ViewModel.BaseViewModel">
             <inheritdoc/>
         </member>
@@ -15,12 +28,18 @@
         </member>
         <member name="T:TimeForBattle.ViewModel.CreatureDetailsViewModel">
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:TimeForBattle.ViewModel.CreatureDetailsViewModel.Creature">
             <inheritdoc cref="F:TimeForBattle.ViewModel.CreatureDetailsViewModel.creature"/>
         </member>
+        <member name="F:TimeForBattle.ViewModel.CreatureDetailsViewModel.goToEditCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureDetailsViewModel.GoToEditCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CreatureDetailsViewModel.GoToEditCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureDetailsViewModel.GoToEditAsync"/>.</summary>
+        </member>
         <member name="T:TimeForBattle.ViewModel.CreatureListViewModel">
-            <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
@@ -71,12 +90,6 @@
         <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.DeleteCreatureCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureListViewModel.DeleteCreature(TimeForBattle.Model.Creature)"/>.</summary>
         </member>
-        <member name="F:TimeForBattle.ViewModel.CreatureListViewModel.updateCreatureCommand">
-            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.UpdateCreatureCommand"/>.</summary>
-        </member>
-        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.UpdateCreatureCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureListViewModel.UpdateCreature(TimeForBattle.Model.Creature)"/>.</summary>
-        </member>
         <member name="F:TimeForBattle.ViewModel.CreatureListViewModel.getCreatureCommand">
             <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.GetCreatureCommand"/>.</summary>
         </member>
@@ -113,14 +126,14 @@
             for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
             </summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Creature">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Creature" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Title">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Title" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Creature">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Creature" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsRefreshing">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsRefreshing" generated properties.</summary>
@@ -134,14 +147,14 @@
             for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
             </summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Creature">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Creature" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Title">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Title" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Creature">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Creature" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsRefreshing">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsRefreshing" generated properties.</summary>

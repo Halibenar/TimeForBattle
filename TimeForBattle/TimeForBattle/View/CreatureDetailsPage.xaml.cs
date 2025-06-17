@@ -2,14 +2,18 @@ namespace TimeForBattle.View;
 
 public partial class CreatureDetailsPage : ContentPage
 {
-	public CreatureDetailsPage(CreatureDetailsViewModel viewModel)
+    CreatureDetailsViewModel viewModel;
+
+    public CreatureDetailsPage(CreatureDetailsViewModel viewModel)
 	{
         InitializeComponent();
         BindingContext = viewModel;
+        this.viewModel = viewModel;
     }
 
-    protected override void OnNavigatedTo(NavigatedToEventArgs args)
+    protected override void OnAppearing()
     {
-        base.OnNavigatedTo(args);
+        base.OnAppearing();
+        this.viewModel.RefreshCommand.Execute(null);
     }
 }

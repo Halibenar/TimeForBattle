@@ -8,18 +8,19 @@ public partial class CreatureListViewModel: BaseViewModel
 {
     public CreatureService<Creature> creatureService;
     public CreatureService<InitiativeCreature> initiativeService;
+
     public ObservableCollection<Creature> Creatures { get; } = new();
     public ObservableCollection<InitiativeCreature> Initiative { get; } = new();
 
-    public CreatureListViewModel(CreatureService<Creature> characterService, CreatureService<InitiativeCreature> initiativeService)
+    public CreatureListViewModel(CreatureService<Creature> creatureService, CreatureService<InitiativeCreature> initiativeService)
     {
         Title = "Creatures";
-        this.creatureService = characterService;
+        this.creatureService = creatureService;
         this.initiativeService = initiativeService;
         Creatures = [];
         Initiative = [];
         TestCreatures();
-        RefreshCreatures();
+        RefreshCreaturesCommand.Execute(null);
     }
 
     public async void TestCreatures()
@@ -33,14 +34,14 @@ public partial class CreatureListViewModel: BaseViewModel
         //    ArmorClass = 15,
         //    InitiativeBonus = 2,
         //    MaximumHitPoints = 10,
-        //    Speed = 30,
+        //    Speed = "30 ft.",
         //    StrScore = 8,
         //    DexScore = 15,
         //    ConScore = 10,
         //    IntScore = 10,
         //    WisScore = 8,
         //    ChaScore = 8,
-        //    ChallengeRating = 1 / 4
+        //    ChallengeRating = "1/4"
         //};
 
         //await creatureService.SaveAsync(newCreature);
@@ -54,14 +55,14 @@ public partial class CreatureListViewModel: BaseViewModel
         //    ArmorClass = 14,
         //    InitiativeBonus = 2,
         //    MaximumHitPoints = 7,
-        //    Speed = 30,
+        //    Speed = "30 ft.",
         //    StrScore = 7,
         //    DexScore = 15,
         //    ConScore = 9,
         //    IntScore = 8,
         //    WisScore = 7,
         //    ChaScore = 8,
-        //    ChallengeRating = 1 / 8
+        //    ChallengeRating = "1/8"
         //};
 
         //await creatureService.SaveAsync(newCreature2);
@@ -75,14 +76,14 @@ public partial class CreatureListViewModel: BaseViewModel
         //    ArmorClass = 12,
         //    InitiativeBonus = 2,
         //    MaximumHitPoints = 27,
-        //    Speed = 40,
+        //    Speed = "40 ft.",
         //    StrScore = 6,
         //    DexScore = 14,
         //    ConScore = 13,
         //    IntScore = 6,
         //    WisScore = 10,
         //    ChaScore = 8,
-        //    ChallengeRating = 1 / 2,
+        //    ChallengeRating = "1/2",
         //    Senses = "Sarkvision 60 ft."
         //};
 
@@ -165,11 +166,11 @@ public partial class CreatureListViewModel: BaseViewModel
         }
     }
 
-    [RelayCommand]
-    async Task UpdateCreature(Creature creature)
-    {
-        await AppShell.Current.Navigation.PushAsync(new View.AddCreaturePage());
-    }
+    //[RelayCommand]
+    //async Task UpdateCreature(Creature creature)
+    //{
+    //    await AppShell.Current.Navigation.PushAsync(new View.AddCreaturePage());
+    //}
 
     [RelayCommand]
     public async Task<Creature> GetCreature(int iD)

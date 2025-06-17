@@ -10,5 +10,6 @@ public partial class AppShell : Shell
 
         Routing.RegisterRoute(nameof(CreatureDetailsPage), typeof(CreatureDetailsPage));
         Routing.RegisterRoute(nameof(InitiativePage), typeof(InitiativePage));
+        Routing.RegisterRoute(nameof(AddCreaturePage), typeof(AddCreaturePage));
     }
 }

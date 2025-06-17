@@ -8,10 +8,8 @@ public partial class CreatureService<T> where T : DatabaseObject, new()
 
     async Task Init()
     {
-        if (database is not null)
-            return;
-
-        database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
+        if (database is null)
+            database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
         await database.CreateTableAsync<T>();
     }
 

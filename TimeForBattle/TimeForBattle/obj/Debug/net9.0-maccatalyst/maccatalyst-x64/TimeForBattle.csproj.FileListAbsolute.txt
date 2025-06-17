@@ -295,9 +295,6 @@ D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-maccatalyst
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\libxamarin-dotnet-nativeaot.a
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\libxamarin-dotnet.a
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\libxamarin-dotnet.dylib
-D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
-D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
-D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\Microsoft.VisualStudio.DesignTools.TapContract.dll
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\XamlC.stamp
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\TimeForB.EC007626.Up2Date
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\TimeForBattle.dll
