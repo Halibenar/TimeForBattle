@@ -2,37 +2,37 @@
 
 public partial class Creature : DatabaseObject
 {
-    public string Name { get; set; }
-    public string Size { get; set; }
-    public string Type { get; set; }
-    public string Alignment { get; set; }
+    [ObservableProperty] public string name;
+    [ObservableProperty] public string size;
+    [ObservableProperty] public string type;
+    [ObservableProperty] public string alignment;
 
     [ObservableProperty] public int armorClass;
-    public int InitiativeBonus { get; set; }
-    public int MaximumHitPoints { get; set; }
-    public string Speed { get; set; }
-    public string ChallengeRating { get; set; }
+    [ObservableProperty] public int initiativeBonus;
+    [ObservableProperty] public int maximumHitPoints;
+    [ObservableProperty] public string speed;
+    [ObservableProperty] public string challengeRating;
 
-    public int StrScore { get; set; }
-    public int DexScore { get; set; }
-    public int ConScore { get; set; }
-    public int IntScore { get; set; }
-    public int WisScore { get; set; }
-    public int ChaScore { get; set; }
+    [ObservableProperty] public int strScore;
+    [ObservableProperty] public int dexScore;
+    [ObservableProperty] public int conScore;
+    [ObservableProperty] public int intScore;
+    [ObservableProperty] public int wisScore;
+    [ObservableProperty] public int chaScore;
 
-    public string SavingThrows { get; set; }
-    public string Skills { get; set; }
-    public string Resistances { get; set; }
-    public string Vulnerabilities { get; set; }
-    public string Immunities { get; set; }
-    public string Senses { get; set; }
-    public string Languages { get; set; }
-    public string Gear { get; set; }
+    [ObservableProperty] public string savingThrows;
+    [ObservableProperty] public string skills;
+    [ObservableProperty] public string resistances;
+    [ObservableProperty] public string vulnerabilities;
+    [ObservableProperty] public string immunities;
+    [ObservableProperty] public string senses;
+    [ObservableProperty] public string languages;
+    [ObservableProperty] public string gear;
 
-    public string Traits { get; set; }
+    [ObservableProperty] public string traits;
 
-    public string Actions { get; set; }
-    public string BonusActions { get; set; }
-    public string Reactions { get; set; }
-    public string LegendaryActions { get; set; }
+    [ObservableProperty] public string actions;
+    [ObservableProperty] public string bonusActions;
+    [ObservableProperty] public string reactions;
+    [ObservableProperty] public string legendaryActions;
 }

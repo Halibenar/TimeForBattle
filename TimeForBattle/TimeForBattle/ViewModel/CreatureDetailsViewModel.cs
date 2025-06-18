@@ -11,7 +11,6 @@ public partial class CreatureDetailsViewModel: BaseViewModel
     public CreatureDetailsViewModel(CreatureService<Creature> characterService)
     {
         this.creatureService = characterService;
-        //GetCreature(creature.Id);
     }
 
     [ObservableProperty] Creature creature;
@@ -27,12 +26,5 @@ public partial class CreatureDetailsViewModel: BaseViewModel
             {
                 {"Creature", Creature}
             });
-    }
-
-    [RelayCommand]
-    public async Task Refresh()
-    {
-        //this.creature = await this.creatureService.GetByIdAsync(this.creature.Id);
-        Trace.WriteLine(Creature.ArmorClass);
     }
 }
