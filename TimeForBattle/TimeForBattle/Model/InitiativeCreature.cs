@@ -4,8 +4,8 @@ namespace TimeForBattle.Model;
 public partial class InitiativeCreature : Creature
 {
     public int CreatureID { get; set; }
-    public int CurrentHitPoints { get; set; }
-    public int? Initiative { get; set; }
+    [ObservableProperty] public int currentHitPoints;
+    [ObservableProperty] public int? initiative;
 
     public InitiativeCreature() { }
 

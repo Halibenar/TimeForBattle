@@ -4,7 +4,7 @@ using TimeForBattle.View;
 
 namespace TimeForBattle.ViewModel;
 
-public partial class CreatureListViewModel: BaseViewModel
+public partial class CreatureListViewModel : BaseViewModel
 {
     public CreatureService<Creature> creatureService;
     public CreatureService<InitiativeCreature> initiativeService;
@@ -88,6 +88,43 @@ public partial class CreatureListViewModel: BaseViewModel
         //};
 
         //await creatureService.SaveAsync(newCreature3);
+
+        //Creature newCreature4 = new()
+        //{
+        //    Name = "Lich",
+        //    Size = "Medium",
+        //    Type = "Undead (Wizard)",
+        //    Alignment = "Neutral Evil",
+        //    ArmorClass = 20,
+        //    InitiativeBonus = 17,
+        //    MaximumHitPoints = 315,
+        //    Speed = "30 ft.",
+        //    StrScore = 11,
+        //    DexScore = 16,
+        //    ConScore = 16,
+        //    IntScore = 21,
+        //    WisScore = 14,
+        //    ChaScore = 16,
+        //    ChallengeRating = "21",
+
+        //    SavingThrows = "Dex +7, Con +7, Int +7, Wis +7",
+        //    Skills = "Arcana +19, History +12, Insight +9, Perception +9",
+        //    Resistances = "Cold, Lightning",
+        //    //Vulnerabilities = "",
+        //    Immunities = "Necrotic, Poison; Charmed, Exhaustion, Frightened, Paralyzed, Poisoned",
+        //    Senses = "Truesight 120 ft.; Passive Perception 19",
+        //    Languages = "All",
+        //    Gear = "Component Pouch",
+
+        //    Traits = "Legendary Resistance (4/Day, or 5/Day in Lair). If the lich fails a saving throw, it can choose to succeed instead.\r\n\r\nSpirit Jar. If destroyed, the lich reforms in 1d10 days if it has a spirit jar, reviving with all its Hit Points. The new body appears in an unoccupied space within the lich’s lair.",
+
+        //    Actions = "Multiattack. The lich makes three attacks, using Eldritch Burst or Paralyzing Touch in any combination.\r\n\r\nEldritch Burst. Melee or Ranged Attack Roll: +12, reach 5 ft. or range 120 ft. Hit: 31 (4d12 + 5) Force damage.\r\n\r\nParalyzing Touch. Melee Attack Roll: +12, reach 5 ft. Hit: 15 (3d6 + 5) Cold damage, and the target has the Paralyzed condition until the start of the lich’s next turn.\r\n\r\nSpellcasting. The lich casts one of the following spells, using Intelligence as the spellcasting ability (spell save DC 20):\r\n\r\nAt Will: Detect Magic, Detect Thoughts, Dispel Magic, Fireball (level 5 version), Invisibility, Lightning Bolt (level 5 version), Mage Hand, Prestidigitation\r\n\r\n2/Day Each: Animate Dead, Dimension Door, Plane Shift\r\n\r\n1/Day Each: Chain Lightning, Finger of Death, Power Word Kill, Scrying",
+        //    //BonusActions = "",
+        //    Reactions = "Protective Magic. The lich casts Counterspell or Shield in response to the spell’s trigger, using the same spellcasting ability as Spellcasting.",
+        //    LegendaryActions = "Legendary Action Uses: 3 (4 in Lair). Immediately after another creature’s turn, the lich can expend a use to take one of the following actions. The lich regains all expended uses at the start of each of its turns.\r\n\r\nDeathly Teleport. The lich teleports up to 60 feet to an unoccupied space it can see, and each creature within 10 feet of the space it left takes 11 (2d10) Necrotic damage.\r\n\r\nDisrupt Life. Constitution Saving Throw: DC 20, each creature that isn’t an Undead in a 20-foot Emanation originating from the lich. Failure: 31 (9d6) Necrotic damage. Success: Half damage. Failure or Success: The lich can’t take this action again until the start of its next turn.\r\n\r\nFrightening Gaze. The lich casts Fear, using the same spellcasting ability as Spellcasting. The lich can’t take this action again until the start of its next turn.",
+        //};
+
+        //await creatureService.SaveAsync(newCreature4);
     }
 
     [ObservableProperty] bool isRefreshing;
@@ -104,7 +141,7 @@ public partial class CreatureListViewModel: BaseViewModel
 
         List<InitiativeCreature> initiativeCreatureData = await initiativeService.GetAllAsync();
         Initiative.Clear();
-        foreach(InitiativeCreature initiativeCreature in initiativeCreatureData)
+        foreach (InitiativeCreature initiativeCreature in initiativeCreatureData)
         {
             Initiative.Add(initiativeCreature);
         }
@@ -186,11 +223,11 @@ public partial class CreatureListViewModel: BaseViewModel
         //Parallel.ForEach(Initiative, creature =>
         //{
         //    //if (character.Type == "NPC")
-            
+
         //        int initiative = rng.Next(1, 21) + creature.InitiativeBonus;
         //        creature.Initiative = initiative;
         //        creatureService.SaveAsync(creature);
-            
+
         //});
 
         //SortInitiative();
@@ -199,12 +236,12 @@ public partial class CreatureListViewModel: BaseViewModel
     [RelayCommand]
     void SortInitiative()
     {
-    //    var sortedCreatures = Creatures.OrderByDescending(x => x.Initiative).ThenByDescending(x => x.Bonus).ToList();
+        //    var sortedCreatures = Creatures.OrderByDescending(x => x.Initiative).ThenByDescending(x => x.Bonus).ToList();
 
-    //    Creatures.Clear();
-    //    foreach (var creature in sortedCreatures)
-    //    {
-    //        Creatures.Add(creature);
-    //    }
+        //    Creatures.Clear();
+        //    foreach (var creature in sortedCreatures)
+        //    {
+        //        Creatures.Add(creature);
+        //    }
     }
 }
