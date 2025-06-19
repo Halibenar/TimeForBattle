@@ -8,15 +8,14 @@
     <ScrollView>
         <StackLayout Margin="10">
             <Label Text="{Binding Creature.Name}"
-                   FontSize="20"
-                   VerticalOptions="Center" />
+                   FontSize="20"/>
             <Line X1="-5"
-                  X2="200"
+                  X2="300"
                   Stroke="DarkRed"
                   StrokeThickness="4" />
-            <Label VerticalOptions="Center"
-                   FontAttributes="Italic"
-                   TextColor="Grey">
+            <Label FontAttributes="Italic"
+                   TextColor="Grey"
+                   Padding="0,3,0,0">
                 <Label.Text>
                     <MultiBinding StringFormat="{}{0} {1}, {2}">
                         <Binding Path="Creature.Size" />
@@ -25,142 +24,239 @@
                     </MultiBinding>
                 </Label.Text>
             </Label>
-            <HorizontalStackLayout Spacing="5">
-                <Label VerticalOptions="Center"
-                       Text="Armor Class"
-                       FontAttributes="Bold" />
-                <Label VerticalOptions="Center"
-                       Text="{Binding Creature.ArmorClass}" />
-            </HorizontalStackLayout>
-            <HorizontalStackLayout Spacing="5">
-                <Label VerticalOptions="Center"
-                       Text="Hit Points"
-                       FontAttributes="Bold" />
-                <Label VerticalOptions="Center"
-                       Text="{Binding Creature.MaximumHitPoints}" />
-            </HorizontalStackLayout>
-            <HorizontalStackLayout Spacing="5">
-                <Label VerticalOptions="Center"
-                       Text="Speed"
-                       FontAttributes="Bold" />
-                <Label VerticalOptions="Center"
-                       Text="{Binding Creature.Speed}" />
-            </HorizontalStackLayout>
-            <HorizontalStackLayout Spacing="5"
-                                   IsVisible="{Binding Creature.Skills, TargetNullValue=False}">
-                <Label VerticalOptions="Center"
-                       Text="Skills"
-                       FontAttributes="Bold" />
-                <Label VerticalOptions="Center"
-                       Text="{Binding Creature.Skills}" />
-            </HorizontalStackLayout>
-            <HorizontalStackLayout Spacing="5"
-                                   IsVisible="{Binding Creature.Vulnerabilities, TargetNullValue=False}">
-                <Label VerticalOptions="Center"
-                       Text="Vulnerabilities"
-                       FontAttributes="Bold" />
-                <Label VerticalOptions="Center"
-                       Text="{Binding Creature.Vulnerabilities}" />
-            </HorizontalStackLayout>
-            <HorizontalStackLayout Spacing="5"
-                                   IsVisible="{Binding Creature.Resistances, TargetNullValue=False}">
-                <Label VerticalOptions="Center"
-                       Text="Resistances"
-                       FontAttributes="Bold" />
-                <Label VerticalOptions="Center"
-                       Text="{Binding Creature.Resistances}" />
-            </HorizontalStackLayout>
-            <HorizontalStackLayout Spacing="5"
-                                   IsVisible="{Binding Creature.Immunities, TargetNullValue=False}">
-                <Label VerticalOptions="Center"
-                       Text="Immunities"
-                       FontAttributes="Bold" />
-                <Label VerticalOptions="Center"
-                       Text="{Binding Creature.Immunities}" />
-            </HorizontalStackLayout>
-            <HorizontalStackLayout Spacing="5"
-                                   IsVisible="{Binding Creature.Senses, TargetNullValue=False}">
-                <Label VerticalOptions="Center"
-                       Text="Senses"
-                       FontAttributes="Bold" />
-                <Label VerticalOptions="Center"
-                       Text="{Binding Creature.Senses}" />
-            </HorizontalStackLayout>
-            <HorizontalStackLayout Spacing="5"
-                                   IsVisible="{Binding Creature.Languages, TargetNullValue=False}">
-                <Label VerticalOptions="Center"
-                       Text="Languages"
-                       FontAttributes="Bold" />
-                <Label VerticalOptions="Center"
-                       Text="{Binding Creature.Languages}" />
-            </HorizontalStackLayout>
-            <HorizontalStackLayout Spacing="5"
-                                   IsVisible="{Binding Creature.ChallengeRating, TargetNullValue=False}">
-                <Label VerticalOptions="Center"
-                       Text="CR"
-                       FontAttributes="Bold" />
-                <Label VerticalOptions="Center"
-                       Text="{Binding Creature.ChallengeRating}" />
-            </HorizontalStackLayout>
 
-            <VerticalStackLayout Spacing="5"
-                                 IsVisible="{Binding Creature.Traits, TargetNullValue=False}">
-                <Label VerticalOptions="Center"
-                       Text="Traits" />
+            <Grid Grid.Row="6"
+                  Grid.ColumnSpan="2"
+                  Grid.RowSpan="2"
+                  ColumnDefinitions="*,*,*,*,*,*"
+                  ColumnSpacing="4"
+                  RowDefinitions="*,*"
+                  RowSpacing="2"
+                  Padding="5">
+
+                <Label Grid.Column="0"
+                       Grid.Row="0"
+                       Text="STR"
+                       FontSize="15"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+                <Label Grid.Column="1"
+                       Grid.Row="0"
+                       Text="DEX"
+                       FontSize="15"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+                <Label Grid.Column="2"
+                       Grid.Row="0"
+                       Text="CON"
+                       FontSize="15"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+                <Label Grid.Column="3"
+                       Grid.Row="0"
+                       Text="INT"
+                       FontSize="15"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+                <Label Grid.Column="4"
+                       Grid.Row="0"
+                       Text="WIS"
+                       FontSize="15"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+                <Label Grid.Column="5"
+                       Grid.Row="0"
+                       Text="CHA"
+                       FontSize="15"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+                <Label Grid.Column="0"
+                       Grid.Row="1"
+                       Text="{Binding Creature.StrScore}"
+                       FontSize="15"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+                <Label Grid.Column="1"
+                       Grid.Row="1"
+                       Text="{Binding Creature.DexScore}"
+                       FontSize="15"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+                <Label Grid.Column="2"
+                       Grid.Row="1"
+                       Text="{Binding Creature.ConScore}"
+                       FontSize="15"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+                <Label Grid.Column="3"
+                       Grid.Row="1"
+                       Text="{Binding Creature.IntScore}"
+                       FontSize="15"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+                <Label Grid.Column="4"
+                       Grid.Row="1"
+                       Text="{Binding Creature.WisScore}"
+                       FontSize="15"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+                <Label Grid.Column="5"
+                       Grid.Row="1"
+                       Text="{Binding Creature.ChaScore}"
+                       FontSize="15"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+            </Grid>
+
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Armor Class "
+                              FontAttributes="Bold" />
+                        <Span Text="{Binding Creature.ArmorClass}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Hit Points "
+                              FontAttributes="Bold" />
+                        <Span Text="{Binding Creature.MaximumHitPoints}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Speed "
+                              FontAttributes="Bold" />
+                        <Span Text="{Binding Creature.Speed}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label IsVisible="{Binding Creature.Skills, TargetNullValue=False}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Skills "
+                              FontAttributes="Bold" />
+                        <Span Text="{Binding Creature.Skills}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label IsVisible="{Binding Creature.Vulnerabilities, TargetNullValue=False}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Vulnerabilities "
+                              FontAttributes="Bold" />
+                        <Span Text="{Binding Creature.Vulnerabilities}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label IsVisible="{Binding Creature.Resistances, TargetNullValue=False}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Resistances "
+                              FontAttributes="Bold" />
+                        <Span Text="{Binding Creature.Resistances}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label IsVisible="{Binding Creature.Immunities, TargetNullValue=False}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Immunities "
+                              FontAttributes="Bold" />
+                        <Span Text="{Binding Creature.Immunities}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label IsVisible="{Binding Creature.Senses, TargetNullValue=False}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Senses "
+                              FontAttributes="Bold" />
+                        <Span Text="{Binding Creature.Senses}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label IsVisible="{Binding Creature.Languages, TargetNullValue=False}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Languages "
+                              FontAttributes="Bold" />
+                        <Span Text="{Binding Creature.Languages}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label IsVisible="{Binding Creature.ChallengeRating, TargetNullValue=False}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="CR "
+                                  FontAttributes="Bold" />
+                            <Span Text="{Binding Creature.ChallengeRating}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+            <VerticalStackLayout IsVisible="{Binding Creature.Traits, TargetNullValue=False}"
+                                 Padding="0,10,0,0">
+                <Label Text="Traits"
+                       FontSize="20"/>
                 <Line X1="-5"
-                      X2="200"
+                      X2="300"
                       Stroke="DarkRed"
                       StrokeThickness="4" />
-                <Label VerticalOptions="Center"
-                       Text="{Binding Creature.Traits}" />
+                <Label Text="{Binding Creature.Traits}"
+                       Padding="0,3,0,0" />
             </VerticalStackLayout>
 
-            <VerticalStackLayout Spacing="5"
-                                 IsVisible="{Binding Creature.Actions, TargetNullValue=False}">
-                <Label VerticalOptions="Center"
-                       Text="Actions" />
+            <VerticalStackLayout IsVisible="{Binding Creature.Actions, TargetNullValue=False}"
+                                 Padding="0,10,0,0">
+                <Label Text="Actions"
+                       FontSize="20" />
                 <Line X1="-5"
-                      X2="200"
+                      X2="300"
                       Stroke="DarkRed"
                       StrokeThickness="4" />
-                <Label VerticalOptions="Center"
-                       Text="{Binding Creature.Actions}" />
+                <Label Text="{Binding Creature.Actions}"
+                       Padding="0,3,0,0" />
             </VerticalStackLayout>
 
-            <VerticalStackLayout Spacing="5"
-                                 IsVisible="{Binding Creature.BonusActions, TargetNullValue=False}">
-                <Label VerticalOptions="Center"
-                       Text="Bonus Actions" />
+            <VerticalStackLayout IsVisible="{Binding Creature.BonusActions, TargetNullValue=False}"
+                                 Padding="0,10,0,0">
+                <Label Text="Bonus Actions"
+                       FontSize="20"/>
                 <Line X1="-5"
-                      X2="200"
+                      X2="300"
                       Stroke="DarkRed"
                       StrokeThickness="4" />
-                <Label VerticalOptions="Center"
-                       Text="{Binding Creature.BonusActions}" />
+                <Label Text="{Binding Creature.BonusActions}"
+                       Padding="0,3,0,0" />
             </VerticalStackLayout>
 
-            <VerticalStackLayout Spacing="5"
-                                 IsVisible="{Binding Creature.Reactions, TargetNullValue=False}">
-                <Label VerticalOptions="Center"
-                       Text="Reactions" />
+            <VerticalStackLayout IsVisible="{Binding Creature.Reactions, TargetNullValue=False}"
+                                 Padding="0,10,0,0">
+                <Label Text="Reactions"
+                       FontSize="20" />
                 <Line X1="-5"
-                      X2="200"
+                      X2="300"
                       Stroke="DarkRed"
                       StrokeThickness="4" />
-                <Label VerticalOptions="Center"
-                       Text="{Binding Creature.Reactions}" />
+                <Label Text="{Binding Creature.Reactions}" 
+                       Padding="0,3,0,0"/>
             </VerticalStackLayout>
 
-            <VerticalStackLayout Spacing="5"
-                                 IsVisible="{Binding Creature.LegendaryActions, TargetNullValue=False}">
-                <Label VerticalOptions="Center"
-                       Text="Legendary Actions" />
+            <VerticalStackLayout IsVisible="{Binding Creature.LegendaryActions, TargetNullValue=False}"
+                                 Padding="0,10,0,0">
+                <Label Text="Legendary Actions"
+                       FontSize="20" />
                 <Line X1="-5"
-                      X2="200"
+                      X2="300"
                       Stroke="DarkRed"
                       StrokeThickness="4" />
-                <Label VerticalOptions="Center"
-                       Text="{Binding Creature.LegendaryActions}" />
+                <Label Text="{Binding Creature.LegendaryActions}"
+                       Padding="0,3,0,0" />
             </VerticalStackLayout>
 
             <Button Text="Edit"
