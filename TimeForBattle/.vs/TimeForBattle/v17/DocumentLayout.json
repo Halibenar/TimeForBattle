@@ -133,8 +133,7 @@
               "RelativeToolTip": "TimeForBattle\\View\\CreatureDetailsPage.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:16:12.993Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:16:12.993Z"
             },
             {
               "$type": "Document",
@@ -146,8 +145,7 @@
               "RelativeToolTip": "TimeForBattle\\ViewModel\\CreatureListViewModel.cs",
               "ViewState": "AgIAAFIAAAAAAAAAAAAgwH4AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T12:47:35.91Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-10T12:47:35.91Z"
             },
             {
               "$type": "Document",
@@ -157,7 +155,7 @@
               "RelativeDocumentMoniker": "TimeForBattle\\View\\CreatureDetailsPage.xaml",
               "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\CreatureDetailsPage.xaml",
               "RelativeToolTip": "TimeForBattle\\View\\CreatureDetailsPage.xaml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADMAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAGwAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-03-19T12:15:57.378Z",
               "EditorCaption": ""
@@ -170,7 +168,7 @@
               "RelativeDocumentMoniker": "TimeForBattle\\View\\CreatureListPage.xaml",
               "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\CreatureListPage.xaml",
               "RelativeToolTip": "TimeForBattle\\View\\CreatureListPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAwwK0AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-03-19T12:01:41.067Z",
               "EditorCaption": ""
@@ -185,8 +183,7 @@
               "RelativeToolTip": "TimeForBattle\\ViewModel\\CreatureDetailsViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T11:22:05.495Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T11:22:05.495Z"
             },
             {
               "$type": "Document",
@@ -198,8 +195,7 @@
               "RelativeToolTip": "TimeForBattle\\View\\CreatureListPage.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:05:20.57Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:05:20.57Z"
             },
             {
               "$type": "Document",
@@ -211,8 +207,7 @@
               "RelativeToolTip": "TimeForBattle\\Model\\Creature.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T12:45:35.078Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-10T12:45:35.078Z"
             },
             {
               "$type": "Document",
@@ -224,8 +219,7 @@
               "RelativeToolTip": "TimeForBattle\\Model\\InitiativeCreature.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T18:55:06.769Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-14T18:55:06.769Z"
             },
             {
               "$type": "Document",
@@ -249,8 +243,7 @@
               "RelativeToolTip": "TimeForBattle\\Model\\DatabaseObject.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T14:47:17.633Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-12T14:47:17.633Z"
             },
             {
               "$type": "Document",
