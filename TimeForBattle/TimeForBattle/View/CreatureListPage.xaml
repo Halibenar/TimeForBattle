@@ -9,31 +9,26 @@
 
     <Grid ColumnDefinitions="*,*"
           ColumnSpacing="0"
-          RowDefinitions="*,Auto,50"
-          RowSpacing="0"
-          Padding="0,0,0,0">
-
-        <RefreshView Grid.Row="0"
-                     Grid.ColumnSpan="2"
+          RowDefinitions="*,Auto,50">
+        <ScrollView Grid.Row="0"
+                    Grid.ColumnSpan="2">
+        <RefreshView 
                      Command="{Binding RefreshCreaturesCommand}"
                      IsRefreshing="{Binding IsRefreshing}"
                      VerticalOptions="Fill"
                      HorizontalOptions="Fill">
-            <CollectionView BackgroundColor="Transparent"
-                            ItemsSource="{Binding Creatures}"
-                            SelectionMode="None">
-
-                <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical"
-                                     Span="2"
-                                     VerticalItemSpacing="10" />
-                </CollectionView.ItemsLayout>
-
-                <CollectionView.ItemTemplate>
+                <FlexLayout BackgroundColor="Transparent"
+                            BindableLayout.ItemsSource="{Binding Creatures}"
+                            Direction="Row"
+                            Wrap="Wrap"
+                            JustifyContent="SpaceEvenly"
+                            AlignItems="Start"
+                            AlignContent="Start">
+                    <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="model:Creature">
-                        <Grid Padding="0">
+                        <Grid Padding="0,1,0,1">
                             <Border HeightRequest="180"
-                                    WidthRequest="160"
+                                    WidthRequest="150"
                                     Stroke="DarkRed"
                                     StrokeThickness="2">
                                 <Border.GestureRecognizers>
@@ -95,9 +90,7 @@
                                           Grid.RowSpan="2"
                                           ColumnDefinitions="*,*,*,*,*,*"
                                           ColumnSpacing="4"
-                                          RowDefinitions="*,*"
-                                          RowSpacing="2"
-                                          Padding="5">
+                                          RowDefinitions="*,*">
 
                                         <Label Grid.Column="0"
                                                Grid.Row="0"
@@ -193,15 +186,15 @@
                             </Border>
                         </Grid>
                     </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
         </RefreshView>
+        </ScrollView>
 
         <Grid Grid.Row="1"
               Grid.ColumnSpan="2"
               ColumnDefinitions="*"
               ColumnSpacing="0"
-              Padding="10,0,10,0"
               RowDefinitions="20,*"
               RowSpacing="0">
 

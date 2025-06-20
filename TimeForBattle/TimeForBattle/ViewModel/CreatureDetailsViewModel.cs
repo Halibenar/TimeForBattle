@@ -1,4 +1,5 @@
-﻿using TimeForBattle.Services;
+﻿using System.Globalization;
+using TimeForBattle.Services;
 using TimeForBattle.View;
 
 namespace TimeForBattle.ViewModel;
