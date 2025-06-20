@@ -46,7 +46,7 @@
                    BasedOn="{StaticResource BaseLabel}"
                    TargetType="Label">
                 <Setter Property="FontSize"
-                        Value="10" />
+                        Value="8" />
             </Style>
 
             <Style x:Key="SmallLabel"
@@ -68,6 +68,34 @@
                    TargetType="Label">
                 <Setter Property="FontSize"
                         Value="20" />
+            </Style>
+
+            <Style x:Key="StatblockText"
+                   TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="DarkRed" />
+                <Setter Property="FontSize"
+                        Value="14" />
+                <Setter Property="HorizontalOptions"
+                        Value="Start" />
+                <Setter Property="VerticalOptions"
+                        Value="Center" />
+            </Style>
+
+            <Style x:Key="StatblockSpan"
+                   TargetType="Span">
+                <Setter Property="TextColor"
+                        Value="DarkRed" />
+                <Setter Property="FontSize"
+                        Value="14" />
+            </Style>
+            
+            <Style x:Key="StatblockLine"
+                   TargetType="Line">
+                <Setter  Property="Stroke"
+                         Value="DarkRed" />
+                <Setter  Property="StrokeThickness"
+                         Value="2" />
             </Style>
 
             <Style TargetType="RefreshView"

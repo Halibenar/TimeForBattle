@@ -2,17 +2,24 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:TimeForBattle.ViewModel"
+             xmlns:converters="clr-namespace:TimeForBattle.Converters"
              x:Class="TimeForBattle.View.CreatureDetailsPage"
              x:DataType="viewmodel:CreatureDetailsViewModel"
              Title="{Binding Creature.Name}">
+    <ContentPage.Resources>
+        <converters:AttributeConverter x:Key="intToString" />
+        <converters:InitiativeConverter x:Key="initiative" />
+    </ContentPage.Resources>
+
     <ScrollView>
         <StackLayout Margin="10">
             <Label Text="{Binding Creature.Name}"
-                   FontSize="20"/>
+                   Style="{StaticResource StatblockText}"
+                   FontSize="20"
+                   FontAttributes="Bold" />
             <Line X1="-5"
                   X2="300"
-                  Stroke="DarkRed"
-                  StrokeThickness="4" />
+                  Style="{StaticResource StatblockLine}" />
             <Label FontAttributes="Italic"
                    TextColor="Grey"
                    Padding="0,3,0,0">
@@ -24,123 +31,284 @@
                     </MultiBinding>
                 </Label.Text>
             </Label>
-
-            <Grid Grid.Row="6"
-                  Grid.ColumnSpan="2"
-                  Grid.RowSpan="2"
-                  ColumnDefinitions="*,*,*,*,*,*"
-                  ColumnSpacing="4"
-                  RowDefinitions="*,*"
+            <Grid ColumnDefinitions="Auto,Auto"
+                  RowDefinitions="*,*,*"
                   RowSpacing="2"
-                  Padding="5">
-
-                <Label Grid.Column="0"
-                       Grid.Row="0"
-                       Text="STR"
-                       FontSize="15"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center" />
-                <Label Grid.Column="1"
-                       Grid.Row="0"
-                       Text="DEX"
-                       FontSize="15"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center" />
-                <Label Grid.Column="2"
-                       Grid.Row="0"
-                       Text="CON"
-                       FontSize="15"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center" />
-                <Label Grid.Column="3"
-                       Grid.Row="0"
-                       Text="INT"
-                       FontSize="15"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center" />
-                <Label Grid.Column="4"
-                       Grid.Row="0"
-                       Text="WIS"
-                       FontSize="15"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center" />
-                <Label Grid.Column="5"
-                       Grid.Row="0"
-                       Text="CHA"
-                       FontSize="15"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center" />
-                <Label Grid.Column="0"
-                       Grid.Row="1"
-                       Text="{Binding Creature.StrScore}"
-                       FontSize="15"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center" />
-                <Label Grid.Column="1"
-                       Grid.Row="1"
-                       Text="{Binding Creature.DexScore}"
-                       FontSize="15"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center" />
-                <Label Grid.Column="2"
-                       Grid.Row="1"
-                       Text="{Binding Creature.ConScore}"
-                       FontSize="15"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center" />
-                <Label Grid.Column="3"
-                       Grid.Row="1"
-                       Text="{Binding Creature.IntScore}"
-                       FontSize="15"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center" />
-                <Label Grid.Column="4"
-                       Grid.Row="1"
-                       Text="{Binding Creature.WisScore}"
-                       FontSize="15"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center" />
-                <Label Grid.Column="5"
-                       Grid.Row="1"
-                       Text="{Binding Creature.ChaScore}"
-                       FontSize="15"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center" />
+                  HorizontalOptions="Start"
+                  Padding="0,10,0,0">
+                <HorizontalStackLayout Grid.Column="0"
+                                       Grid.Row="0">
+                    <Label Style="{StaticResource StatblockText}"
+                           Text="AC"
+                           FontAttributes="Bold" />
+                    <Label Style="{StaticResource StatblockText}"
+                           Text="{Binding Creature.ArmorClass}"
+                           Padding="3,0,0,0" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Grid.Column="1"
+                                       Grid.Row="0">
+                    <Label Style="{StaticResource StatblockText}"
+                           Text="Initiative "
+                           FontAttributes="Bold" />
+                    <Label Style="{StaticResource StatblockText}"
+                           Text="{Binding Creature.InitiativeBonus, StringFormat='{}+{0}'}"
+                           Padding="3,0,0,0" />
+                    <Label Style="{StaticResource StatblockText}"
+                           Text="{Binding Creature.InitiativeBonus, Converter={StaticResource initiative}, StringFormat='{} ({0})'}" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Grid.Column="0"
+                                       Grid.Row="1">
+                    <Label Style="{StaticResource StatblockText}"
+                           Text="HP "
+                           FontAttributes="Bold" />
+                    <Label Style="{StaticResource StatblockText}"
+                           Text="{Binding Creature.MaximumHitPoints}"
+                           Padding="3,0,0,0" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Grid.Column="0"
+                                       Grid.Row="2">
+                    <Label Style="{StaticResource StatblockText}"
+                           Text="Speed "
+                           FontAttributes="Bold" />
+                    <Label Style="{StaticResource StatblockText}"
+                           Text="{Binding Creature.Speed}"
+                           Padding="3,0,0,0" />
+                </HorizontalStackLayout>
             </Grid>
 
-            <Label>
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="Armor Class "
-                              FontAttributes="Bold" />
-                        <Span Text="{Binding Creature.ArmorClass}" />
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
-            <Label>
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="Hit Points "
-                              FontAttributes="Bold" />
-                        <Span Text="{Binding Creature.MaximumHitPoints}" />
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
-            <Label>
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="Speed "
-                              FontAttributes="Bold" />
-                        <Span Text="{Binding Creature.Speed}" />
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
+            <Grid ColumnDefinitions="30,20,20,20,30,20,20,20,30,20,20,20"
+                  RowDefinitions="*,*,*"
+                  RowSpacing="2"
+                  HorizontalOptions="Start"
+                  Padding="0,10,0,10">
+
+                <Label Grid.Column="2"
+                       Grid.Row="0"
+                       HorizontalOptions="Center"
+                       Text="MOD"
+                       Style="{StaticResource MicroLabel}"
+                       TextColor="Grey" />
+                <Label Grid.Column="3"
+                       Grid.Row="0"
+                       HorizontalOptions="Center"
+                       Text="SAVE"
+                       Style="{StaticResource MicroLabel}"
+                       TextColor="Grey" />
+                <Label Grid.Column="6"
+                       Grid.Row="0"
+                       HorizontalOptions="Center"
+                       Text="MOD"
+                       Style="{StaticResource MicroLabel}"
+                       TextColor="Grey" />
+                <Label Grid.Column="7"
+                       Grid.Row="0"
+                       HorizontalOptions="Center"
+                       Text="SAVE"
+                       Style="{StaticResource MicroLabel}"
+                       TextColor="Grey" />
+                <Label Grid.Column="10"
+                       Grid.Row="0"
+                       HorizontalOptions="Center"
+                       Text="MOD"
+                       Style="{StaticResource MicroLabel}"
+                       TextColor="Grey" />
+                <Label Grid.Column="11"
+                       Grid.Row="0"
+                       HorizontalOptions="Center"
+                       Text="SAVE"
+                       Style="{StaticResource MicroLabel}"
+                       TextColor="Grey" />
+
+                <Label Grid.Column="0"
+                       Grid.Row="1"
+                       HorizontalOptions="End"
+                       Style="{StaticResource StatblockText}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="S"
+                                  FontAttributes="Bold" />
+                            <Span Text="TR"
+                                  FontSize="10"
+                                  FontAttributes="Bold" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Grid.Column="1"
+                       Grid.Row="1"
+                       HorizontalOptions="Center"
+                       Text="{Binding Creature.StrScore}"
+                       Style="{StaticResource StatblockText}" />
+                <Label Grid.Column="2"
+                       Grid.Row="1"
+                       HorizontalOptions="Center"
+                       Text="{Binding Creature.StrScore, Converter={StaticResource intToString}}"
+                       Style="{StaticResource StatblockText}" />
+                <Label Grid.Column="3"
+                       Grid.Row="1"
+                       HorizontalOptions="Center"
+                       Text="{Binding Creature.StrScore, Converter={StaticResource intToString}}"
+                       Style="{StaticResource StatblockText}" />
+
+                <Label Grid.Column="4"
+                       Grid.Row="1"
+                       HorizontalOptions="End"
+                       Style="{StaticResource StatblockText}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="D"
+                                  FontAttributes="Bold" />
+                            <Span Text="EX"
+                                  FontSize="10"
+                                  FontAttributes="Bold" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Grid.Column="5"
+                       Grid.Row="1"
+                       HorizontalOptions="Center"
+                       Text="{Binding Creature.DexScore}"
+                       Style="{StaticResource StatblockText}" />
+                <Label Grid.Column="6"
+                       Grid.Row="1"
+                       HorizontalOptions="Center"
+                       Text="{Binding Creature.DexScore, Converter={StaticResource intToString}}"
+                       Style="{StaticResource StatblockText}" />
+                <Label Grid.Column="7"
+                       Grid.Row="1"
+                       HorizontalOptions="Center"
+                       Text="{Binding Creature.DexScore, Converter={StaticResource intToString}}"
+                       Style="{StaticResource StatblockText}" />
+
+                <Label Grid.Column="8"
+                       Grid.Row="1"
+                       HorizontalOptions="End"
+                       Style="{StaticResource StatblockText}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="C"
+                                  FontAttributes="Bold" />
+                            <Span Text="ON"
+                                  FontSize="10"
+                                  FontAttributes="Bold" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Grid.Column="9"
+                       Grid.Row="1"
+                       HorizontalOptions="Center"
+                       Text="{Binding Creature.ConScore}"
+                       Style="{StaticResource StatblockText}" />
+                <Label Grid.Column="10"
+                       Grid.Row="1"
+                       HorizontalOptions="Center"
+                       Text="{Binding Creature.ConScore, Converter={StaticResource intToString}}"
+                       Style="{StaticResource StatblockText}" />
+                <Label Grid.Column="11"
+                       Grid.Row="1"
+                       HorizontalOptions="Center"
+                       Text="{Binding Creature.ConScore, Converter={StaticResource intToString}}"
+                       Style="{StaticResource StatblockText}" />
+
+                <Label Grid.Column="0"
+                       Grid.Row="2"
+                       HorizontalOptions="End"
+                       Style="{StaticResource StatblockText}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="I"
+                                  FontAttributes="Bold" />
+                            <Span Text="NT"
+                                  FontSize="10"
+                                  FontAttributes="Bold" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Grid.Column="1"
+                       Grid.Row="2"
+                       HorizontalOptions="Center"
+                       Text="{Binding Creature.IntScore}"
+                       Style="{StaticResource StatblockText}" />
+                <Label Grid.Column="2"
+                       Grid.Row="2"
+                       HorizontalOptions="Center"
+                       Text="{Binding Creature.IntScore, Converter={StaticResource intToString}}"
+                       Style="{StaticResource StatblockText}" />
+                <Label Grid.Column="3"
+                       Grid.Row="2"
+                       HorizontalOptions="Center"
+                       Text="{Binding Creature.IntScore, Converter={StaticResource intToString}}"
+                       Style="{StaticResource StatblockText}" />
+
+                <Label Grid.Column="4"
+                       Grid.Row="2"
+                       HorizontalOptions="End"
+                       Style="{StaticResource StatblockText}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="W"
+                                  FontAttributes="Bold" />
+                            <Span Text="IS"
+                                  FontSize="10"
+                                  FontAttributes="Bold" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Grid.Column="5"
+                       Grid.Row="2"
+                       HorizontalOptions="Center"
+                       Text="{Binding Creature.WisScore}"
+                       Style="{StaticResource StatblockText}" />
+                <Label Grid.Column="6"
+                       Grid.Row="2"
+                       HorizontalOptions="Center"
+                       Text="{Binding Creature.WisScore, Converter={StaticResource intToString}}"
+                       Style="{StaticResource StatblockText}" />
+                <Label Grid.Column="7"
+                       Grid.Row="2"
+                       HorizontalOptions="Center"
+                       Text="{Binding Creature.WisScore, Converter={StaticResource intToString}}"
+                       Style="{StaticResource StatblockText}" />
+
+                <Label Grid.Column="8"
+                       Grid.Row="2"
+                       HorizontalOptions="End"
+                       Style="{StaticResource StatblockText}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="C"
+                                  FontAttributes="Bold" />
+                            <Span Text="HA"
+                                  FontSize="10"
+                                  FontAttributes="Bold" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Grid.Column="9"
+                       Grid.Row="2"
+                       HorizontalOptions="Center"
+                       Text="{Binding Creature.ChaScore}"
+                       Style="{StaticResource StatblockText}" />
+                <Label Grid.Column="10"
+                       Grid.Row="2"
+                       HorizontalOptions="Center"
+                       Text="{Binding Creature.ChaScore, Converter={StaticResource intToString}}"
+                       Style="{StaticResource StatblockText}" />
+                <Label Grid.Column="11"
+                       Grid.Row="2"
+                       HorizontalOptions="Center"
+                       Text="{Binding Creature.ChaScore, Converter={StaticResource intToString}}"
+                       Style="{StaticResource StatblockText}" />
+
+            </Grid>
+
             <Label IsVisible="{Binding Creature.Skills, TargetNullValue=False}">
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="Skills "
-                              FontAttributes="Bold" />
-                        <Span Text="{Binding Creature.Skills}" />
+                              FontAttributes="Bold"
+                              Style="{StaticResource StatblockSpan}" />
+                        <Span Text="{Binding Creature.Skills}"
+                              Style="{StaticResource StatblockSpan}" />
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
@@ -148,8 +316,10 @@
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="Vulnerabilities "
-                              FontAttributes="Bold" />
-                        <Span Text="{Binding Creature.Vulnerabilities}" />
+                              FontAttributes="Bold"
+                              Style="{StaticResource StatblockSpan}" />
+                        <Span Text="{Binding Creature.Vulnerabilities}"
+                              Style="{StaticResource StatblockSpan}" />
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
@@ -157,8 +327,10 @@
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="Resistances "
-                              FontAttributes="Bold" />
-                        <Span Text="{Binding Creature.Resistances}" />
+                              FontAttributes="Bold"
+                              Style="{StaticResource StatblockSpan}" />
+                        <Span Text="{Binding Creature.Resistances}"
+                              Style="{StaticResource StatblockSpan}" />
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
@@ -166,8 +338,10 @@
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="Immunities "
-                              FontAttributes="Bold" />
-                        <Span Text="{Binding Creature.Immunities}" />
+                              FontAttributes="Bold"
+                              Style="{StaticResource StatblockSpan}" />
+                        <Span Text="{Binding Creature.Immunities}"
+                              Style="{StaticResource StatblockSpan}" />
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
@@ -175,8 +349,10 @@
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="Senses "
-                              FontAttributes="Bold" />
-                        <Span Text="{Binding Creature.Senses}" />
+                              FontAttributes="Bold"
+                              Style="{StaticResource StatblockSpan}" />
+                        <Span Text="{Binding Creature.Senses}"
+                              Style="{StaticResource StatblockSpan}" />
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
@@ -184,29 +360,33 @@
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="Languages "
-                              FontAttributes="Bold" />
-                        <Span Text="{Binding Creature.Languages}" />
+                              FontAttributes="Bold"
+                              Style="{StaticResource StatblockSpan}" />
+                        <Span Text="{Binding Creature.Languages}"
+                              Style="{StaticResource StatblockSpan}" />
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
             <Label IsVisible="{Binding Creature.ChallengeRating, TargetNullValue=False}">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="CR "
-                                  FontAttributes="Bold" />
-                            <Span Text="{Binding Creature.ChallengeRating}" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="CR "
+                              FontAttributes="Bold"
+                              Style="{StaticResource StatblockSpan}" />
+                        <Span Text="{Binding Creature.ChallengeRating}"
+                              Style="{StaticResource StatblockSpan}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
             <VerticalStackLayout IsVisible="{Binding Creature.Traits, TargetNullValue=False}"
                                  Padding="0,10,0,0">
                 <Label Text="Traits"
-                       FontSize="20"/>
+                       Style="{StaticResource StatblockText}"
+                       FontSize="20" />
                 <Line X1="-5"
                       X2="300"
-                      Stroke="DarkRed"
-                      StrokeThickness="4" />
+                      Style="{StaticResource StatblockLine}" />
                 <Label Text="{Binding Creature.Traits}"
                        Padding="0,3,0,0" />
             </VerticalStackLayout>
@@ -214,11 +394,11 @@
             <VerticalStackLayout IsVisible="{Binding Creature.Actions, TargetNullValue=False}"
                                  Padding="0,10,0,0">
                 <Label Text="Actions"
+                       Style="{StaticResource StatblockText}"
                        FontSize="20" />
                 <Line X1="-5"
                       X2="300"
-                      Stroke="DarkRed"
-                      StrokeThickness="4" />
+                      Style="{StaticResource StatblockLine}" />
                 <Label Text="{Binding Creature.Actions}"
                        Padding="0,3,0,0" />
             </VerticalStackLayout>
@@ -226,11 +406,11 @@
             <VerticalStackLayout IsVisible="{Binding Creature.BonusActions, TargetNullValue=False}"
                                  Padding="0,10,0,0">
                 <Label Text="Bonus Actions"
-                       FontSize="20"/>
+                       Style="{StaticResource StatblockText}"
+                       FontSize="20" />
                 <Line X1="-5"
                       X2="300"
-                      Stroke="DarkRed"
-                      StrokeThickness="4" />
+                      Style="{StaticResource StatblockLine}" />
                 <Label Text="{Binding Creature.BonusActions}"
                        Padding="0,3,0,0" />
             </VerticalStackLayout>
@@ -238,23 +418,23 @@
             <VerticalStackLayout IsVisible="{Binding Creature.Reactions, TargetNullValue=False}"
                                  Padding="0,10,0,0">
                 <Label Text="Reactions"
+                       Style="{StaticResource StatblockText}"
                        FontSize="20" />
                 <Line X1="-5"
                       X2="300"
-                      Stroke="DarkRed"
-                      StrokeThickness="4" />
-                <Label Text="{Binding Creature.Reactions}" 
-                       Padding="0,3,0,0"/>
+                      Style="{StaticResource StatblockLine}" />
+                <Label Text="{Binding Creature.Reactions}"
+                       Padding="0,3,0,0" />
             </VerticalStackLayout>
 
             <VerticalStackLayout IsVisible="{Binding Creature.LegendaryActions, TargetNullValue=False}"
                                  Padding="0,10,0,0">
                 <Label Text="Legendary Actions"
+                       Style="{StaticResource StatblockText}"
                        FontSize="20" />
                 <Line X1="-5"
                       X2="300"
-                      Stroke="DarkRed"
-                      StrokeThickness="4" />
+                      Style="{StaticResource StatblockLine}" />
                 <Label Text="{Binding Creature.LegendaryActions}"
                        Padding="0,3,0,0" />
             </VerticalStackLayout>
