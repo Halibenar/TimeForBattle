@@ -9,10 +9,15 @@
     <ContentPage.Resources>
         <converters:AttributeConverter x:Key="intToString" />
         <converters:InitiativeConverter x:Key="initiative" />
+        <converters:StringContainDataConverter x:Key="StringContainDataConverter" />
     </ContentPage.Resources>
 
-    <ScrollView>
-        <StackLayout Margin="10">
+    <Grid ColumnDefinitions="*"
+          ColumnSpacing="0"
+          RowDefinitions="*,50">
+        <ScrollView Grid.Column="0"
+                    Grid.Row="0">
+            <StackLayout Margin="10">
             <Label Text="{Binding Creature.Name}"
                    Style="{StaticResource StatblockText}"
                    FontSize="20"
@@ -301,7 +306,7 @@
 
             </Grid>
 
-            <Label IsVisible="{Binding Creature.Skills, TargetNullValue=False}">
+            <Label IsVisible="{Binding Creature.Skills, Converter={StaticResource StringContainDataConverter}}">
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="Skills "
@@ -312,7 +317,7 @@
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
-            <Label IsVisible="{Binding Creature.Vulnerabilities, TargetNullValue=False}">
+            <Label IsVisible="{Binding Creature.Vulnerabilities, Converter={StaticResource StringContainDataConverter}}">
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="Vulnerabilities "
@@ -323,7 +328,7 @@
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
-            <Label IsVisible="{Binding Creature.Resistances, TargetNullValue=False}">
+            <Label IsVisible="{Binding Creature.Resistances, Converter={StaticResource StringContainDataConverter}}">
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="Resistances "
@@ -334,7 +339,7 @@
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
-            <Label IsVisible="{Binding Creature.Immunities, TargetNullValue=False}">
+            <Label IsVisible="{Binding Creature.Immunities, Converter={StaticResource StringContainDataConverter}}">
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="Immunities "
@@ -345,7 +350,7 @@
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
-            <Label IsVisible="{Binding Creature.Senses, TargetNullValue=False}">
+            <Label IsVisible="{Binding Creature.Senses, Converter={StaticResource StringContainDataConverter}}">
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="Senses "
@@ -356,7 +361,7 @@
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
-            <Label IsVisible="{Binding Creature.Languages, TargetNullValue=False}">
+            <Label IsVisible="{Binding Creature.Languages, Converter={StaticResource StringContainDataConverter}}">
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="Languages "
@@ -367,7 +372,7 @@
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
-            <Label IsVisible="{Binding Creature.ChallengeRating, TargetNullValue=False}">
+            <Label IsVisible="{Binding Creature.ChallengeRating, Converter={StaticResource StringContainDataConverter}}">
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="CR "
@@ -379,7 +384,7 @@
                 </Label.FormattedText>
             </Label>
 
-            <VerticalStackLayout IsVisible="{Binding Creature.Traits, TargetNullValue=False}"
+            <VerticalStackLayout IsVisible="{Binding Creature.Traits, Converter={StaticResource StringContainDataConverter}}"
                                  Padding="0,10,0,0">
                 <Label Text="Traits"
                        Style="{StaticResource StatblockText}"
@@ -388,10 +393,12 @@
                       X2="300"
                       Style="{StaticResource StatblockLine}" />
                 <Label Text="{Binding Creature.Traits}"
-                       Padding="0,3,0,0" />
+                       Padding="0,3,0,0"
+                       MaximumWidthRequest="300"
+                       HorizontalOptions="Start" />
             </VerticalStackLayout>
 
-            <VerticalStackLayout IsVisible="{Binding Creature.Actions, TargetNullValue=False}"
+            <VerticalStackLayout IsVisible="{Binding Creature.Actions, Converter={StaticResource StringContainDataConverter}}"
                                  Padding="0,10,0,0">
                 <Label Text="Actions"
                        Style="{StaticResource StatblockText}"
@@ -400,10 +407,12 @@
                       X2="300"
                       Style="{StaticResource StatblockLine}" />
                 <Label Text="{Binding Creature.Actions}"
-                       Padding="0,3,0,0" />
+                       Padding="0,3,0,0"
+                       MaximumWidthRequest="300"
+                       HorizontalOptions="Start" />
             </VerticalStackLayout>
 
-            <VerticalStackLayout IsVisible="{Binding Creature.BonusActions, TargetNullValue=False}"
+            <VerticalStackLayout IsVisible="{Binding Creature.BonusActions, Converter={StaticResource StringContainDataConverter}}"
                                  Padding="0,10,0,0">
                 <Label Text="Bonus Actions"
                        Style="{StaticResource StatblockText}"
@@ -412,10 +421,12 @@
                       X2="300"
                       Style="{StaticResource StatblockLine}" />
                 <Label Text="{Binding Creature.BonusActions}"
-                       Padding="0,3,0,0" />
+                       Padding="0,3,0,0"
+                       MaximumWidthRequest="300"
+                       HorizontalOptions="Start" />
             </VerticalStackLayout>
 
-            <VerticalStackLayout IsVisible="{Binding Creature.Reactions, TargetNullValue=False}"
+            <VerticalStackLayout IsVisible="{Binding Creature.Reactions, Converter={StaticResource StringContainDataConverter}}"
                                  Padding="0,10,0,0">
                 <Label Text="Reactions"
                        Style="{StaticResource StatblockText}"
@@ -424,10 +435,12 @@
                       X2="300"
                       Style="{StaticResource StatblockLine}" />
                 <Label Text="{Binding Creature.Reactions}"
-                       Padding="0,3,0,0" />
+                       Padding="0,3,0,0"
+                       MaximumWidthRequest="300"
+                       HorizontalOptions="Start" />
             </VerticalStackLayout>
 
-            <VerticalStackLayout IsVisible="{Binding Creature.LegendaryActions, TargetNullValue=False}"
+            <VerticalStackLayout IsVisible="{Binding Creature.LegendaryActions, Converter={StaticResource StringContainDataConverter}}"
                                  Padding="0,10,0,0">
                 <Label Text="Legendary Actions"
                        Style="{StaticResource StatblockText}"
@@ -436,12 +449,20 @@
                       X2="300"
                       Style="{StaticResource StatblockLine}" />
                 <Label Text="{Binding Creature.LegendaryActions}"
-                       Padding="0,3,0,0" />
+                       Padding="0,3,0,0"
+                       MaximumWidthRequest="300"
+                       HorizontalOptions="Start" />
             </VerticalStackLayout>
 
-            <Button Text="Edit"
-                    CommandParameter="{Binding .}"
-                    Command="{Binding x:DataType='viewmodel:CreatureDetailsViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:CreatureDetailsViewModel}}, Path=GoToEditCommand}" />
-        </StackLayout>
+            </StackLayout>
+        
     </ScrollView>
+        <Button Grid.Column="0"
+                Grid.Row="1"
+                Text="Edit"
+                CommandParameter="{Binding .}"
+                Command="{Binding x:DataType='viewmodel:CreatureDetailsViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:CreatureDetailsViewModel}}, Path=GoToEditCommand}"
+                BorderColor="Black"
+                CornerRadius="0" />
+    </Grid>
 </ContentPage>
