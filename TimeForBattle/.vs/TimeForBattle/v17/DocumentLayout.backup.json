@@ -145,12 +145,11 @@
               "Title": "CreatureDetailsPage.xaml",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\CreatureDetailsPage.xaml",
               "RelativeDocumentMoniker": "TimeForBattle\\View\\CreatureDetailsPage.xaml",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\CreatureDetailsPage.xaml*",
-              "RelativeToolTip": "TimeForBattle\\View\\CreatureDetailsPage.xaml*",
+              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\CreatureDetailsPage.xaml",
+              "RelativeToolTip": "TimeForBattle\\View\\CreatureDetailsPage.xaml",
               "ViewState": "AgIAAKsBAAAAAAAAAAAgwNMBAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-19T12:15:57.378Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:15:57.378Z"
             },
             {
               "$type": "Document",
@@ -158,9 +157,9 @@
               "Title": "AddCreaturePage.xaml",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\AddCreaturePage.xaml",
               "RelativeDocumentMoniker": "TimeForBattle\\View\\AddCreaturePage.xaml",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\AddCreaturePage.xaml",
-              "RelativeToolTip": "TimeForBattle\\View\\AddCreaturePage.xaml",
-              "ViewState": "AgIAABQCAAAAAAAAAAAgwDoCAAAEAAAAAAAAAA==",
+              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\AddCreaturePage.xaml*",
+              "RelativeToolTip": "TimeForBattle\\View\\AddCreaturePage.xaml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-03-31T11:16:33.02Z",
               "EditorCaption": ""
@@ -175,8 +174,7 @@
               "RelativeToolTip": "TimeForBattle\\View\\CreatureListPage.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-19T12:01:41.067Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:01:41.067Z"
             },
             {
               "$type": "Document",
@@ -188,8 +186,7 @@
               "RelativeToolTip": "TimeForBattle\\ViewModel\\AddCreatureViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:19:12.349Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T11:19:12.349Z"
             },
             {
               "$type": "Document",
@@ -201,8 +198,7 @@
               "RelativeToolTip": "TimeForBattle\\View\\AddCreaturePage.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:17:06.761Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T11:17:06.761Z"
             },
             {
               "$type": "Document",
@@ -214,8 +210,7 @@
               "RelativeToolTip": "TimeForBattle\\Model\\Creature.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T12:45:35.078Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-10T12:45:35.078Z"
             },
             {
               "$type": "Document",
@@ -227,8 +222,7 @@
               "RelativeToolTip": "TimeForBattle\\Converters\\InitiativeConverter.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T15:42:33.811Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T15:42:33.811Z"
             },
             {
               "$type": "Document",
@@ -240,8 +234,7 @@
               "RelativeToolTip": "TimeForBattle\\Converters\\StringContainDataConverter.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T14:10:39.229Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-23T14:10:39.229Z"
             },
             {
               "$type": "Document",
@@ -253,8 +246,7 @@
               "RelativeToolTip": "TimeForBattle\\Model\\InitiativeCreature.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T18:55:06.769Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-14T18:55:06.769Z"
             },
             {
               "$type": "Document",
@@ -302,8 +294,7 @@
               "RelativeToolTip": "TimeForBattle\\App.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-19T11:59:10.526Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T11:59:10.526Z"
             },
             {
               "$type": "Document",
