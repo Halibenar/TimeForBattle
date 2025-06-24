@@ -28,4 +28,10 @@ public partial class CreatureDetailsViewModel: BaseViewModel
                 {"Creature", Creature}
             });
     }
+
+    [RelayCommand]
+    public async Task ReturnAsync()
+    {
+        await Shell.Current.GoToAsync("..");
+    }
 }
