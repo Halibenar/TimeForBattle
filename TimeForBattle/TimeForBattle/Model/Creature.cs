@@ -20,7 +20,13 @@ public partial class Creature : DatabaseObject
     [ObservableProperty] public int wisScore;
     [ObservableProperty] public int chaScore;
 
-    [ObservableProperty] public string savingThrows;
+    [ObservableProperty] public string strSave;
+    [ObservableProperty] public string dexSave;
+    [ObservableProperty] public string conSave;
+    [ObservableProperty] public string intSave;
+    [ObservableProperty] public string wisSave;
+    [ObservableProperty] public string chaSave;
+
     [ObservableProperty] public string skills;
     [ObservableProperty] public string resistances;
     [ObservableProperty] public string vulnerabilities;

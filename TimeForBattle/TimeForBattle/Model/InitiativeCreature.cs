@@ -33,7 +33,13 @@ public partial class InitiativeCreature : Creature
         this.WisScore = creature.WisScore;
         this.ChaScore = creature.ChaScore;
 
-        this.SavingThrows = creature.SavingThrows;
+        this.StrSave = creature.StrSave;
+        this.DexSave = creature.DexSave;
+        this.ConSave = creature.ConSave;
+        this.IntSave = creature.IntSave;
+        this.WisSave = creature.WisSave;
+        this.ChaSave = creature.ChaSave;
+
         this.Skills = creature.Skills;
         this.Resistances = creature.Resistances;
         this.Vulnerabilities = creature.Vulnerabilities;
