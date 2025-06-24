@@ -9,15 +9,17 @@ public class AttributeConverter : IValueConverter
     {
         if (value is int val)
         {
-            int modifier = (val - 10) / 2;
+            double x = ((double)val - 10) / 2;
+            int modifier = (int)Math.Floor(x);
+
 
             if (modifier >= 0)
             {
-                return ("+" + modifier.ToString());
+                return "+" + modifier.ToString();
             }
             else
             {
-                return (modifier.ToString());
+                return modifier.ToString();
             }
         }
 
@@ -26,6 +28,11 @@ public class AttributeConverter : IValueConverter
 
     object? IValueConverter.ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        throw new NotImplementedException();
+        if (value is int val)
+        {
+            int modifier = 10 + val * 2;
+        }
+
+        return value;
     }
 }
