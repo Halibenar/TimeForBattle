@@ -12,10 +12,17 @@
         <converters:InitiativeConverter x:Key="initiative" />
     </ContentPage.Resources>
 
-    <Grid ColumnDefinitions="*"
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding SaveCreatureCommand}"
+                            IconOverride="back.png" />
+    </Shell.BackButtonBehavior>
+
+    <Grid ColumnDefinitions="*,80"
           ColumnSpacing="0"
           RowDefinitions="*,50">
-        <ScrollView>
+        <ScrollView Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="0">
             <Grid Margin="10"
                   ColumnDefinitions="*,*,*,*,*,*"
                   RowDefinitions="Auto,Auto,10,Auto,Auto,Auto,10,Auto,Auto,Auto,10,Auto,Auto,Auto,Auto,Auto,Auto,Auto,10,Auto,Auto,Auto,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto">
@@ -195,7 +202,7 @@
                        WidthRequest="50"
                        MaxLength="3"
                        Keyboard="Numeric" />
-                
+
                 <Label Grid.Column="0"
                        Grid.Row="13"
                        Style="{StaticResource StatblockText}"
@@ -229,7 +236,7 @@
                        WidthRequest="50"
                        MaxLength="3"
                        Keyboard="Numeric" />
-                
+
                 <Label Grid.Column="0"
                        Grid.Row="14"
                        Style="{StaticResource StatblockText}"
@@ -263,7 +270,7 @@
                        WidthRequest="50"
                        MaxLength="3"
                        Keyboard="Numeric" />
-                
+
                 <Label Grid.Column="0"
                        Grid.Row="15"
                        Style="{StaticResource StatblockText}"
@@ -297,7 +304,7 @@
                        WidthRequest="50"
                        MaxLength="3"
                        Keyboard="Numeric" />
-                
+
                 <Label Grid.Column="0"
                        Grid.Row="16"
                        Style="{StaticResource StatblockText}"
@@ -331,7 +338,7 @@
                        WidthRequest="50"
                        MaxLength="3"
                        Keyboard="Numeric" />
-                
+
                 <Label Grid.Column="0"
                        Grid.Row="17"
                        Style="{StaticResource StatblockText}"
@@ -553,9 +560,14 @@
 
         <Button Grid.Column="0"
                 Grid.Row="1"
-                x:Name="saveChanges"
                 Command="{Binding SaveCreatureCommand}"
-                Text="Save changes"
+                Text="Return"
+                BorderColor="Black"
+                CornerRadius="0" />
+        <Button Grid.Column="1"
+                Grid.Row="1"
+                Command="{Binding DeleteCreatureCommand}"
+                Text="Delete"
                 BorderColor="Black"
                 CornerRadius="0" />
     </Grid>

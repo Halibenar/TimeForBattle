@@ -203,11 +203,17 @@ public partial class CreatureListViewModel : BaseViewModel
         }
     }
 
-    //[RelayCommand]
-    //async Task UpdateCreature(Creature creature)
-    //{
-    //    await AppShell.Current.Navigation.PushAsync(new View.AddCreaturePage());
-    //}
+    [RelayCommand]
+    public async Task NewCreatureAsync()
+    {
+        Creature creature = new();
+
+        await Shell.Current.GoToAsync($"{nameof(AddCreaturePage)}", true,
+            new Dictionary<string, object>
+            {
+                {"Creature", creature}
+            });
+    }
 
     [RelayCommand]
     public async Task<Creature> GetCreature(int iD)
