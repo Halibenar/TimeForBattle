@@ -104,7 +104,7 @@
                        Grid.ColumnSpan="1"
                        Grid.Row="7"
                        Style="{StaticResource StatblockText}"
-                       Text="{Binding Creature.InitiativeBonus}"
+                       Text="{Binding Creature.InitiativeBonus, StringFormat='+{0}'}"
                        HorizontalOptions="End" />
                 <Label Grid.Column="2"
                        Grid.ColumnSpan="1"

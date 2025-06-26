@@ -2,6 +2,8 @@
 
 public partial class Creature : DatabaseObject
 {
+    [ObservableProperty] public bool isPlayer;
+
     [ObservableProperty] public string name;
     [ObservableProperty] public string size;
     [ObservableProperty] public string type;
