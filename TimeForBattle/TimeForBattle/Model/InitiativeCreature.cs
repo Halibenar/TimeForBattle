@@ -16,6 +16,7 @@ public partial class InitiativeCreature : Creature
         this.CurrentHitPoints = creature.MaximumHitPoints;
 
         this.Name = creature.Name;
+        this.IsPlayer = creature.IsPlayer;
         this.Size = creature.Size;
         this.Type = creature.Type;
         this.Alignment = creature.Alignment;
