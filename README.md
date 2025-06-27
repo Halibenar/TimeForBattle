@@ -13,7 +13,7 @@ TimeForBattle aims to assist the Game Master of a tabletop roleplaying game with
 (Done!)- Add creature creation page
 (Done!)- Add creature Create/Read/Update/Delete to database
 (Done!)- Add initiative list page
-- Add player characters as a seperate class to other creatures
+(Done!)- Add player characters as a seperate class to other creatures
 - Add rolling initiative
   - Automatic rolling and sorting for creatures
   - Custom input of initiative for player characters
