@@ -9,7 +9,6 @@ public partial class CreatureListPage : ContentPage
 		InitializeComponent();
 		BindingContext = viewModel;
 		this.viewModel = viewModel;
-
     }
 
     protected override void OnAppearing()

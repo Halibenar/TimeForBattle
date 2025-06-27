@@ -1,32 +1,30 @@
-﻿using System.Windows.Input;
-using TimeForBattle.Services;
+﻿using TimeForBattle.Services;
 using TimeForBattle.View;
 
 namespace TimeForBattle.ViewModel;
 
 public partial class CreatureListViewModel : BaseViewModel
 {
-    public CreatureService<Creature> creatureService;
-    public CreatureService<InitiativeCreature> initiativeService;
-
-    public ObservableCollection<Creature> Creatures { get; } = new();
-    public ObservableCollection<Creature> Monsters { get; } = new();
-    public ObservableCollection<Creature> Players { get; } = new();
-    public ObservableCollection<InitiativeCreature> Initiative { get; } = new();
+    [ObservableProperty] public ObservableCollection<Creature> creatures = new();
+    public CreatureService<Creature> CreatureService;
+    public CreatureService<InitiativeCreature> InitiativeService;
+    
+    public ObservableCollection<Creature> Monsters { get; }
+    public ObservableCollection<Creature> Players { get; }
+    public ObservableCollection<InitiativeCreature> Initiative { get; }
 
     public bool ViewMonsters;
 
     public CreatureListViewModel(CreatureService<Creature> creatureService, CreatureService<InitiativeCreature> initiativeService)
     {
         Title = "Creatures";
-        this.creatureService = creatureService;
-        this.initiativeService = initiativeService;
+        this.CreatureService = creatureService;
+        this.InitiativeService = initiativeService;
         Creatures = [];
         Monsters = [];
         Players = [];
         Initiative = [];
         ViewMonsters = true;
-        RefreshCreaturesCommand.Execute(null);
     }
 
     [ObservableProperty] bool isRefreshing;
@@ -34,40 +32,39 @@ public partial class CreatureListViewModel : BaseViewModel
     [RelayCommand]
     public async Task RefreshCreatures()
     {
-        List<Creature> creatureData = await creatureService.GetAllAsync();
+        List<Creature> creatureData = await CreatureService.GetAllAsync();
         Creatures.Clear();
         Monsters.Clear();
         Players.Clear();
+
         foreach (Creature creature in creatureData)
         {
             if (creature.IsPlayer)
-            {
                 Players.Add(creature);
-                if (!ViewMonsters)
-                    Creatures.Add(creature);
-            }
-
             else
-            {
                 Monsters.Add(creature);
-                if (ViewMonsters)
-                    Creatures.Add(creature);
-            }
         }
 
-        List<InitiativeCreature> initiativeCreatureData = await initiativeService.GetAllAsync();
+        List<InitiativeCreature> initiativeCreatureData = await InitiativeService.GetAllAsync();
         Initiative.Clear();
+
         foreach (InitiativeCreature initiativeCreature in initiativeCreatureData)
         {
             Initiative.Add(initiativeCreature);
         }
+
+        await Task.Run(() => ChangeView(ViewMonsters));
     }
 
     [RelayCommand]
-    public async Task ChangeViewAsync(bool viewMonsters)
+    public void ChangeView(bool viewMonsters)
     {
         ViewMonsters = viewMonsters;
-        await RefreshCreatures();
+
+        if (ViewMonsters)
+            Creatures = Monsters;
+        else
+            Creatures = Players;
     }
 
     [RelayCommand]
@@ -100,7 +97,7 @@ public partial class CreatureListViewModel : BaseViewModel
 
         InitiativeCreature initiativeCreature = new(creature);
 
-        await initiativeService.SaveAsync(initiativeCreature);
+        await InitiativeService.SaveAsync(initiativeCreature);
 
         Initiative.Add(initiativeCreature);
     }
@@ -111,7 +108,7 @@ public partial class CreatureListViewModel : BaseViewModel
         if (initiativeCreature is null)
             return;
 
-        if (await initiativeService.DeleteAsync(await initiativeService.GetByIdAsync(initiativeCreature.Id)) > 0)
+        if (await InitiativeService.DeleteAsync(await InitiativeService.GetByIdAsync(initiativeCreature.Id)) > 0)
         {
             Initiative.Remove(initiativeCreature);
         }
@@ -120,7 +117,7 @@ public partial class CreatureListViewModel : BaseViewModel
     [RelayCommand]
     async Task DeleteCreature(Creature creature)
     {
-        if (await creatureService.DeleteAsync(await creatureService.GetByIdAsync(creature.Id)) > 0)
+        if (await CreatureService.DeleteAsync(await CreatureService.GetByIdAsync(creature.Id)) > 0)
         {
             if (creature.IsPlayer)
                 Players.Remove(creature);
@@ -162,7 +159,7 @@ public partial class CreatureListViewModel : BaseViewModel
     [RelayCommand]
     public async Task<Creature> GetCreature(int iD)
     {
-        return await creatureService.GetByIdAsync(iD);
+        return await CreatureService.GetByIdAsync(iD);
     }
 
     [RelayCommand]

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:TimeForBattle.Model"
              xmlns:viewmodel="clr-namespace:TimeForBattle.ViewModel"
-             x:DataType="viewmodel:CreatureListViewModel"
+             x:DataType="viewmodel:InitiativeViewModel"
              Title="{Binding Title}"
              x:Class="TimeForBattle.View.InitiativePage">
 
@@ -18,23 +18,55 @@
         </CollectionView.ItemsLayout>
 
         <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="model:Creature">
+            <DataTemplate x:DataType="model:InitiativeCreature">
                 <Grid Padding="0">
-                    <Border HeightRequest="30">
+                    <Border HeightRequest="60"
+                            WidthRequest="300"
+                            Stroke="DarkRed"
+                            StrokeThickness="2">
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer CommandParameter="{Binding .}" />
                         </Border.GestureRecognizers>
-                        <Grid ColumnDefinitions="*,150"
-                              ColumnSpacing="5"
-                              RowDefinitions="*"
+                        <Grid ColumnDefinitions="100,*,*,*,*"
+                              ColumnSpacing="0"
+                              RowDefinitions="20,20"
                               RowSpacing="0"
                               Padding="0">
                             <Label Grid.Column="0"
                                    Grid.Row="0"
+                                   Grid.RowSpan="2"
                                    Text="{Binding Name}"
                                    VerticalOptions="Center" />
                             <Button Grid.Column="1"
                                     Grid.Row="0"
+                                    Text="+"
+                                    VerticalOptions="Center"
+                                    WidthRequest="40"
+                                    HeightRequest="20"/>
+                            <Button Grid.Column="1"
+                                    Grid.Row="1"
+                                    Text="-"
+                                    VerticalOptions="Center"
+                                    WidthRequest="40"
+                                    HeightRequest="20" />
+                            <Entry Grid.Column="2"
+                                   Grid.Row="0"
+                                   Grid.RowSpan="2"
+                                   Text="{Binding CurrentHitPoints}"
+                                   WidthRequest="40"
+                                   MinimumWidthRequest="40"
+                                   VerticalOptions="Center" 
+                                   MaxLength="3"
+                                   Keyboard="Numeric"/>
+                            <Label Grid.Column="3"
+                                   Grid.Row="0"
+                                   Grid.RowSpan="2"
+                                   Text="{Binding MaximumHitPoints, StringFormat='{} / {0}'}"
+                                   VerticalOptions="Center" />
+
+                            <Button Grid.Column="4"
+                                    Grid.Row="0"
+                                    Grid.RowSpan="2"
                                     Text="Remove"
                                     CommandParameter="{Binding .}"
                                     Command="{Binding x:DataType='viewmodel:CreatureListViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:CreatureListViewModel}}, Path=RemoveFromInitiativeCommand}" />

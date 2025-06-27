@@ -1,11 +1,28 @@
+using TimeForBattle.Services;
+using TimeForBattle.View;
+
 namespace TimeForBattle.ViewModel;
 
 public partial class InitiativeViewModel : BaseViewModel
 {
-    public InitiativeViewModel()
-    {
+    public CreatureService<InitiativeCreature> InitiativeService;
+    public ObservableCollection<InitiativeCreature> Initiative { get; }
 
+    public InitiativeViewModel(CreatureService<InitiativeCreature> initiativeService)
+    {
+        this.InitiativeService = initiativeService;
+        Initiative = [];
     }
 
-    [ObservableProperty] List<Creature> initiative;
+    [RelayCommand]
+    public async Task RefreshInitiative()
+    {
+        List<InitiativeCreature> initiativeCreatureData = await InitiativeService.GetAllAsync();
+        Initiative.Clear();
+
+        foreach (InitiativeCreature initiativeCreature in initiativeCreatureData)
+        {
+            Initiative.Add(initiativeCreature);
+        }
+    }
 }
