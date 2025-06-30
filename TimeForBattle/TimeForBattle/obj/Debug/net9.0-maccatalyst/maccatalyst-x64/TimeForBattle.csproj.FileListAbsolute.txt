@@ -302,3 +302,5 @@ D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-maccatalyst
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\TimeForBattle.pdb
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\TimeForBattle.genruntimeconfig.cache
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\ref\TimeForBattle.dll
+D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\CommunityToolkit.Maui.dll
+D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\CommunityToolkit.Maui.Core.dll

@@ -4,6 +4,7 @@ namespace TimeForBattle.Model;
 public partial class InitiativeCreature : Creature
 {
     public int CreatureID { get; set; }
+    [ObservableProperty] public int? gridID;
     [ObservableProperty] public int currentHitPoints;
     [ObservableProperty] public int? initiative;
 
@@ -13,6 +14,7 @@ public partial class InitiativeCreature : Creature
     {
         this.CreatureID = creature.Id;
         this.Initiative = null;
+        this.GridID = null;
         this.CurrentHitPoints = creature.MaximumHitPoints;
 
         this.Name = creature.Name;

@@ -328,7 +328,7 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 Command="{Binding GoToInitiativeCommand}"
-                Text="Roll for Initiative"
+                Text="View Initiative"
                 BorderColor="Black"
                 CornerRadius="0" />
     </Grid>
