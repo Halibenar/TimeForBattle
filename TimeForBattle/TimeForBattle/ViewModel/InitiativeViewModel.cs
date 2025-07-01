@@ -6,7 +6,7 @@ namespace TimeForBattle.ViewModel;
 public partial class InitiativeViewModel : BaseViewModel
 {
     public CreatureService<InitiativeCreature> InitiativeService;
-    public ObservableCollection<InitiativeCreature> Initiative { get; }
+    [ObservableProperty] public ObservableCollection<InitiativeCreature> initiative = new();
 
     public InitiativeViewModel(CreatureService<InitiativeCreature> initiativeService)
     {
@@ -23,6 +23,37 @@ public partial class InitiativeViewModel : BaseViewModel
         foreach (InitiativeCreature initiativeCreature in initiativeCreatureData)
         {
             Initiative.Add(initiativeCreature);
+        }
+    }
+
+    [RelayCommand]
+    void RollInitiative()
+    {
+        Random rng = new();
+
+        foreach(InitiativeCreature creature in Initiative)
+        {
+            if (!creature.IsPlayer)
+            {
+                int initiative = rng.Next(1, 21) + creature.InitiativeBonus;
+                creature.Initiative = initiative;
+                Task.Run(() => InitiativeService.SaveAsync(creature));
+            }
+
+        }
+
+        SortInitiative();
+    }
+
+    [RelayCommand]
+    public void SortInitiative()
+    {
+        var sortedCreatures = Initiative.OrderByDescending(x => x.Initiative).ThenByDescending(x => x.InitiativeBonus).ToList();
+
+        Initiative.Clear();
+        foreach (var creature in sortedCreatures)
+        {
+            Initiative.Add(creature);
         }
     }
 }
