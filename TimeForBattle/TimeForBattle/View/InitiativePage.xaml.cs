@@ -15,4 +15,9 @@ public partial class InitiativePage : ContentPage
     {
         viewModel.RefreshInitiative();
     }
+
+    private void Entry_TextCompleted(object sender, EventArgs e)
+    {
+        viewModel.SortInitiative();
+    }
 }

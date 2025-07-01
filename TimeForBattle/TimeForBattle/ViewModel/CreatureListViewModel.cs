@@ -161,34 +161,4 @@ public partial class CreatureListViewModel : BaseViewModel
     {
         return await CreatureService.GetByIdAsync(iD);
     }
-
-    [RelayCommand]
-    void RollInitiative()
-    {
-        //Random rng = new Random();
-
-        //Parallel.ForEach(Initiative, creature =>
-        //{
-        //    //if (character.Type == "NPC")
-
-        //        int initiative = rng.Next(1, 21) + creature.InitiativeBonus;
-        //        creature.Initiative = initiative;
-        //        creatureService.SaveAsync(creature);
-
-        //});
-
-        //SortInitiative();
-    }
-
-    [RelayCommand]
-    void SortInitiative()
-    {
-        //    var sortedCreatures = Creatures.OrderByDescending(x => x.Initiative).ThenByDescending(x => x.Bonus).ToList();
-
-        //    Creatures.Clear();
-        //    foreach (var creature in sortedCreatures)
-        //    {
-        //        Creatures.Add(creature);
-        //    }
-    }
 }
