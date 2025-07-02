@@ -14,6 +14,7 @@ public partial class CreatureListViewModel : BaseViewModel
     public ObservableCollection<InitiativeCreature> Initiative { get; }
 
     public bool ViewMonsters;
+    public Combat currentCombat;
 
     public CreatureListViewModel(CreatureService<Creature> creatureService, CreatureService<InitiativeCreature> initiativeService)
     {
@@ -25,6 +26,11 @@ public partial class CreatureListViewModel : BaseViewModel
         Players = [];
         Initiative = [];
         ViewMonsters = true;
+        currentCombat = new()
+        {
+            Id = 1
+        };
+
     }
 
     [ObservableProperty] bool isRefreshing;
@@ -86,7 +92,11 @@ public partial class CreatureListViewModel : BaseViewModel
         if (this.Initiative is null)
             return;
 
-        await Shell.Current.GoToAsync($"{nameof(InitiativePage)}", true);
+        await Shell.Current.GoToAsync($"{nameof(InitiativePage)}", true,
+            new Dictionary<string, object>
+            {
+                {"Combat", currentCombat}
+            });
     }
 
     [RelayCommand]
@@ -95,7 +105,7 @@ public partial class CreatureListViewModel : BaseViewModel
         if (creature is null)
             return;
 
-        InitiativeCreature initiativeCreature = new(creature);
+        InitiativeCreature initiativeCreature = new(creature, currentCombat.Id);
 
         await InitiativeService.SaveAsync(initiativeCreature);
 

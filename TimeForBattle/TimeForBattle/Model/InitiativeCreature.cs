@@ -4,18 +4,20 @@ namespace TimeForBattle.Model;
 public partial class InitiativeCreature : Creature
 {
     public int CreatureID { get; set; }
-    [ObservableProperty] public int? gridID;
+    public int CombatID { get; set; }
     [ObservableProperty] public int currentHitPoints;
     [ObservableProperty] public int? initiative;
+    [ObservableProperty] public bool isTurn;
 
     public InitiativeCreature() { }
 
-    public InitiativeCreature(Creature creature)
+    public InitiativeCreature(Creature creature, int combatID)
     {
         this.CreatureID = creature.Id;
+        this.CombatID = combatID;
         this.Initiative = null;
-        this.GridID = null;
         this.CurrentHitPoints = creature.MaximumHitPoints;
+        this.IsTurn = false;
 
         this.Name = creature.Name;
         this.IsPlayer = creature.IsPlayer;
@@ -57,6 +59,7 @@ public partial class InitiativeCreature : Creature
         this.BonusActions = creature.BonusActions;
         this.Reactions = creature.Reactions;
         this.LegendaryActions = creature.LegendaryActions;
+        CombatID = combatID;
     }
 }
 

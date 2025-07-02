@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:TimeForBattle.Model"
              xmlns:viewmodel="clr-namespace:TimeForBattle.ViewModel"
+             xmlns:converters="clr-namespace:TimeForBattle.Converters"
              x:DataType="viewmodel:InitiativeViewModel"
              Title="{Binding Title}"
              x:Class="TimeForBattle.View.InitiativePage"
@@ -24,15 +25,13 @@
 
         <Button Grid.Column="1"
                 Grid.Row="1"
-                Text="Previous" />
-
-        <Label Grid.Column="2"
-            Grid.Row="1"
-            Text="..." />
+                Text="Previous"
+                Command="{Binding PreviousCreatureCommand}" />
 
         <Button Grid.Column="3"
                 Grid.Row="1"
-                Text="Next" />
+                Text="Next"
+                Command="{Binding NextCreatureCommand}" />
 
         <ScrollView Grid.Column="1"
                     Grid.ColumnSpan="3"
@@ -53,13 +52,19 @@
                                               Grid.Row="0"
                                               Grid.RowSpan="1">
                                 <toolkit:Expander.Header>
-                                    <Grid ColumnDefinitions="*,*,*,*"
+                                    <Grid ColumnDefinitions="*,*,*,*,*"
                                           ColumnSpacing="0"
                                           RowDefinitions="*"
                                           RowSpacing="0"
                                           Padding="3,3,3,3">
 
-                                        <Entry Grid.Column="0"
+
+                                        <Label Grid.Column="0"
+                                               Grid.Row="0"
+                                               Text="Yes"
+                                               IsVisible="{Binding IsTurn}" />
+
+                                        <Entry Grid.Column="1"
                                                Grid.Row="0"
                                                Text="{Binding Initiative}"
                                                WidthRequest="35"
@@ -68,18 +73,10 @@
                                                MaxLength="2"
                                                Keyboard="Numeric"
                                                Completed="Entry_TextCompleted"/>
-                                        <Label Grid.Column="1"
+                                        <Label Grid.Column="2"
                                                Grid.Row="0"
                                                Text="{Binding Name}"
                                                VerticalOptions="Center" />
-                                        <Entry Grid.Column="2"
-                                               Grid.Row="0"
-                                               Text="{Binding GridID}"
-                                               WidthRequest="45"
-                                               MinimumWidthRequest="45"
-                                               VerticalOptions="Center"
-                                               MaxLength="3"
-                                               Keyboard="Numeric" />
                                     </Grid>
                                 </toolkit:Expander.Header>
                                 <Grid ColumnDefinitions="*,*,*,*"
