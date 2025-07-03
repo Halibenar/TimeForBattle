@@ -19,7 +19,7 @@ public partial class InitiativeViewModel : BaseViewModel
     [RelayCommand]
     public async Task RefreshInitiative()
     {
-        List<InitiativeCreature> initiativeCreatureData = await InitiativeService.GetAllAsync();
+        List<InitiativeCreature> initiativeCreatureData = await InitiativeService.GetAllByCategoryAsync(combat.Id);
         Initiative.Clear();
 
         foreach (InitiativeCreature initiativeCreature in initiativeCreatureData)

@@ -18,16 +18,19 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+        builder.Services.AddSingleton<MainMenuPage>();
         builder.Services.AddSingleton<CreatureListPage>();
         builder.Services.AddTransient<CreatureDetailsPage>();
 		builder.Services.AddTransient<AddCreaturePage>();
 		builder.Services.AddSingleton<InitiativePage>();
 
+        builder.Services.AddSingleton<MainMenuViewModel>();
         builder.Services.AddSingleton<CreatureListViewModel>();
         builder.Services.AddTransient<CreatureDetailsViewModel>();
         builder.Services.AddTransient<AddCreatureViewModel>();
         builder.Services.AddSingleton<InitiativeViewModel>();
 
+        builder.Services.AddSingleton<CreatureService<Combat>>();
         builder.Services.AddSingleton<CreatureService<Creature>>();
 		builder.Services.AddSingleton<CreatureService<InitiativeCreature>>();
 		builder.Services.AddSingleton<DialogService>();

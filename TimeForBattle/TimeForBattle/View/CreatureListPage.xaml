@@ -246,7 +246,6 @@
                                                 Text="View"
                                                 CommandParameter="{Binding .}"
                                                 Command="{Binding x:DataType='viewmodel:CreatureListViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:CreatureListViewModel}}, Path=GoToDetailsCommand}" />
-
                                     </Grid>
                                 </Border>
                             </Grid>
