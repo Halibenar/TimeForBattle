@@ -19,6 +19,12 @@ public partial class CreatureService<T> where T : DatabaseObject, new()
         return await database.Table<T>().ToListAsync();
     }
 
+    public async Task<List<T>> GetAllByCategoryAsync(int category)
+    {
+        await Init();
+        return await database.Table<T>().Where(i => i.Category == category).ToListAsync();
+    }
+
     public async Task<T> GetByIdAsync(int id)
     {
         await Init();

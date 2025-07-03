@@ -3,6 +3,7 @@ using TimeForBattle.View;
 
 namespace TimeForBattle.ViewModel;
 
+[QueryProperty("Combat", "Combat")]
 public partial class CreatureListViewModel : BaseViewModel
 {
     [ObservableProperty] public ObservableCollection<Creature> creatures = new();
@@ -14,7 +15,7 @@ public partial class CreatureListViewModel : BaseViewModel
     public ObservableCollection<InitiativeCreature> Initiative { get; }
 
     public bool ViewMonsters;
-    public Combat currentCombat;
+    [ObservableProperty] public Combat combat;
 
     public CreatureListViewModel(CreatureService<Creature> creatureService, CreatureService<InitiativeCreature> initiativeService)
     {
@@ -26,11 +27,6 @@ public partial class CreatureListViewModel : BaseViewModel
         Players = [];
         Initiative = [];
         ViewMonsters = true;
-        currentCombat = new()
-        {
-            Id = 1
-        };
-
     }
 
     [ObservableProperty] bool isRefreshing;
@@ -51,7 +47,7 @@ public partial class CreatureListViewModel : BaseViewModel
                 Monsters.Add(creature);
         }
 
-        List<InitiativeCreature> initiativeCreatureData = await InitiativeService.GetAllAsync();
+        List<InitiativeCreature> initiativeCreatureData = await InitiativeService.GetAllByCategoryAsync(Combat.Id);
         Initiative.Clear();
 
         foreach (InitiativeCreature initiativeCreature in initiativeCreatureData)
@@ -95,7 +91,7 @@ public partial class CreatureListViewModel : BaseViewModel
         await Shell.Current.GoToAsync($"{nameof(InitiativePage)}", true,
             new Dictionary<string, object>
             {
-                {"Combat", currentCombat}
+                {"Combat", Combat}
             });
     }
 
@@ -105,7 +101,7 @@ public partial class CreatureListViewModel : BaseViewModel
         if (creature is null)
             return;
 
-        InitiativeCreature initiativeCreature = new(creature, currentCombat.Id);
+        InitiativeCreature initiativeCreature = new(creature, Combat.Id);
 
         await InitiativeService.SaveAsync(initiativeCreature);
 
@@ -164,11 +160,5 @@ public partial class CreatureListViewModel : BaseViewModel
             {
                 {"Creature", creature}
             });
-    }
-
-    [RelayCommand]
-    public async Task<Creature> GetCreature(int iD)
-    {
-        return await CreatureService.GetByIdAsync(iD);
     }
 }
