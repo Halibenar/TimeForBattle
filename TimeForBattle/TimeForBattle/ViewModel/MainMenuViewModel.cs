@@ -44,7 +44,7 @@ public partial class MainMenuViewModel : BaseViewModel
             combat.Name = NewCombatName;
         await CombatService.SaveAsync(combat);
 
-        await Shell.Current.GoToAsync($"{nameof(CreatureListPage)}", true,
+        await Shell.Current.GoToAsync($"{nameof(InitiativePage)}", true,
             new Dictionary<string, object>
             {
                 {"Combat", combat}
@@ -70,7 +70,7 @@ public partial class MainMenuViewModel : BaseViewModel
         if (combat is null)
             return;
 
-        await Shell.Current.GoToAsync($"{nameof(CreatureListPage)}", true,
+        await Shell.Current.GoToAsync($"{nameof(InitiativePage)}", true,
             new Dictionary<string, object>
             {
                 {"Combat", combat}

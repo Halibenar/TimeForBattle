@@ -26,54 +26,81 @@ public partial class InitiativeViewModel : BaseViewModel
         {
             Initiative.Add(initiativeCreature);
         }
-        SortInitiative();
+        SortInitiativeAsync();
     }
 
     [RelayCommand]
-    void RollInitiative()
+    public async Task GoToCreatureListAsync()
+    {
+        if (this.Combat is null)
+            return;
+
+        await Shell.Current.GoToAsync($"{nameof(CreatureListPage)}", true,
+            new Dictionary<string, object>
+            {
+                {"Combat", Combat}
+            });
+    }
+
+    [RelayCommand]
+    public async Task RollInitiativeAsync()
     {
         if (Initiative is null || Initiative.Count == 0)
             return;
 
-        Random rng = new();
-
-        foreach (InitiativeCreature creature in Initiative)
+        await Task.Run(() =>
         {
-            if (!creature.IsPlayer)
+            Random rng = new();
+
+            foreach (InitiativeCreature creature in Initiative)
             {
-                int initiative = rng.Next(1, 21) + creature.InitiativeBonus;
-                creature.Initiative = initiative;
+                if (!creature.IsPlayer)
+                {
+                    int initiative = rng.Next(1, 21) + creature.InitiativeBonus;
+                    creature.Initiative = initiative;
+                }
+
                 Task.Run(() => InitiativeService.SaveAsync(creature));
             }
-        }
+        });
 
-        SortInitiative();
+        await SortInitiativeAsync();
 
         InitiativeCreature? currentCreature = Initiative.FirstOrDefault(x => x.IsTurn == true, null);
 
         if (currentCreature is not null)
         {
-            currentCreature.IsTurn = false;
-            Task.Run(() => InitiativeService.SaveAsync(currentCreature));
+           currentCreature.IsTurn = false;
+           await InitiativeService.SaveAsync(currentCreature);
         }
 
         Initiative[0].IsTurn = true;
-        Task.Run(() => InitiativeService.SaveAsync(Initiative[0]));
+        await InitiativeService.SaveAsync(Initiative[0]);
     }
 
     [RelayCommand]
-    public void SortInitiative()
+    public async Task SortInitiativeAsync()
     {
         if (Initiative is null || Initiative.Count == 0)
             return;
 
-        var sortedCreatures = Initiative.OrderByDescending(x => x.Initiative).ThenByDescending(x => x.InitiativeBonus).ToList();
-
-        Initiative.Clear();
-        foreach (var creature in sortedCreatures)
+        await Task.Run(() =>
         {
-            Initiative.Add(creature);
-        }
+            var sortedCreatures = Initiative.OrderByDescending(x => x.Initiative).ThenByDescending(x => x.InitiativeBonus).ToList();
+
+            Initiative.Clear();
+            foreach (var creature in sortedCreatures)
+            {
+                Initiative.Add(creature);
+            }
+        });
+    }
+
+    [RelayCommand]
+    public async Task SaveInitiativeInputAsync(InitiativeCreature initiativeCreature)
+    {
+        await InitiativeService.SaveAsync(initiativeCreature);
+        await SortInitiativeAsync();
     }
 
     [RelayCommand]
