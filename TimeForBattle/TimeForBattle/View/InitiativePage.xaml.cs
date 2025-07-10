@@ -11,13 +11,20 @@ public partial class InitiativePage : ContentPage
 		this.viewModel = viewModel;
 	}
 
-    protected override void OnAppearing()
+    protected async override void OnAppearing()
     {
-        viewModel.RefreshInitiative();
+        base.OnAppearing();
+        await viewModel.RefreshInitiativeAsync();
     }
 
-    private void InitiativeEntryCompleted(object sender, EventArgs e)
+    protected async override void OnNavigatingFrom(NavigatingFromEventArgs args)
     {
-        viewModel.SaveInitiativeInputAsync();
+        base.OnNavigatingFrom(args);
+        await viewModel.SaveCombatAsync();
+    }
+
+    private async void InitiativeEntryCompleted(object sender, EventArgs e)
+    {
+        await viewModel.SaveCombatAsync();
     }
 }

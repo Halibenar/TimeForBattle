@@ -7,9 +7,4 @@ public partial class AddCreaturePage : ContentPage
         InitializeComponent();
         BindingContext = viewModel;
     }
-
-    protected override void OnNavigatedTo(NavigatedToEventArgs args)
-    {
-        base.OnNavigatedTo(args);
-    }
 }

@@ -7,6 +7,7 @@ public partial class InitiativeCreature : Creature
     [ObservableProperty] public int currentHitPoints;
     [ObservableProperty] public int? initiative;
     [ObservableProperty] public bool isTurn;
+    [ObservableProperty] public bool isExpanded;
 
     public InitiativeCreature() { }
 
@@ -17,6 +18,7 @@ public partial class InitiativeCreature : Creature
         this.Initiative = null;
         this.CurrentHitPoints = creature.MaximumHitPoints;
         this.IsTurn = false;
+        this.IsExpanded = false;
 
         this.Name = creature.Name;
         this.IsPlayer = creature.IsPlayer;

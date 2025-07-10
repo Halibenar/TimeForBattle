@@ -11,8 +11,8 @@ public partial class CreatureListPage : ContentPage
 		this.viewModel = viewModel;
     }
 
-    protected override void OnAppearing()
+    protected async override void OnAppearing()
 	{
-		viewModel.RefreshCreatures();
+		await viewModel.RefreshCreatures();
 	}
 }
