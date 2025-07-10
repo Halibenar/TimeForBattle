@@ -6,33 +6,40 @@ namespace TimeForBattle.ViewModel;
 [QueryProperty("Combat", "Combat")]
 public partial class InitiativeViewModel : BaseViewModel
 {
+    public CreatureService<Creature> CreatureService;
     public CreatureService<InitiativeCreature> InitiativeService;
+    public CreatureService<Combat> CombatService;
     [ObservableProperty] public ObservableCollection<InitiativeCreature> initiative = new();
     [ObservableProperty] Combat combat;
 
-    public InitiativeViewModel(CreatureService<InitiativeCreature> initiativeService)
+    public InitiativeViewModel(CreatureService<Creature> creatureService, CreatureService<InitiativeCreature> initiativeService, CreatureService<Combat> combatService)
     {
+        this.CreatureService = creatureService;
         this.InitiativeService = initiativeService;
+        this.CombatService = combatService;
         Initiative = [];
     }
 
     [RelayCommand]
-    public async Task RefreshInitiative()
+    public async Task RefreshInitiativeAsync()
     {
-        List<InitiativeCreature> initiativeCreatureData = await InitiativeService.GetAllByCategoryAsync(combat.Id);
+        if (Combat is null)
+            return;
+
+        List<InitiativeCreature> initiativeCreatureData = await InitiativeService.GetAllByCategoryAsync(Combat.Id);
+
         Initiative.Clear();
 
         foreach (InitiativeCreature initiativeCreature in initiativeCreatureData)
-        {
             Initiative.Add(initiativeCreature);
-        }
-        SortInitiativeAsync();
+
+        await SortInitiativeAsync();
     }
 
     [RelayCommand]
     public async Task GoToCreatureListAsync()
     {
-        if (this.Combat is null)
+        if (Combat is null)
             return;
 
         await Shell.Current.GoToAsync($"{nameof(CreatureListPage)}", true,
@@ -70,8 +77,8 @@ public partial class InitiativeViewModel : BaseViewModel
 
         if (currentCreature is not null)
         {
-           currentCreature.IsTurn = false;
-           await InitiativeService.SaveAsync(currentCreature);
+            currentCreature.IsTurn = false;
+            await InitiativeService.SaveAsync(currentCreature);
         }
 
         Initiative[0].IsTurn = true;
@@ -84,23 +91,32 @@ public partial class InitiativeViewModel : BaseViewModel
         if (Initiative is null || Initiative.Count == 0)
             return;
 
+        List<InitiativeCreature> sortedCreatures = [];
+
         await Task.Run(() =>
         {
-            var sortedCreatures = Initiative.OrderByDescending(x => x.Initiative).ThenByDescending(x => x.InitiativeBonus).ToList();
-
-            Initiative.Clear();
-            foreach (var creature in sortedCreatures)
-            {
-                Initiative.Add(creature);
-            }
+            sortedCreatures = Initiative.OrderByDescending(x => x.Initiative).ThenByDescending(x => x.InitiativeBonus).ToList();
         });
+
+        Initiative.Clear();
+
+        foreach (InitiativeCreature creature in sortedCreatures)
+            Initiative.Add(creature);
     }
 
     [RelayCommand]
-    public async Task SaveInitiativeInputAsync(InitiativeCreature initiativeCreature)
+    public async Task SaveCombatAsync()
     {
-        await InitiativeService.SaveAsync(initiativeCreature);
-        await SortInitiativeAsync();
+        if (Combat is null)
+            return;
+        
+        await CombatService.SaveAsync(Combat);
+
+        if (Initiative is null || Initiative.Count == 0)
+            return;
+        
+        foreach (InitiativeCreature creature in Initiative.ToList())
+            await InitiativeService.SaveAsync(creature);
     }
 
     [RelayCommand]
@@ -160,5 +176,20 @@ public partial class InitiativeViewModel : BaseViewModel
             previousCreature.IsTurn = true;
             Task.Run(() => InitiativeService.SaveAsync(previousCreature));
         }
+    }
+
+    [RelayCommand]
+    public async Task GoToDetailsAsync(InitiativeCreature initiativeCreature)
+    {
+        if (initiativeCreature is null)
+            return;
+
+        Creature creature = await CreatureService.GetByIdAsync(initiativeCreature.CreatureID);
+
+        await Shell.Current.GoToAsync($"{nameof(CreatureDetailsPage)}", true,
+            new Dictionary<string, object>
+            {
+                {"Creature", creature}
+            });
     }
 }

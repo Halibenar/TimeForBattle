@@ -11,8 +11,8 @@ public partial class MainMenuPage : ContentPage
         this.viewModel = viewModel;
     }
 
-    protected override void OnAppearing()
+    protected async override void OnAppearing()
     {
-        viewModel.RefreshCombats();
+        await viewModel.RefreshCombats();
     }
 }
