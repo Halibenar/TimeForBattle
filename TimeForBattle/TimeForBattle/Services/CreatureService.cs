@@ -4,9 +4,9 @@ namespace TimeForBattle.Services;
 
 public partial class CreatureService<T> where T : DatabaseObject, new()
 {
-    SQLiteAsyncConnection database;
+    public SQLiteAsyncConnection database;
 
-    async Task Init()
+    public async Task Init()
     {
         if (database is null)
             database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
@@ -19,12 +19,6 @@ public partial class CreatureService<T> where T : DatabaseObject, new()
         return await database.Table<T>().ToListAsync();
     }
 
-    public async Task<List<T>> GetAllByCategoryAsync(int category)
-    {
-        await Init();
-        return await database.Table<T>().Where(i => i.Category == category).ToListAsync();
-    }
-
     public async Task<T> GetByIdAsync(int id)
     {
         await Init();
@@ -35,16 +29,23 @@ public partial class CreatureService<T> where T : DatabaseObject, new()
     {
         await Init();
 
-        if (t.Id != 0)
-            return await database.UpdateAsync(t);
-        else
-            return await database.InsertAsync(t);
-        
+        if (t is not null)
+        {
+            if (t.Id != 0)
+                return await database.UpdateAsync(t);
+            else
+                return await database.InsertAsync(t);
+        }
+
+        return 0;
     } 
 
     public async Task<int> DeleteAsync(T t)
     {
         await Init();
-        return await database.DeleteAsync(t);
+        if (t is not null)
+            return await database.DeleteAsync(t);
+
+        return 0;
     }
 }

@@ -7,12 +7,12 @@ namespace TimeForBattle.ViewModel;
 public partial class InitiativeViewModel : BaseViewModel
 {
     public CreatureService<Creature> CreatureService;
-    public CreatureService<InitiativeCreature> InitiativeService;
+    public InitiativeService<InitiativeCreature> InitiativeService;
     public CreatureService<Combat> CombatService;
     [ObservableProperty] public ObservableCollection<InitiativeCreature> initiative = new();
     [ObservableProperty] Combat combat;
 
-    public InitiativeViewModel(CreatureService<Creature> creatureService, CreatureService<InitiativeCreature> initiativeService, CreatureService<Combat> combatService)
+    public InitiativeViewModel(CreatureService<Creature> creatureService, InitiativeService<InitiativeCreature> initiativeService, CreatureService<Combat> combatService)
     {
         this.CreatureService = creatureService;
         this.InitiativeService = initiativeService;
@@ -26,7 +26,7 @@ public partial class InitiativeViewModel : BaseViewModel
         if (Combat is null)
             return;
 
-        List<InitiativeCreature> initiativeCreatureData = await InitiativeService.GetAllByCategoryAsync(Combat.Id);
+        List<InitiativeCreature> initiativeCreatureData = await InitiativeService.GetAllByCombatAsync(Combat.Id);
 
         Initiative.Clear();
 
@@ -61,7 +61,7 @@ public partial class InitiativeViewModel : BaseViewModel
 
             foreach (InitiativeCreature creature in Initiative)
             {
-                if (!creature.IsPlayer)
+                if (!creature.IsPlayer && !creature.Initiative.HasValue)
                 {
                     int initiative = rng.Next(1, 21) + creature.InitiativeBonus;
                     creature.Initiative = initiative;
@@ -75,14 +75,14 @@ public partial class InitiativeViewModel : BaseViewModel
 
         InitiativeCreature? currentCreature = Initiative.FirstOrDefault(x => x.IsTurn == true, null);
 
-        if (currentCreature is not null)
+        if (currentCreature is null)
         {
-            currentCreature.IsTurn = false;
-            await InitiativeService.SaveAsync(currentCreature);
+            Initiative[0].IsTurn = true;
+            await InitiativeService.SaveAsync(Initiative[0]);
         }
 
-        Initiative[0].IsTurn = true;
-        await InitiativeService.SaveAsync(Initiative[0]);
+        Combat.IsStarted = true;
+        await CombatService.SaveAsync(Combat);
     }
 
     [RelayCommand]
@@ -114,13 +114,15 @@ public partial class InitiativeViewModel : BaseViewModel
 
         if (Initiative is null || Initiative.Count == 0)
             return;
-        
+
         foreach (InitiativeCreature creature in Initiative.ToList())
+        {
             await InitiativeService.SaveAsync(creature);
+        }
     }
 
     [RelayCommand]
-    public void NextCreature()
+    public async Task NextCreature()
     {
         if (Initiative is null || Initiative.Count == 0)
             return;
@@ -133,10 +135,14 @@ public partial class InitiativeViewModel : BaseViewModel
             if (Initiative.IndexOf(currentCreature) + 1 < Initiative.Count)
                 nextCreature = Initiative[Initiative.IndexOf(currentCreature) + 1];
             else
+            {
                 nextCreature = Initiative[0];
-
+                Combat.RoundCount++;
+                await CombatService.SaveAsync(Combat);
+            }
+               
             currentCreature.IsTurn = false;
-            Task.Run(() => InitiativeService.SaveAsync(currentCreature));
+            await Task.Run(() => InitiativeService.SaveAsync(currentCreature));
         }
         else
             nextCreature = Initiative[0];
@@ -144,13 +150,13 @@ public partial class InitiativeViewModel : BaseViewModel
         if (nextCreature is not null)
         {
             nextCreature.IsTurn = true;
-            Task.Run(() => InitiativeService.SaveAsync(nextCreature));
+            await Task.Run(() => InitiativeService.SaveAsync(nextCreature));
         }
 
     }
 
     [RelayCommand]
-    public void PreviousCreature()
+    public async Task PreviousCreature()
     {
         if (Initiative is null || Initiative.Count == 0)
             return;
@@ -163,10 +169,15 @@ public partial class InitiativeViewModel : BaseViewModel
             if (Initiative.IndexOf(currentCreature) - 1 >= 0)
                 previousCreature = Initiative[Initiative.IndexOf(currentCreature) - 1];
             else
+            {
                 previousCreature = Initiative[^1];
+                if (Combat.RoundCount > 0)
+                    Combat.RoundCount--;
+                await CombatService.SaveAsync(Combat);
+            }
 
             currentCreature.IsTurn = false;
-            Task.Run(() => InitiativeService.SaveAsync(currentCreature));
+            await Task.Run(() => InitiativeService.SaveAsync(currentCreature));
         }
         else
             previousCreature = Initiative[0];
@@ -174,7 +185,7 @@ public partial class InitiativeViewModel : BaseViewModel
         if (previousCreature is not null)
         {
             previousCreature.IsTurn = true;
-            Task.Run(() => InitiativeService.SaveAsync(previousCreature));
+            await Task.Run(() => InitiativeService.SaveAsync(previousCreature));
         }
     }
 
@@ -191,5 +202,12 @@ public partial class InitiativeViewModel : BaseViewModel
             {
                 {"Creature", creature}
             });
+    }
+
+    [RelayCommand]
+    public async Task PauseInitiativeAsync()
+    {
+        Combat.IsStarted = false;
+        await CombatService.SaveAsync(Combat);
     }
 }

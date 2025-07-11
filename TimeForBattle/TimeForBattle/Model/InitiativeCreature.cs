@@ -4,8 +4,10 @@ namespace TimeForBattle.Model;
 public partial class InitiativeCreature : Creature
 {
     public int CreatureID { get; set; }
+    public int CombatID { get; set; }
     [ObservableProperty] public int currentHitPoints;
     [ObservableProperty] public int? initiative;
+    [ObservableProperty] public int? nameID;
     [ObservableProperty] public bool isTurn;
     [ObservableProperty] public bool isExpanded;
 
@@ -14,7 +16,8 @@ public partial class InitiativeCreature : Creature
     public InitiativeCreature(Creature creature, int combatID)
     {
         this.CreatureID = creature.Id;
-        this.Category = combatID;
+        this.CombatID = combatID;
+        this.NameID = null;
         this.Initiative = null;
         this.CurrentHitPoints = creature.MaximumHitPoints;
         this.IsTurn = false;
