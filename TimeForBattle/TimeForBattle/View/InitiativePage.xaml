@@ -10,27 +10,42 @@
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Name="root">
 
+    <ContentPage.Resources>
+        <converters:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+        <converters:EntryToNullableIntConverter x:Key="EntryToNullableIntConverter" />
+    </ContentPage.Resources>
+
     <Grid ColumnDefinitions="*,*,*"
           ColumnSpacing="0"
           RowDefinitions="Auto,Auto,*">
 
         <Button Grid.Column="0"
                 Grid.Row="0"
-                Text="Roll"
-                Command="{Binding RollInitiativeCommand}" />
-        <Button Grid.Column="1"
+                Text="Start"
+                Command="{Binding RollInitiativeCommand}"
+                IsVisible="{Binding Combat.IsStarted, Converter={StaticResource InvertedBoolConverter}}" />
+        <Button Grid.Column="0"
                 Grid.Row="0"
-                Text="Sort"
-                Command="{Binding SortInitiativeCommand}" />
+                Text="Pause"
+                Command="{Binding PauseInitiativeCommand}"
+                IsVisible="{Binding Combat.IsStarted}" />
         <Button Grid.Column="2"
                 Grid.Row="0"
-                Text="Add"
-                Command="{Binding GoToCreatureListCommand}" />
+                Text="Manage Creatures"
+                LineBreakMode="WordWrap"
+                Command="{Binding GoToCreatureListCommand}"
+                IsVisible="{Binding Combat.IsStarted, Converter={StaticResource InvertedBoolConverter}}" />
 
         <Button Grid.Column="0"
                 Grid.Row="1"
                 Text="Previous"
                 Command="{Binding PreviousCreatureCommand}" />
+
+        <Label Grid.Column="1"
+               Grid.Row="1"
+               Text="{Binding Combat.RoundCount, StringFormat='{}Round {0}'}"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
 
         <Button Grid.Column="2"
                 Grid.Row="1"
@@ -80,22 +95,43 @@
                                               Padding="3,3,3,3">
                                             <Entry Grid.Column="0"
                                                    Grid.Row="0"
-                                                   Text="{Binding Initiative}"
+                                                   Text="{Binding Initiative, Converter={StaticResource EntryToNullableIntConverter}}"
+                                                   IsVisible="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=Combat.IsStarted, Converter={StaticResource InvertedBoolConverter}}"
                                                    WidthRequest="35"
                                                    MinimumWidthRequest="35"
+                                                   HeightRequest="35"
+                                                   MinimumHeightRequest="35"
                                                    VerticalOptions="Center"
                                                    HorizontalOptions="Start"
                                                    MaxLength="2"
                                                    Keyboard="Numeric"
                                                    Completed="InitiativeEntryCompleted" />
-                                            <Label Grid.Column="1"
+                                            <Label Grid.Column="0"
                                                    Grid.Row="0"
-                                                   Text="{Binding Name}"
+                                                   Text="{Binding Initiative}"
+                                                   IsVisible="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=Combat.IsStarted}"
+                                                   WidthRequest="35"
+                                                   MinimumWidthRequest="35"
+                                                   HeightRequest="25"
+                                                   MinimumHeightRequest="24"
+                                                   Margin="11,10,0,0"
                                                    VerticalOptions="Center"
                                                    HorizontalOptions="Start" />
+                                            <HorizontalStackLayout  Grid.Column="1"
+                                                                    Grid.Row="0"
+                                                                    Spacing="2">
+                                                <Label FontAttributes="Bold"
+                                                       VerticalOptions="Center"
+                                                       HorizontalOptions="Start"
+                                                       Text="{Binding Name}" />
+                                                <Label FontAttributes="Bold"
+                                                       VerticalOptions="Center"
+                                                       HorizontalOptions="Start"
+                                                       Text="{Binding NameID}" />
+                                            </HorizontalStackLayout>
                                         </Grid>
                                     </toolkit:Expander.Header>
-                                    
+
                                     <Grid ColumnDefinitions="*,*,*,*"
                                           ColumnSpacing="0"
                                           RowDefinitions="*,*"

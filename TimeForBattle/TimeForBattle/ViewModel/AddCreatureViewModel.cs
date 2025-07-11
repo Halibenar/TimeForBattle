@@ -1,18 +1,19 @@
 ﻿using TimeForBattle.Services;
-using TimeForBattle.View;
 
 namespace TimeForBattle.ViewModel;
 
 [QueryProperty("Creature", "Creature")]
 public partial class AddCreatureViewModel : BaseViewModel
 {
-    public CreatureService<Creature> creatureService;
-    public DialogService dialogService;
+    public CreatureService<Creature> CreatureService;
+    public InitiativeService<InitiativeCreature> InitiativeService;
+    public DialogService DialogService;
 
-    public AddCreatureViewModel(CreatureService<Creature> characterService, DialogService dialogService)
+    public AddCreatureViewModel(CreatureService<Creature> characterService, InitiativeService<InitiativeCreature> initiativeService, DialogService dialogService)
     {
-        this.creatureService = characterService;
-        this.dialogService = dialogService;
+        this.CreatureService = characterService;
+        this.InitiativeService = initiativeService;
+        this.DialogService = dialogService;
     }
 
     [ObservableProperty] Creature creature;
@@ -23,7 +24,7 @@ public partial class AddCreatureViewModel : BaseViewModel
         if (Creature is null)
             return;
 
-        await creatureService.SaveAsync(Creature);
+        await CreatureService.SaveAsync(Creature);
         await Shell.Current.GoToAsync("..");
     }
 
@@ -33,12 +34,18 @@ public partial class AddCreatureViewModel : BaseViewModel
         if (Creature is null)
             return;
 
-        bool answer = await dialogService.ShowConfirmationAsync((ContentPage)AppShell.Current.CurrentPage, "Delete?", "Are you sure you want to delete this creature?", "Yes", "No");
+        bool answer = await DialogService.ShowConfirmationAsync((ContentPage)AppShell.Current.CurrentPage, "Delete?", "Are you sure you want to delete this creature?", "Yes", "No");
         if (answer)
         {
-            if (await creatureService.GetByIdAsync(Creature.Id) is not null) {
-                await creatureService.DeleteAsync(await creatureService.GetByIdAsync(Creature.Id));
+            if (await CreatureService.DeleteAsync(await CreatureService.GetByIdAsync(Creature.Id)) > 0)
+            {
+                List<InitiativeCreature> deleteList = await InitiativeService.GetAllByCreatureAsync(Creature.Id);
+                foreach (InitiativeCreature deleteCreature in deleteList)
+                {
+                    await InitiativeService.DeleteAsync(deleteCreature);
+                }
             }
+
             await Shell.Current.GoToAsync("../..");
         }
     }

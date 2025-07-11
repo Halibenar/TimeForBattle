@@ -3,11 +3,13 @@
 public partial class Combat : DatabaseObject
 {
     [ObservableProperty] public string name;
-    [ObservableProperty] public int turnCount;
+    [ObservableProperty] public int roundCount;
+    [ObservableProperty] public bool isStarted;
     public int currentTurnCreatureID;
-
+    
     public Combat()
     {
-        turnCount = 0;
+        roundCount = 1;
+        isStarted = false;
     }
 }

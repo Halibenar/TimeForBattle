@@ -44,17 +44,29 @@
 
         <Button Grid.Row="0"
                 Grid.Column="1"
-                Command="{Binding NewMonsterCommand}"
                 Text="New Monster"
                 BorderColor="Black"
-                CornerRadius="0" />
+                CornerRadius="0"
+                Command="{Binding NewCreatureCommand}">
+            <Button.CommandParameter>
+                <x:Boolean>
+                    False
+                </x:Boolean>
+            </Button.CommandParameter>
+        </Button>
 
         <Button Grid.Row="1"
                 Grid.Column="1"
-                Command="{Binding NewPlayerCommand}"
                 Text="New Player"
                 BorderColor="Black"
-                CornerRadius="0" />
+                CornerRadius="0"
+                Command="{Binding NewCreatureCommand}">
+            <Button.CommandParameter>
+                <x:Boolean>
+                    True
+                </x:Boolean>
+            </Button.CommandParameter>
+        </Button>
 
         <ScrollView Grid.Row="2"
                     Grid.ColumnSpan="2">
@@ -298,18 +310,19 @@
                     <DataTemplate x:DataType="model:InitiativeCreature">
                         <Grid Padding="0">
                             <Border HeightRequest="30">
-                                <Border.GestureRecognizers>
-                                    <TapGestureRecognizer CommandParameter="{Binding .}" />
-                                </Border.GestureRecognizers>
                                 <Grid ColumnDefinitions="*,80"
                                       ColumnSpacing="5"
                                       RowDefinitions="*"
                                       RowSpacing="0"
                                       Padding="0">
-                                    <Label Grid.Column="0"
-                                           Grid.Row="0"
-                                           Text="{Binding Name}"
-                                           VerticalOptions="Center" />
+                                    <HorizontalStackLayout  Grid.Column="0"
+                                                            Grid.Row="0"
+                                                            Spacing="2">
+                                        <Label VerticalOptions="Center"
+                                               Text="{Binding Name}" />
+                                        <Label VerticalOptions="Center"
+                                               Text="{Binding NameID}" />
+                                    </HorizontalStackLayout>
                                     <Button Grid.Column="1"
                                             Grid.Row="0"
                                             Text="Remove"

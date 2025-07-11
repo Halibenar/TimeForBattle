@@ -1,4 +1,5 @@
-﻿using TimeForBattle.Services;
+﻿using System.ComponentModel.Design;
+using TimeForBattle.Services;
 using TimeForBattle.View;
 
 namespace TimeForBattle.ViewModel;
@@ -8,7 +9,7 @@ public partial class CreatureListViewModel : BaseViewModel
 {
     [ObservableProperty] public ObservableCollection<Creature> creatures = new();
     public CreatureService<Creature> CreatureService;
-    public CreatureService<InitiativeCreature> InitiativeService;
+    public InitiativeService<InitiativeCreature> InitiativeService;
     
     public ObservableCollection<Creature> Monsters { get; }
     public ObservableCollection<Creature> Players { get; }
@@ -17,7 +18,7 @@ public partial class CreatureListViewModel : BaseViewModel
     public bool ViewMonsters;
     [ObservableProperty] public Combat combat;
 
-    public CreatureListViewModel(CreatureService<Creature> creatureService, CreatureService<InitiativeCreature> initiativeService)
+    public CreatureListViewModel(CreatureService<Creature> creatureService, InitiativeService<InitiativeCreature> initiativeService)
     {
         Title = "Creatures";
         this.CreatureService = creatureService;
@@ -47,7 +48,7 @@ public partial class CreatureListViewModel : BaseViewModel
                 Monsters.Add(creature);
         }
 
-        List<InitiativeCreature> initiativeCreatureData = await InitiativeService.GetAllByCategoryAsync(Combat.Id);
+        List<InitiativeCreature> initiativeCreatureData = await InitiativeService.GetAllByCombatAsync(Combat.Id);
         Initiative.Clear();
 
         foreach (InitiativeCreature initiativeCreature in initiativeCreatureData)
@@ -101,11 +102,31 @@ public partial class CreatureListViewModel : BaseViewModel
         if (creature is null)
             return;
 
-        InitiativeCreature initiativeCreature = new(creature, Combat.Id);
+        InitiativeCreature newInitiativeCreature = new(creature, Combat.Id);
 
-        await InitiativeService.SaveAsync(initiativeCreature);
+        int identifier = 1;
+        foreach(InitiativeCreature initiativeCreature in Initiative) {
+            if (initiativeCreature.CreatureID == newInitiativeCreature.CreatureID)
+            {
+                if (initiativeCreature.NameID is null)
+                {
+                    initiativeCreature.NameID = identifier;
+                    await InitiativeService.SaveAsync(initiativeCreature);
+                    identifier++;
+                }
+                else
+                {
+                    identifier = (int)initiativeCreature.NameID + 1;
+                }
+            }
+        }
 
-        Initiative.Add(initiativeCreature);
+        if (identifier > 1)
+            newInitiativeCreature.NameID = identifier;
+
+        await InitiativeService.SaveAsync(newInitiativeCreature);
+
+        Initiative.Add(newInitiativeCreature);
     }
 
     [RelayCommand]
@@ -121,38 +142,11 @@ public partial class CreatureListViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    async Task DeleteCreature(Creature creature)
-    {
-        if (await CreatureService.DeleteAsync(await CreatureService.GetByIdAsync(creature.Id)) > 0)
-        {
-            if (creature.IsPlayer)
-                Players.Remove(creature);
-            else
-                Monsters.Remove(creature);
-        }
-    }
-
-    [RelayCommand]
-    public async Task NewMonsterAsync()
+    public async Task NewCreatureAsync(bool isPlayer)
     {
         Creature creature = new()
         {
-            IsPlayer = false
-        };
-
-        await Shell.Current.GoToAsync($"{nameof(AddCreaturePage)}", true,
-            new Dictionary<string, object>
-            {
-                {"Creature", creature}
-            });
-    }
-
-    [RelayCommand]
-    public async Task NewPlayerAsync()
-    {
-        Creature creature = new()
-        {
-            IsPlayer = true
+            IsPlayer = isPlayer
         };
 
         await Shell.Current.GoToAsync($"{nameof(AddCreaturePage)}", true,
