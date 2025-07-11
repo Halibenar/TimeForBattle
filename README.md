@@ -15,11 +15,11 @@ TimeForBattle aims to assist the Game Master of a tabletop roleplaying game with
 - Add initiative list page (Done!)
 - Add player characters as a seperate class to other creatures (Done!)
 - Add saving and loading separate combat encounters (Done!)
+- Add rolling initiative (Done!)
+  - Automatic rolling and sorting for creatures (Done!)
+  - Custom input of initiative for player characters (Done!)
+  - Separate initiative rolling for creatures added after initiative was rolled (Done!)
 
-- Add rolling initiative
-  - Automatic rolling and sorting for creatures
-  - Custom input of initiative for player characters
-  - Separate initiative rolling for creatures added after initiative was rolled
 - Add HP tracking
   - Input of current HP
   - Subtraction of HP
