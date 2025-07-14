@@ -7,7 +7,6 @@ public partial class MainMenuViewModel : BaseViewModel
 {
     public CreatureService<Combat> CombatService;
     public ObservableCollection<Combat> Combats { get; }
-    [ObservableProperty] public string newCombatName;
 
     public MainMenuViewModel(CreatureService<Combat> combatService)
     {
@@ -38,10 +37,7 @@ public partial class MainMenuViewModel : BaseViewModel
         Combats.Add(combat);
         await CombatService.SaveAsync(combat);
 
-        if (String.IsNullOrEmpty(newCombatName))
-            combat.Name = "Combat #" + combat.Id.ToString();
-        else
-            combat.Name = NewCombatName;
+        combat.Name = "Combat #" + combat.Id.ToString();
         await CombatService.SaveAsync(combat);
 
         await Shell.Current.GoToAsync($"{nameof(InitiativePage)}", true,

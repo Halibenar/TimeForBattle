@@ -5,7 +5,7 @@
              xmlns:viewmodel="clr-namespace:TimeForBattle.ViewModel"
              xmlns:converters="clr-namespace:TimeForBattle.Converters"
              x:DataType="viewmodel:CreatureListViewModel"
-             Title="{Binding Title}"
+             Title="{Binding Combat.Name}"
              x:Class="TimeForBattle.View.CreatureListPage">
 
     <ContentPage.Resources>
