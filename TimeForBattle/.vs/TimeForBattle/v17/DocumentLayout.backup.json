@@ -181,8 +181,7 @@
               "RelativeToolTip": "TimeForBattle\\ViewModel\\BaseViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T12:47:46.55Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-10T12:47:46.55Z"
             },
             {
               "$type": "Document",
@@ -194,8 +193,7 @@
               "RelativeToolTip": "TimeForBattle\\ViewModel\\CreatureListViewModel.cs",
               "ViewState": "AgIAAHkAAAAAAAAAAAAYwJwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T12:47:35.91Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-10T12:47:35.91Z"
             },
             {
               "$type": "Document",
@@ -207,8 +205,7 @@
               "RelativeToolTip": "TimeForBattle\\Model\\Creature.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T12:45:35.078Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-10T12:45:35.078Z"
             },
             {
               "$type": "Document",
@@ -220,8 +217,7 @@
               "RelativeToolTip": "TimeForBattle\\View\\CreatureListPage.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T12:05:20.57Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:05:20.57Z"
             },
             {
               "$type": "Document",
@@ -233,8 +229,7 @@
               "RelativeToolTip": "TimeForBattle\\View\\CreatureListPage.xaml",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAADgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-19T12:01:41.067Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:01:41.067Z"
             },
             {
               "$type": "Document",
@@ -244,7 +239,7 @@
               "RelativeDocumentMoniker": "TimeForBattle\\Services\\CreatureService.cs",
               "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Services\\CreatureService.cs",
               "RelativeToolTip": "TimeForBattle\\Services\\CreatureService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-19T11:40:13.97Z",
               "EditorCaption": ""
@@ -259,8 +254,7 @@
               "RelativeToolTip": "TimeForBattle\\Model\\DatabaseObject.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T14:47:17.633Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-12T14:47:17.633Z"
             },
             {
               "$type": "Document",
@@ -272,8 +266,7 @@
               "RelativeToolTip": "TimeForBattle\\Services\\InitiativeService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-11T14:37:20.452Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-11T14:37:20.452Z"
             },
             {
               "$type": "Document",
@@ -285,8 +278,7 @@
               "RelativeToolTip": "TimeForBattle\\View\\InitiativePage.xaml",
               "ViewState": "AgIAAFcAAAAAAAAAAAAAAIQAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-14T15:22:45.443Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-14T15:22:45.443Z"
             },
             {
               "$type": "Document",
@@ -298,8 +290,7 @@
               "RelativeToolTip": "TimeForBattle\\ViewModel\\AddCreatureViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:19:12.349Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T11:19:12.349Z"
             },
             {
               "$type": "Document",
@@ -311,8 +302,7 @@
               "RelativeToolTip": "TimeForBattle\\View\\AddCreaturePage.xaml",
               "ViewState": "AgIAAEkCAAAAAAAAAAAAAAQAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-31T11:16:33.02Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-31T11:16:33.02Z"
             },
             {
               "$type": "Document",
@@ -324,8 +314,7 @@
               "RelativeToolTip": "TimeForBattle\\View\\CreatureDetailsPage.xaml",
               "ViewState": "AgIAAMEBAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-19T12:15:57.378Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T12:15:57.378Z"
             },
             {
               "$type": "Document",
@@ -337,8 +326,7 @@
               "RelativeToolTip": "TimeForBattle\\Model\\InitiativeCreature.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T18:55:06.769Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-14T18:55:06.769Z"
             },
             {
               "$type": "Document",
@@ -350,8 +338,7 @@
               "RelativeToolTip": "TimeForBattle\\ViewModel\\InitiativeViewModel.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAQwBIAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T15:25:19.713Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-14T15:25:19.713Z"
             },
             {
               "$type": "Document",
@@ -363,8 +350,7 @@
               "RelativeToolTip": "TimeForBattle\\MauiProgram.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T14:19:35.84Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T14:19:35.84Z"
             },
             {
               "$type": "Document",
@@ -376,8 +362,7 @@
               "RelativeToolTip": "TimeForBattle\\View\\MainMenuPage.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T14:13:39.953Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-02T14:13:39.953Z"
             },
             {
               "$type": "Document",
@@ -389,8 +374,7 @@
               "RelativeToolTip": "TimeForBattle\\View\\InitiativePage.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T15:23:34.272Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-14T15:23:34.272Z"
             },
             {
               "$type": "Document",
@@ -402,8 +386,7 @@
               "RelativeToolTip": "TimeForBattle\\View\\MainMenuPage.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-02T14:10:22.675Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-02T14:10:22.675Z"
             },
             {
               "$type": "Document",
@@ -415,8 +398,7 @@
               "RelativeToolTip": "TimeForBattle\\Converters\\EntryToNullabeIntConverter.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-11T12:46:20.088Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-11T12:46:20.088Z"
             },
             {
               "$type": "Document",
@@ -428,8 +410,7 @@
               "RelativeToolTip": "TimeForBattle\\Model\\Combat.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T10:46:36.514Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-02T10:46:36.514Z"
             },
             {
               "$type": "Document",
@@ -477,8 +458,7 @@
               "RelativeToolTip": "TimeForBattle\\App.xaml",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAAGwAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-19T11:59:10.526Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T11:59:10.526Z"
             },
             {
               "$type": "Document",
@@ -514,8 +494,7 @@
               "RelativeToolTip": "TimeForBattle\\AppShell.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-19T11:58:16.115Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T11:58:16.115Z"
             },
             {
               "$type": "Document",
@@ -623,8 +602,7 @@
               "RelativeToolTip": "TimeForBattle\\Resources\\Styles\\Styles.xaml",
               "ViewState": "AgIAAGcAAAAAAAAAAAAmwIwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-20T14:01:18.225Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T14:01:18.225Z"
             },
             {
               "$type": "Document",

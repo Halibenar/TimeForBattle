@@ -8,19 +8,16 @@
              x:Class="TimeForBattle.View.MainMenuPage"
              Title="{Binding Title}">
 
-    <Grid ColumnDefinitions="*,*"
+    <Grid ColumnDefinitions="*,*,*"
           ColumnSpacing="0"
-          RowDefinitions="Auto,Auto,*">
+          RowDefinitions="*,Auto,Auto,*">
 
-        <Entry  Grid.Column="0"
-                Grid.Row="0"
-                Text="{Binding NewCombatName}" />
         <Button Grid.Column="1"
-                Grid.Row="0"
-                Text="Sort"
+                Grid.Row="1"
+                Text="New"
                 Command="{Binding NewCombatCommand}"/>
         <ScrollView Grid.Row="2"
-                    Grid.ColumnSpan="2">
+                    Grid.ColumnSpan="3">
             <FlexLayout BackgroundColor="Transparent"
                         BindableLayout.ItemsSource="{Binding Combats}"
                         Direction="Column"
@@ -31,10 +28,7 @@
                     <DataTemplate x:DataType="model:Combat">
                         <HorizontalStackLayout HorizontalOptions="Center">
 
-                            <Label Text="{Binding Name}"
-                                   FontSize="20"
-                                   VerticalOptions="Center" />
-                            <Button Text="Load"
+                            <Button Text="{Binding Name, StringFormat='{}Load {0}'}"
                                     CommandParameter="{Binding .}"
                                     Command="{Binding x:DataType='viewmodel:MainMenuViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:MainMenuViewModel}}, Path=LoadCombatCommand}" />
                             <Button Text="Del"
