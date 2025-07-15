@@ -34,12 +34,13 @@
                 Text="Manage Creatures"
                 LineBreakMode="WordWrap"
                 Command="{Binding GoToCreatureListCommand}"
-                IsVisible="{Binding Combat.IsStarted, Converter={StaticResource InvertedBoolConverter}}" />
+                IsEnabled="{Binding Combat.IsStarted, Converter={StaticResource InvertedBoolConverter}}" />
 
         <Button Grid.Column="0"
                 Grid.Row="1"
                 Text="Previous"
-                Command="{Binding PreviousCreatureCommand}" />
+                Command="{Binding PreviousCreatureCommand}"
+                IsEnabled="{Binding Combat.IsStarted}"/>
 
         <Label Grid.Column="1"
                Grid.Row="1"
@@ -50,7 +51,8 @@
         <Button Grid.Column="2"
                 Grid.Row="1"
                 Text="Next"
-                Command="{Binding NextCreatureCommand}" />
+                Command="{Binding NextCreatureCommand}"
+                IsEnabled="{Binding Combat.IsStarted}"/>
 
         <ScrollView Grid.Column="0"
                     Grid.ColumnSpan="3"

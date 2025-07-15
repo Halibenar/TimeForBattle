@@ -84,6 +84,9 @@
 	  <Compile Update="View\MainMenuPage.xaml.cs">
 	    <DependentUpon>MainMenuPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="View\CombatListPage.xaml.cs">
+	    <DependentUpon>CombatListPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -100,6 +103,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\MainMenuPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\CombatListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

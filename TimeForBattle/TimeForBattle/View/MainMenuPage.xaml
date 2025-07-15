@@ -8,36 +8,22 @@
              x:Class="TimeForBattle.View.MainMenuPage"
              Title="{Binding Title}">
 
-    <Grid ColumnDefinitions="*,*,*"
+    <Grid ColumnDefinitions="*,Auto,*"
           ColumnSpacing="0"
-          RowDefinitions="*,Auto,Auto,*">
-
+          RowDefinitions="*,Auto,Auto,Auto,Auto,*">
         <Button Grid.Column="1"
                 Grid.Row="1"
-                Text="New"
+                Text="New Combat"
                 Command="{Binding NewCombatCommand}"/>
-        <ScrollView Grid.Row="2"
-                    Grid.ColumnSpan="3">
-            <FlexLayout BackgroundColor="Transparent"
-                        BindableLayout.ItemsSource="{Binding Combats}"
-                        Direction="Column"
-                        Wrap="NoWrap"
-                        JustifyContent="Start"
-                        AlignContent="Start">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate x:DataType="model:Combat">
-                        <HorizontalStackLayout HorizontalOptions="Center">
-
-                            <Button Text="{Binding Name, StringFormat='{}Load {0}'}"
-                                    CommandParameter="{Binding .}"
-                                    Command="{Binding x:DataType='viewmodel:MainMenuViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:MainMenuViewModel}}, Path=LoadCombatCommand}" />
-                            <Button Text="Del"
-                                    CommandParameter="{Binding .}"
-                                    Command="{Binding x:DataType='viewmodel:MainMenuViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:MainMenuViewModel}}, Path=DeleteCombatCommand}" />
-                        </HorizontalStackLayout>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </FlexLayout>
-        </ScrollView>
+        <Button Grid.Column="1"
+                Grid.Row="2"
+                Text="Load Combat"
+                Command="{Binding GoToCombatListPageCommand}" />
+        <Button Grid.Column="1"
+                Grid.Row="3"
+                Text="Options"/>
+        <Button Grid.Column="1"
+                Grid.Row="4"
+                Text="Exit" />
     </Grid>
 </ContentPage>

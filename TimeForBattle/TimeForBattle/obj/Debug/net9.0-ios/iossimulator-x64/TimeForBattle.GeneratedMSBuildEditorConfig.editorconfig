@@ -53,6 +53,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = TimeForBattle.View.AddCrea
 build_metadata.AdditionalFiles.TargetPath = View\AddCreaturePage.xaml
 build_metadata.AdditionalFiles.RelativePath = View\AddCreaturePage.xaml
 
+[D:/GitHub/TimeForBattle/TimeForBattle/TimeForBattle/View/CombatListPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TimeForBattle.View.CombatListPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\CombatListPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\CombatListPage.xaml
+
 [D:/GitHub/TimeForBattle/TimeForBattle/TimeForBattle/View/CreatureDetailsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TimeForBattle.View.CreatureDetailsPage.xaml
