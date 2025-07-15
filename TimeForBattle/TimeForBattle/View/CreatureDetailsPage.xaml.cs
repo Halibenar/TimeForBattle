@@ -1,6 +1,3 @@
-using System.Globalization;
-using TimeForBattle.Converters;
-
 namespace TimeForBattle.View;
 
 public partial class CreatureDetailsPage : ContentPage
