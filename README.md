@@ -19,10 +19,10 @@ TimeForBattle aims to assist the Game Master of a tabletop roleplaying game with
   - Automatic rolling and sorting for creatures (Done!)
   - Custom input of initiative for player characters (Done!)
   - Separate initiative rolling for creatures added after initiative was rolled (Done!)
+- Add HP tracking (Done!)
+  - Input of current HP (Done!)
+  - Subtraction of HP (Done!)
 
-- Add HP tracking
-  - Input of current HP
-  - Subtraction of HP
-- Add status tracking
+- Add status tracking and combat info
   - Track turn count and status duration
 - Add automatic rolling of saves and attacks
