@@ -210,4 +210,24 @@ public partial class InitiativeViewModel : BaseViewModel
         Combat.IsStarted = false;
         await CombatService.SaveAsync(Combat);
     }
+
+    [RelayCommand]
+    public async Task CurrentHitPointsPlusAsync(InitiativeCreature initiativeCreature)
+    {
+        if (initiativeCreature is null)
+            return;
+
+        initiativeCreature.CurrentHitPoints++;
+        await InitiativeService.SaveAsync(initiativeCreature);
+    }
+
+    [RelayCommand]
+    public async Task CurrentHitPointsMinusAsync(InitiativeCreature initiativeCreature)
+    {
+        if (initiativeCreature is null || initiativeCreature.CurrentHitPoints <= 0)
+            return;
+
+        initiativeCreature.CurrentHitPoints--;
+        await InitiativeService.SaveAsync(initiativeCreature);
+    }
 }
