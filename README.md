@@ -26,3 +26,4 @@ TimeForBattle aims to assist the Game Master of a tabletop roleplaying game with
 - Add status tracking and combat info
   - Track turn count and status duration
 - Add automatic rolling of saves and attacks
+  - Change Save Modifier variables to int, with AttributeConverter to convert to int and back to display string to a mod with +/-
