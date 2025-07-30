@@ -7,7 +7,8 @@
              x:DataType="viewmodel:CreatureDetailsViewModel"
              Title="{Binding Creature.Name}">
     <ContentPage.Resources>
-        <converters:AttributeConverter x:Key="intToString" />
+        <converters:AttributeConverter x:Key="AttributeConverter" />
+        <converters:ProficiencyConverter x:Key="ProficiencyConverter" />
         <converters:InitiativeConverter x:Key="initiative" />
         <converters:StringContainDataConverter x:Key="StringContainDataConverter" />
         <converters:NotStringContainDataConverter x:Key="NotStringContainDataConverter" />
@@ -118,7 +119,7 @@
                        Style="{StaticResource StatblockText}"
                        Text="{Binding Creature.Speed}"
                        HorizontalOptions="End"/>
-                
+
                 <Label Grid.Column="2"
                        Grid.Row="11"
                        HorizontalOptions="Center"
@@ -144,20 +145,20 @@
                 <Label Grid.Column="2"
                        Grid.Row="12"
                        HorizontalOptions="Center"
-                       Text="{Binding Creature.StrScore, Converter={StaticResource intToString}, Mode=OneWay}"
+                       Text="{Binding Creature.StrScore, Converter={StaticResource AttributeConverter}, Mode=OneWay}"
                        Style="{StaticResource StatblockText}" />
                 <Label Grid.Column="3"
                        Grid.Row="12"
                        HorizontalOptions="Center"
-                       IsVisible="{Binding Creature.StrSave, Converter={StaticResource StringContainDataConverter}}"
-                       Text="{Binding Creature.StrSave}"
-                       Style="{StaticResource StatblockText}" />
-                <Label Grid.Column="3"
-                       Grid.Row="12"
-                       HorizontalOptions="Center"
-                       IsVisible="{Binding Creature.StrSave, Converter={StaticResource NotStringContainDataConverter}}"
-                       Text="{Binding Creature.StrScore, Converter={StaticResource intToString}}"
-                       Style="{StaticResource StatblockText}" />
+                       Style="{StaticResource StatblockText}">
+                    <Label.Text>
+                        <MultiBinding Converter="{StaticResource ProficiencyConverter}">
+                            <Binding Path="Creature.StrScore" />
+                            <Binding Path="Creature.StrSaveProf" />
+                            <Binding Path="Creature.ProficiencyBonus" />
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
 
                 <Label Grid.Column="0"
                        Grid.Row="13"
@@ -171,20 +172,20 @@
                 <Label Grid.Column="2"
                        Grid.Row="13"
                        HorizontalOptions="Center"
-                       Text="{Binding Creature.DexScore, Converter={StaticResource intToString}, Mode=OneWay}"
+                       Text="{Binding Creature.DexScore, Converter={StaticResource AttributeConverter}, Mode=OneWay}"
                        Style="{StaticResource StatblockText}" />
                 <Label Grid.Column="3"
                        Grid.Row="13"
                        HorizontalOptions="Center"
-                       IsVisible="{Binding Creature.DexSave, Converter={StaticResource StringContainDataConverter}}"
-                       Text="{Binding Creature.DexSave}"
-                       Style="{StaticResource StatblockText}" />
-                <Label Grid.Column="3"
-                       Grid.Row="13"
-                       HorizontalOptions="Center"
-                       IsVisible="{Binding Creature.DexSave, Converter={StaticResource NotStringContainDataConverter}}"
-                       Text="{Binding Creature.DexScore, Converter={StaticResource intToString}}"
-                       Style="{StaticResource StatblockText}" />
+                       Style="{StaticResource StatblockText}">
+                    <Label.Text>
+                        <MultiBinding Converter="{StaticResource ProficiencyConverter}">
+                            <Binding Path="Creature.DexScore" />
+                            <Binding Path="Creature.DexSaveProf" />
+                            <Binding Path="Creature.ProficiencyBonus" />
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
 
                 <Label Grid.Column="0"
                        Grid.Row="14"
@@ -198,20 +199,20 @@
                 <Label Grid.Column="2"
                        Grid.Row="14"
                        HorizontalOptions="Center"
-                       Text="{Binding Creature.ConScore, Converter={StaticResource intToString}}"
+                       Text="{Binding Creature.ConScore, Converter={StaticResource AttributeConverter}, Mode=OneWay}"
                        Style="{StaticResource StatblockText}" />
                 <Label Grid.Column="3"
                        Grid.Row="14"
                        HorizontalOptions="Center"
-                       IsVisible="{Binding Creature.ConSave, Converter={StaticResource StringContainDataConverter}}"
-                       Text="{Binding Creature.ConSave}"
-                       Style="{StaticResource StatblockText}" />
-                <Label Grid.Column="3"
-                       Grid.Row="14"
-                       HorizontalOptions="Center"
-                       IsVisible="{Binding Creature.ConSave, Converter={StaticResource NotStringContainDataConverter}}"
-                       Text="{Binding Creature.ConScore, Converter={StaticResource intToString}}"
-                       Style="{StaticResource StatblockText}" />
+                       Style="{StaticResource StatblockText}">
+                    <Label.Text>
+                        <MultiBinding Converter="{StaticResource ProficiencyConverter}">
+                            <Binding Path="Creature.ConScore" />
+                            <Binding Path="Creature.ConSaveProf" />
+                            <Binding Path="Creature.ProficiencyBonus" />
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
 
                 <Label Grid.Column="0"
                        Grid.Row="15"
@@ -221,24 +222,24 @@
                 <Label Grid.Column="1"
                        Grid.Row="15"
                        Style="{StaticResource StatblockText}"
-                       Text="{Binding Creature.IntScore}"/>
+                       Text="{Binding Creature.IntScore}" />
                 <Label Grid.Column="2"
                        Grid.Row="15"
                        HorizontalOptions="Center"
-                       Text="{Binding Creature.IntScore, Converter={StaticResource intToString}}"
+                       Text="{Binding Creature.IntScore, Converter={StaticResource AttributeConverter}, Mode=OneWay}"
                        Style="{StaticResource StatblockText}" />
                 <Label Grid.Column="3"
                        Grid.Row="15"
                        HorizontalOptions="Center"
-                       IsVisible="{Binding Creature.IntSave, Converter={StaticResource StringContainDataConverter}}"
-                       Text="{Binding Creature.IntSave}"
-                       Style="{StaticResource StatblockText}" />
-                <Label Grid.Column="3"
-                       Grid.Row="15"
-                       HorizontalOptions="Center"
-                       IsVisible="{Binding Creature.IntSave, Converter={StaticResource NotStringContainDataConverter}}"
-                       Text="{Binding Creature.IntScore, Converter={StaticResource intToString}}"
-                       Style="{StaticResource StatblockText}" />
+                       Style="{StaticResource StatblockText}">
+                    <Label.Text>
+                        <MultiBinding Converter="{StaticResource ProficiencyConverter}">
+                            <Binding Path="Creature.IntScore" />
+                            <Binding Path="Creature.IntSaveProf" />
+                            <Binding Path="Creature.ProficiencyBonus" />
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
 
                 <Label Grid.Column="0"
                        Grid.Row="16"
@@ -252,20 +253,20 @@
                 <Label Grid.Column="2"
                        Grid.Row="16"
                        HorizontalOptions="Center"
-                       Text="{Binding Creature.WisScore, Converter={StaticResource intToString}}"
+                       Text="{Binding Creature.WisScore, Converter={StaticResource AttributeConverter}, Mode=OneWay}"
                        Style="{StaticResource StatblockText}" />
                 <Label Grid.Column="3"
                        Grid.Row="16"
                        HorizontalOptions="Center"
-                       IsVisible="{Binding Creature.WisSave, Converter={StaticResource StringContainDataConverter}}"
-                       Text="{Binding Creature.WisSave}"
-                       Style="{StaticResource StatblockText}" />
-                <Label Grid.Column="3"
-                       Grid.Row="16"
-                       HorizontalOptions="Center"
-                       IsVisible="{Binding Creature.WisSave, Converter={StaticResource NotStringContainDataConverter}}"
-                       Text="{Binding Creature.WisScore, Converter={StaticResource intToString}}"
-                       Style="{StaticResource StatblockText}" />
+                       Style="{StaticResource StatblockText}">
+                    <Label.Text>
+                        <MultiBinding Converter="{StaticResource ProficiencyConverter}">
+                            <Binding Path="Creature.WisScore" />
+                            <Binding Path="Creature.WisSaveProf" />
+                            <Binding Path="Creature.ProficiencyBonus" />
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
 
                 <Label Grid.Column="0"
                        Grid.Row="17"
@@ -279,20 +280,20 @@
                 <Label Grid.Column="2"
                        Grid.Row="17"
                        HorizontalOptions="Center"
-                       Text="{Binding Creature.ChaScore, Converter={StaticResource intToString}}"
+                       Text="{Binding Creature.ChaScore, Converter={StaticResource AttributeConverter}, Mode=OneWay}"
                        Style="{StaticResource StatblockText}" />
                 <Label Grid.Column="3"
                        Grid.Row="17"
                        HorizontalOptions="Center"
-                       IsVisible="{Binding Creature.ChaSave, Converter={StaticResource StringContainDataConverter}}"
-                       Text="{Binding Creature.ChaSave}"
-                       Style="{StaticResource StatblockText}" />
-                <Label Grid.Column="3"
-                       Grid.Row="17"
-                       HorizontalOptions="Center"
-                       IsVisible="{Binding Creature.ChaSave, Converter={StaticResource NotStringContainDataConverter}}"
-                       Text="{Binding Creature.ChaScore, Converter={StaticResource intToString}}"
-                       Style="{StaticResource StatblockText}" />
+                       Style="{StaticResource StatblockText}">
+                    <Label.Text>
+                        <MultiBinding Converter="{StaticResource ProficiencyConverter}">
+                            <Binding Path="Creature.ChaScore" />
+                            <Binding Path="Creature.ChaSaveProf" />
+                            <Binding Path="Creature.ProficiencyBonus" />
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
 
 
                 <Label Grid.Column="0"
