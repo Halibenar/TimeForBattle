@@ -34,6 +34,7 @@ public partial class InitiativeCreature : Creature
         this.MaximumHitPoints = creature.MaximumHitPoints;
         this.Speed = creature.Speed;
         this.ChallengeRating = creature.ChallengeRating;
+        this.ProficiencyBonus = creature.ProficiencyBonus;
 
         this.StrScore = creature.StrScore;
         this.DexScore = creature.DexScore;
@@ -42,12 +43,12 @@ public partial class InitiativeCreature : Creature
         this.WisScore = creature.WisScore;
         this.ChaScore = creature.ChaScore;
 
-        this.StrSave = creature.StrSave;
-        this.DexSave = creature.DexSave;
-        this.ConSave = creature.ConSave;
-        this.IntSave = creature.IntSave;
-        this.WisSave = creature.WisSave;
-        this.ChaSave = creature.ChaSave;
+        this.StrSaveProf = creature.StrSaveProf;
+        this.DexSaveProf = creature.DexSaveProf;
+        this.ConSaveProf = creature.ConSaveProf;
+        this.IntSaveProf = creature.IntSaveProf;
+        this.WisSaveProf = creature.WisSaveProf;
+        this.ChaSaveProf = creature.ChaSaveProf;
 
         this.Skills = creature.Skills;
         this.Resistances = creature.Resistances;

@@ -4,14 +4,12 @@ namespace TimeForBattle.Converters;
 
 public class AttributeConverter : IValueConverter
 {
-
     object? IValueConverter.Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        if (value is int val)
+        if (value is not null && value is int attributeScore)
         {
-            double x = ((double)val - 10) / 2;
+            double x = ((double)attributeScore - 10) / 2;
             int modifier = (int)Math.Floor(x);
-
 
             if (modifier >= 0)
             {
@@ -26,13 +24,8 @@ public class AttributeConverter : IValueConverter
         return value;
     }
 
-    object? IValueConverter.ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+    public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        if (value is int val)
-        {
-            int modifier = 10 + val * 2;
-        }
-
-        return value;
+        throw new NotImplementedException();
     }
 }

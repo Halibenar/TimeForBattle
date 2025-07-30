@@ -11,6 +11,7 @@ public partial class InitiativeViewModel : BaseViewModel
     public CreatureService<Combat> CombatService;
     [ObservableProperty] public ObservableCollection<InitiativeCreature> initiative = new();
     [ObservableProperty] Combat combat;
+    [ObservableProperty] int rolledValue;
 
     public InitiativeViewModel(CreatureService<Creature> creatureService, InitiativeService<InitiativeCreature> initiativeService, CreatureService<Combat> combatService)
     {
@@ -229,5 +230,18 @@ public partial class InitiativeViewModel : BaseViewModel
 
         initiativeCreature.CurrentHitPoints--;
         await InitiativeService.SaveAsync(initiativeCreature);
+    }
+
+    [RelayCommand]
+    public async Task RollSaveAsync(string saveString)
+    {
+        if (int.Parse(saveString) is int saveValue)
+        {
+            await Task.Run(() =>
+            {
+                Random rng = new();
+                RolledValue = rng.Next(1, 21) + saveValue;
+            });
+        }
     }
 }

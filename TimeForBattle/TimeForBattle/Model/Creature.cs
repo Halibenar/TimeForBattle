@@ -14,6 +14,7 @@ public partial class Creature : DatabaseObject
     [ObservableProperty] public int maximumHitPoints;
     [ObservableProperty] public string speed;
     [ObservableProperty] public string challengeRating;
+    [ObservableProperty] public int proficiencyBonus;
 
     [ObservableProperty] public int strScore;
     [ObservableProperty] public int dexScore;
@@ -22,12 +23,12 @@ public partial class Creature : DatabaseObject
     [ObservableProperty] public int wisScore;
     [ObservableProperty] public int chaScore;
 
-    [ObservableProperty] public string strSave;
-    [ObservableProperty] public string dexSave;
-    [ObservableProperty] public string conSave;
-    [ObservableProperty] public string intSave;
-    [ObservableProperty] public string wisSave;
-    [ObservableProperty] public string chaSave;
+    [ObservableProperty] public bool strSaveProf;
+    [ObservableProperty] public bool dexSaveProf;
+    [ObservableProperty] public bool conSaveProf;
+    [ObservableProperty] public bool intSaveProf;
+    [ObservableProperty] public bool wisSaveProf;
+    [ObservableProperty] public bool chaSaveProf;
 
     [ObservableProperty] public string skills;
     [ObservableProperty] public string resistances;
