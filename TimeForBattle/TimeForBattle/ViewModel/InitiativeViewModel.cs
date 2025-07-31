@@ -10,8 +10,8 @@ public partial class InitiativeViewModel : BaseViewModel
     public InitiativeService<InitiativeCreature> InitiativeService;
     public CreatureService<Combat> CombatService;
     [ObservableProperty] public ObservableCollection<InitiativeCreature> initiative = new();
-    [ObservableProperty] Combat combat;
-    [ObservableProperty] int rolledValue;
+    [ObservableProperty] Combat? combat;
+    [ObservableProperty] public ObservableCollection<Roll> rolls = new();
 
     public InitiativeViewModel(CreatureService<Creature> creatureService, InitiativeService<InitiativeCreature> initiativeService, CreatureService<Combat> combatService)
     {
@@ -53,7 +53,7 @@ public partial class InitiativeViewModel : BaseViewModel
     [RelayCommand]
     public async Task RollInitiativeAsync()
     {
-        if (Initiative is null || Initiative.Count == 0)
+        if (Combat is null || Initiative is null || Initiative.Count == 0)
             return;
 
         await Task.Run(() =>
@@ -89,7 +89,7 @@ public partial class InitiativeViewModel : BaseViewModel
     [RelayCommand]
     public async Task SortInitiativeAsync()
     {
-        if (Initiative is null || Initiative.Count == 0)
+        if (Combat is null || Initiative is null || Initiative.Count == 0)
             return;
 
         List<InitiativeCreature> sortedCreatures = [];
@@ -110,7 +110,7 @@ public partial class InitiativeViewModel : BaseViewModel
     {
         if (Combat is null)
             return;
-        
+
         await CombatService.SaveAsync(Combat);
 
         if (Initiative is null || Initiative.Count == 0)
@@ -125,7 +125,7 @@ public partial class InitiativeViewModel : BaseViewModel
     [RelayCommand]
     public async Task NextCreature()
     {
-        if (Initiative is null || Initiative.Count == 0)
+        if (Combat is null || Initiative is null || Initiative.Count == 0)
             return;
 
         InitiativeCreature? currentCreature = Initiative.FirstOrDefault(x => x.IsTurn == true, null);
@@ -141,7 +141,7 @@ public partial class InitiativeViewModel : BaseViewModel
                 Combat.RoundCount++;
                 await CombatService.SaveAsync(Combat);
             }
-               
+
             currentCreature.IsTurn = false;
             await Task.Run(() => InitiativeService.SaveAsync(currentCreature));
         }
@@ -159,7 +159,7 @@ public partial class InitiativeViewModel : BaseViewModel
     [RelayCommand]
     public async Task PreviousCreature()
     {
-        if (Initiative is null || Initiative.Count == 0)
+        if (Combat is null || Initiative is null || Initiative.Count == 0)
             return;
 
         InitiativeCreature? currentCreature = Initiative.FirstOrDefault(x => x.IsTurn == true, null);
@@ -208,6 +208,9 @@ public partial class InitiativeViewModel : BaseViewModel
     [RelayCommand]
     public async Task PauseInitiativeAsync()
     {
+        if (Combat is null)
+            return;
+
         Combat.IsStarted = false;
         await CombatService.SaveAsync(Combat);
     }
@@ -215,7 +218,7 @@ public partial class InitiativeViewModel : BaseViewModel
     [RelayCommand]
     public async Task CurrentHitPointsPlusAsync(InitiativeCreature initiativeCreature)
     {
-        if (initiativeCreature is null)
+        if (Combat is null || Initiative is null || initiativeCreature is null)
             return;
 
         initiativeCreature.CurrentHitPoints++;
@@ -225,7 +228,7 @@ public partial class InitiativeViewModel : BaseViewModel
     [RelayCommand]
     public async Task CurrentHitPointsMinusAsync(InitiativeCreature initiativeCreature)
     {
-        if (initiativeCreature is null || initiativeCreature.CurrentHitPoints <= 0)
+        if (Combat is null || Initiative is null || initiativeCreature is null || initiativeCreature.CurrentHitPoints <= 0)
             return;
 
         initiativeCreature.CurrentHitPoints--;
@@ -233,15 +236,15 @@ public partial class InitiativeViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    public async Task RollSaveAsync(string saveString)
+    public async Task RollSaveAsync(Tuple<int?, string?, string?> parameters)
     {
-        if (int.Parse(saveString) is int saveValue)
-        {
-            await Task.Run(() =>
-            {
-                Random rng = new();
-                RolledValue = rng.Next(1, 21) + saveValue;
-            });
-        }
+        if (Combat is null || parameters.Item1 is null)
+            return;
+
+
+            Random rng = new();
+            int roll1 = rng.Next(1, 21);
+            int roll2 = rng.Next(1, 21);
+            Rolls.Insert(0, new Roll(parameters.Item3, parameters.Item2, roll1, roll2, (int)parameters.Item1));
     }
 }
