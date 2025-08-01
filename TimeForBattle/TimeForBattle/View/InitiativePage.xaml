@@ -16,11 +16,13 @@
         <converters:EntryToNullableIntConverter x:Key="EntryToNullableIntConverter" />
         <converters:HitpointConverter x:Key="HitpointConverter" />
         <converters:RollConverter x:Key="RollConverter" />
+        <converters:RollColorConverter x:Key="RollColorConverter" />
+        <converters:AdditionConverter x:Key="AdditionConverter" />
     </ContentPage.Resources>
 
     <Grid ColumnDefinitions="*,*,*"
           ColumnSpacing="0"
-          RowDefinitions="Auto,Auto,*,Auto,Auto,Auto">
+          RowDefinitions="Auto,Auto,*,Auto,Auto">
 
         <Button Grid.Column="0"
                 Grid.Row="0"
@@ -103,28 +105,31 @@
                                                Grid.RowSpan="2"
                                                Text="HP:"
                                                Margin="5,0,5,0"
+                                               HorizontalOptions="Center"
                                                VerticalOptions="Center" />
                                         <Button Grid.Column="1"
                                                 Grid.Row="0"
                                                 Text="+"
                                                 Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=CurrentHitPointsPlusCommand}"
                                                 CommandParameter="{Binding .}"
-                                                HeightRequest="20" 
-                                                WidthRequest="35" />
+                                                HeightRequest="15" 
+                                                WidthRequest="40"
+                                                Padding="2"/>
                                         <Button Grid.Column="1"
                                                 Grid.Row="1"
                                                 Text="-"
                                                 Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=CurrentHitPointsMinusCommand}"
                                                 CommandParameter="{Binding .}"
-                                                HeightRequest="20"
-                                                WidthRequest="35" />
+                                                HeightRequest="15"
+                                                WidthRequest="40"
+                                                Padding="2" />
                                         <Entry Grid.Column="2"
                                                Grid.Row="0"
                                                Grid.RowSpan="2"
                                                Text="{Binding CurrentHitPoints}"
-                                               WidthRequest="45"
-                                               MinimumWidthRequest="45"
-                                               HeightRequest="40"
+                                               WidthRequest="40"
+                                               MinimumWidthRequest="40"
+                                               HeightRequest="30"
                                                VerticalOptions="Center"
                                                MaxLength="3"
                                                Keyboard="Numeric" />
@@ -133,7 +138,19 @@
                                                Grid.RowSpan="2"
                                                Text="{Binding MaximumHitPoints, StringFormat='{} / {0}'}"
                                                VerticalOptions="Center" />
-                                        
+                                        <Label Grid.Column="4"
+                                               Grid.Row="0"
+                                               Grid.RowSpan="2"
+                                               Text="AC:"
+                                               Margin="5,0,5,0"
+                                               HorizontalOptions="End"
+                                               VerticalOptions="Center" />
+                                        <Label Grid.Column="5"
+                                               Grid.Row="0"
+                                               Grid.RowSpan="2"
+                                               Text="{Binding ArmorClass}"
+                                               VerticalOptions="Center" />
+
                                         <Button Grid.Column="0"
                                                 Grid.Row="2"
                                                 Text="STR"
@@ -317,9 +334,15 @@
             </FlexLayout>
         </ScrollView>
 
+        <BoxView Grid.Column="0"
+                 Grid.ColumnSpan="3"
+                 Grid.Row="3"
+                 HeightRequest="2"
+                 Color="DarkRed" />
+
         <ScrollView Grid.Column="0"
                     Grid.ColumnSpan="3"
-                    Grid.Row="3"
+                    Grid.Row="4"
                     HeightRequest="100">
             <FlexLayout BackgroundColor="Transparent"
                         BindableLayout.ItemsSource="{Binding Rolls}"
@@ -330,26 +353,48 @@
                         AlignContent="Start">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="model:Roll">
-                        <Grid ColumnDefinitions="*,*"
+                        <Grid ColumnDefinitions="*,*,*,*"
                               ColumnSpacing="0"
                               RowDefinitions="*,*,*"
                               RowSpacing="0"
                               Padding="3,3,3,3">
                             <Label Grid.Column="0"
+                                   Grid.ColumnSpan="4"
                                    Grid.Row="0"
-                                   Text="{Binding CreatureName}" />
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Center">
+                                <Label.Text>
+                                    <MultiBinding StringFormat="{} {0} rolled {1} ({2})">
+                                        <Binding Path="CreatureName" />
+                                        <Binding Path="RollName" />
+                                        <Binding Path="ModifierString" />
+                                    </MultiBinding>
+                                </Label.Text>
+                            </Label>
                             <Label Grid.Column="1"
-                                   Grid.Row="0"
-                                   Text="{Binding RollName}" />
-                            <Label Grid.Column="0"
+                                   Grid.Row="1" 
+                                   FontSize="20"
+                                   FontAttributes="Bold"
+                                   TextColor="{Binding RollValue1, Converter={StaticResource RollColorConverter}}">
+                                <Label.Text>
+                                    <MultiBinding Converter="{StaticResource AdditionConverter}">
+                                        <Binding Path="RollValue1" />
+                                        <Binding Path="Modifier" />
+                                    </MultiBinding>
+                                </Label.Text>
+                            </Label>
+                            <Label Grid.Column="2"
                                    Grid.Row="1"
-                                   Text="{Binding RollValue1}" />
-                            <Label Grid.Column="1"
-                                   Grid.Row="1"
-                                   Text="{Binding RollValue2}" />
-                            <Label Grid.Column="0"
-                                   Grid.Row="2"
-                                   Text="{Binding Modifier}" />
+                                   FontSize="20"
+                                   FontAttributes="Bold"
+                                   TextColor="{Binding RollValue2, Converter={StaticResource RollColorConverter}}">
+                                <Label.Text>
+                                    <MultiBinding Converter="{StaticResource AdditionConverter}">
+                                        <Binding Path="RollValue2" />
+                                        <Binding Path="Modifier" />
+                                    </MultiBinding>
+                                </Label.Text>
+                            </Label>
                         </Grid>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
